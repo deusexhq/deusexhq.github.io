@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Actor - Deus Ex</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Actor";
+    var mkdocs_page_input_path = "actor.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Deus Ex</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="http://discord.gg/KUAgb">Discord</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../community/">Community</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../coding/">Coding</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../hosting/">Hosting</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../object/">Object</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Actor</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#actor">Actor</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#properties">Properties</a></li>
+        
+            <li><a class="toctree-l3" href="#functions">Functions</a></li>
+        
+            <li><a class="toctree-l3" href="#engine-notification-functions">Engine notification functions</a></li>
+        
+            <li><a class="toctree-l3" href="#tracing">Tracing</a></li>
+        
+            <li><a class="toctree-l3" href="#spawn">Spawn</a></li>
+        
+            <li><a class="toctree-l3" href="#destroy">Destroy</a></li>
+        
+            <li><a class="toctree-l3" href="#timer_1">Timer</a></li>
+        
+            <li><a class="toctree-l3" href="#sound">Sound</a></li>
+        
+            <li><a class="toctree-l3" href="#ai-functions_1">AI functions.</a></li>
+        
+            <li><a class="toctree-l3" href="#teleportation">Teleportation</a></li>
+        
+            <li><a class="toctree-l3" href="#beginplay">BeginPlay</a></li>
+        
+            <li><a class="toctree-l3" href="#disk-access">Disk access.</a></li>
+        
+            <li><a class="toctree-l3" href="#iterator-functions">Iterator functions.</a></li>
+        
+            <li><a class="toctree-l3" href="#color-operators">Color operators</a></li>
+        
+            <li><a class="toctree-l3" href="#scripted-actor-functions">Scripted Actor functions</a></li>
+        
+            <li><a class="toctree-l3" href="#defaultproperties">DefaultProperties</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../game/">Game</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../inventory/">Inventory</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../pawn/">Pawn</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../player/">Player</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Deus Ex</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Actor</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="actor">Actor</h1>
+<p><code>abstract, native, nativereplication</code></p>
+<pre><code>Actor: The base class of all actors.
+This is a built-in Unreal class and it shouldn't be modified.
+</code></pre>
+
+<h2 id="properties">Properties</h2>
+<pre><code class="java">// DEUS_EX STM
+enum EAIEventState
+{
+    EAISTATE_Begin,
+    EAISTATE_End,
+    EAISTATE_Pulse,
+    EAISTATE_ChangeBest
+};
+
+enum EAIEventType
+{
+    EAITYPE_Visual,
+    EAITYPE_Audio,
+    EAITYPE_Olifactory
+};
+
+struct XAIParams
+{
+    var actor BestActor;
+    var float Score;
+    var float Visibility;
+    var float Volume;
+    var float Smell;
+};
+
+// DEUS_EX AJY 
+enum EBarkModes 
+{
+    BM_Idle,
+    BM_CriticalDamage,
+    BM_AreaSecure,
+    BM_TargetAcquired,
+    BM_TargetLost,
+    BM_GoingForAlarm,
+    BM_OutOfAmmo,
+    BM_Scanning,
+    BM_Futz,
+    BM_OnFire,
+    BM_TearGas,
+    BM_Gore,
+    BM_Surprise,
+    BM_PreAttackSearching,
+    BM_PreAttackSighting,
+    BM_PostAttackSearching,
+    BM_SearchGiveUp,
+    BM_AllianceHostile,
+    BM_AllianceFriendly
+};
+
+// Flags.
+var(Advanced) const bool  bStatic;       // Does not move or change over time.
+var(Advanced) bool        bHidden;       // Is hidden during gameplay.
+var(Advanced) const bool  bNoDelete;     // Cannot be deleted during play.
+var bool                  bAnimFinished; // Unlooped animation sequence has finished.
+var bool                  bAnimLoop;     // Whether animation is looping.
+var bool                  bAnimNotify;   // Whether a notify is applied to the current sequence.
+var bool                  bAnimByOwner;  // Animation dictated by owner.
+var const bool            bDeleteMe;     // About to be deleted.
+var transient const bool  bAssimilated;  // Actor dynamics are assimilated in world geometry.
+var transient const bool  bTicked;       // Actor has been updated.
+var transient bool        bLightChanged; // Recalculate this light's lighting now.
+var bool                  bDynamicLight; // Temporarily treat this as a dynamic light.
+var bool                  bTimerLoop;    // Timer loops (else is one-shot).
+
+// Other flags.
+var(Advanced) bool        bCanTeleport;  // This actor can be teleported.
+var(Advanced) bool        bIsSecretGoal; // This actor counts in the &quot;secret&quot; total.
+var(Advanced) bool        bIsKillGoal;   // This actor counts in the &quot;death&quot; toll.
+var(Advanced) bool        bIsItemGoal;   // This actor counts in the &quot;item&quot; count.
+var(Advanced) bool        bCollideWhenPlacing; // This actor collides with the world when placing.
+var(Advanced) bool        bTravel;       // Actor is capable of travelling among servers.
+var(Advanced) bool        bMovable;      // Actor is capable of travelling among servers.
+var(Advanced) bool        bHighDetail;   // Only show up on high-detail.
+var(Advanced) bool        bStasis;       // In StandAlone games, turn off if not in a recently rendered zone turned off if  bCanStasis  and physics = PHYS_None or PHYS_Rotating.
+var(Advanced) bool        bForceStasis;  // Force stasis when not recently rendered, even if physics not none or rotating.
+var const     bool        bIsPawn;       // True only for pawns.
+var(Advanced) const bool  bNetTemporary; // Tear-off simulation in network play.
+var(Advanced) const bool  bNetOptional;  // Actor should only be replicated if bandwidth available.
+var           bool        bReplicateInstigator; // Replicate instigator to client (used by bNetTemporary projectiles).
+var           bool        bTrailerSameRotation; // If PHYS_Trailer and true, have same rotation as owner.
+var           bool        bTrailerPrePivot; // If PHYS_Trailer and true, offset from owner by PrePivot.
+var           bool        bClientAnim;
+var           bool        bSimFall;         // dumb proxy should simulate fall
+
+// DEUS_EX STM - added new flags
+var(Advanced) bool        bBlockSight;   // True if pawns can't see through this actor.
+var(Advanced) bool        bDetectable;   // True if this actor can be detected (by sight, sound, etc).
+var(Advanced) bool        bTransient;    // True if this actor should be destroyed when it goes into stasis
+var           bool        bIgnore;       // True if this actor should be generally ignored; compliance is voluntary
+
+// Priority Parameters
+// Actor's current physics mode.
+var(Movement) const enum EPhysics
+{
+    PHYS_None,
+    PHYS_Walking,
+    PHYS_Falling,
+    PHYS_Swimming,
+    PHYS_Flying,
+    PHYS_Rotating,
+    PHYS_Projectile,
+    PHYS_Rolling,
+    PHYS_Interpolating,
+    PHYS_MovingBrush,
+    PHYS_Spider,
+    PHYS_Trailer
+} Physics;
+
+// Net variables.
+enum ENetRole
+{
+    ROLE_None,              // No role at all.
+    ROLE_DumbProxy,         // Dumb proxy of this actor.
+    ROLE_SimulatedProxy,    // Locally simulated proxy of this actor.
+    ROLE_AutonomousProxy,   // Locally autonomous proxy of this actor.
+    ROLE_Authority,         // Authoritative control over the actor.
+};
+var ENetRole Role;
+var(Networking) ENetRole RemoteRole;
+
+// DEUS_EX STM - added for stasis
+var float LastRenderTime;
+var float DistanceFromPlayer;
+
+// Owner.
+var         const Actor   Owner;         // Owner actor.
+var(Object) name InitialState;
+var(Object) name Group;
+
+// Execution and timer variables.
+var float                 TimerRate;     // Timer event, 0=no timer.
+var const float           TimerCounter;  // Counts up until it reaches TimerRate.
+var(Advanced) float       LifeSpan;      // How old the object lives before dying, 0=forever.
+
+// Animation variables.
+var(Display) name         AnimSequence;  // Animation sequence we're playing.
+var(Display) float        AnimFrame;     // Current animation frame, 0.0 to 1.0.
+var(Display) float        AnimRate;      // Animation rate in frames per second, 0=none, negative=velocity scaled.
+var          float        TweenRate;     // Tween-into rate.
+
+var(Display) float        LODBias;
+
+// Blending animation variables - DEUS_EX CNN
+var name    BlendAnimSequence[4];
+var float   BlendAnimFrame[4];
+var float   BlendAnimRate[4];
+var float   BlendTweenRate[4];
+
+//-----------------------------------------------------------------------------
+// Structures.
+
+// Identifies a unique convex volume in the world.
+struct PointRegion
+{
+    var zoneinfo Zone;       // Zone.
+    var int      iLeaf;      // Bsp leaf.
+    var byte     ZoneNumber; // Zone number.
+};
+
+//-----------------------------------------------------------------------------
+// Major actor properties.
+
+// Scriptable.
+var       const LevelInfo Level;         // Level this actor is on.
+var transient const Level XLevel;        // Level object.
+var(Events) name          Tag;           // Actor's tag name.
+var(Events) name          Event;         // The event this actor causes.
+var Actor                 Target;        // Actor we're aiming at (other uses as well).
+var Pawn                  Instigator;    // Pawn responsible for damage.
+var travel Inventory      Inventory;     // Inventory chain.  (DEUS_EX STM - added &quot;travel&quot;)
+var const Actor           Base;          // Moving brush actor we're standing on.
+var const PointRegion     Region;        // Region this actor is in.
+var(Movement)   name      AttachTag;
+
+// Internal.
+var const byte            StandingCount; // Count of actors standing on this actor.
+var const byte            MiscNumber;    // Internal use.
+var const byte            LatentByte;    // Internal latent function use.
+var const int             LatentInt;     // Internal latent function use.
+var const float           LatentFloat;   // Internal latent function use.
+var const actor           LatentActor;   // Internal latent function use.
+var const actor           Touching[4];   // List of touching actors.
+var const actor           Deleted;       // Next actor in just-deleted chain.
+
+// Internal tags.
+var const transient int CollisionTag, LightingTag, NetTag, OtherTag, ExtraTag, SpecialTag;
+
+// The actor's position and rotation.
+var(Movement) const vector Location;     // Actor's location; use Move to set.
+var(Movement) const rotator Rotation;    // Rotation.
+var       const vector    OldLocation;   // Actor's old location one tick ago.
+var       const vector    ColLocation;   // Actor's old location one move ago.
+var(Movement) vector      Velocity;      // Velocity.
+var       vector          Acceleration;  // Acceleration.
+
+//Editing flags
+var(Advanced) bool        bHiddenEd;     // Is hidden during editing.
+var(Advanced) bool        bDirectional;  // Actor shows direction arrow during editing.
+var const bool            bSelected;     // Selected in UnrealEd.
+var const bool            bMemorized;    // Remembered in UnrealEd.
+var const bool            bHighlighted;  // Highlighted in UnrealEd.
+var bool                  bEdLocked;     // Locked in editor (no movement or rotation).
+var(Advanced) bool        bEdShouldSnap; // Snap to grid in editor.
+var transient bool        bEdSnap;       // Should snap to grid in UnrealEd.
+var transient const bool  bTempEditor;   // Internal UnrealEd.
+
+// What kind of gameplay scenarios to appear in.
+var(Filter) bool          bDifficulty0;  // Appear in difficulty 0.
+var(Filter) bool          bDifficulty1;  // Appear in difficulty 1.
+var(Filter) bool          bDifficulty2;  // Appear in difficulty 2.
+var(Filter) bool          bDifficulty3;  // Appear in difficulty 3.
+var(Filter) bool          bSinglePlayer; // Appear in single player.
+var(Filter) bool          bNet;          // Appear in regular network play.
+var(Filter) bool          bNetSpecial;   // Appear in special network play mode.
+var(Filter) float         OddsOfAppearing; // 0-1 - chance actor will appear in relevant game modes.
+
+//-----------------------------------------------------------------------------
+// Display properties.
+
+// Drawing effect.
+var(Display) enum EDrawType
+{
+    DT_None,
+    DT_Sprite,
+    DT_Mesh,
+    DT_Brush,
+    DT_RopeSprite,
+    DT_VerticalSprite,
+    DT_Terraform,
+    DT_SpriteAnimOnce,
+} DrawType;
+
+// Style for rendering sprites, meshes.
+var(Display) enum ERenderStyle
+{
+    STY_None,
+    STY_Normal,
+    STY_Masked,
+    STY_Translucent,
+    STY_Modulated,
+} Style;
+
+// Other display properties.
+var(Display) texture    Sprite;          // Sprite texture if DrawType=DT_Sprite.
+var(Display) texture    Texture;         // Misc texture.
+var(Display) texture    Skin;            // Special skin or enviro map texture.
+var(Display) mesh       Mesh;            // Mesh if DrawType=DT_Mesh.
+var const export model  Brush;           // Brush if DrawType=DT_Brush.
+var(Display) float      DrawScale;       // Scaling factor, 1.0=normal size.
+var          vector     PrePivot;        // Offset from box center for drawing.
+var(Display) float      ScaleGlow;       // Multiplies lighting.
+var(Display) byte       AmbientGlow;     // Ambient brightness, or 255=pulsing.
+var(Display) byte       Fatness;         // Fatness (mesh distortion).
+
+// Display.
+var(Display)  bool      bUnlit;          // Lights don't affect actor.
+var(Display)  bool      bNoSmooth;       // Don't smooth actor's texture.
+var(Display)  bool      bParticles;      // Mesh is a particle system.
+var(Display)  bool      bRandomFrame;    // Particles use a random texture from among the default texture and the multiskins textures
+var(Display)  bool      bMeshEnviroMap;  // Environment-map the mesh.
+var(Display)  bool      bMeshCurvy;      // Curvy mesh.
+var(Display)  float     VisibilityRadius;// Actor is drawn if viewer is within its visibility
+var(Display)  float     VisibilityHeight;// cylinder.  Zero=infinite visibility.
+
+// Not yet implemented.
+var(Display) bool       bShadowCast;     // Casts shadows.
+
+// Advanced.
+var(Advanced) bool      bOwnerNoSee;     // Everything but the owner can see this actor.
+var(Advanced) bool      bOnlyOwnerSee;   // Only owner can see this actor.
+var Const     bool      bIsMover;        // Is a mover.
+var(Advanced) bool      bAlwaysRelevant; // Always relevant for network.
+var Const     bool      bAlwaysTick;     // Update even when players-only.
+var           bool      bHurtEntry;      // keep HurtRadius from being reentrant
+var(Advanced) bool      bGameRelevant;   // Always relevant for game
+var           bool      bCarriedItem;    // being carried, and not responsible for displaying self, so don't replicated location and rotation
+var           bool      bForcePhysicsUpdate; // force a physics update for simulated pawns
+
+
+// Multiple skin support.
+var(Display) texture MultiSkins[8];
+
+//-----------------------------------------------------------------------------
+// Sound.
+
+// Ambient sound.
+var(Sound) byte         SoundRadius;     // Radius of ambient sound.
+var(Sound) byte         SoundVolume;     // Volume of amient sound.
+var(Sound) byte         SoundPitch;      // Sound pitch shift, 64.0=none.
+var(Sound) sound        AmbientSound;    // Ambient sound effect.
+
+// Regular sounds.
+var(Sound) float TransientSoundVolume;
+var(Sound) float TransientSoundRadius;
+
+// Sound slots for actors.
+enum ESoundSlot
+{
+    SLOT_None,
+    SLOT_Misc,
+    SLOT_Pain,
+    SLOT_Interact,
+    SLOT_Ambient,
+    SLOT_Talk,
+    SLOT_Interface,
+};
+
+// Music transitions.
+enum EMusicTransition
+{
+    MTRAN_None,
+    MTRAN_Instant,
+    MTRAN_Segue,
+    MTRAN_Fade,
+    MTRAN_FastFade,
+    MTRAN_SlowFade,
+};
+
+//-----------------------------------------------------------------------------
+// Collision.
+
+// Collision size.
+var(Collision) const float CollisionRadius; // Radius of collision cyllinder.
+var(Collision) const float CollisionHeight; // Half-height cyllinder.
+
+// Collision flags.
+var(Collision) const bool bCollideActors;   // Collides with other actors.
+var(Collision) bool       bCollideWorld;    // Collides with the world.
+var(Collision) bool       bBlockActors;     // Blocks other nonplayer actors.
+var(Collision) bool       bBlockPlayers;    // Blocks other player actors.
+var(Collision) bool       bProjTarget;      // Projectiles should potentially target this actor.
+
+//-----------------------------------------------------------------------------
+// Lighting.
+
+// Light modulation.
+var(Lighting) enum ELightType
+{
+    LT_None,
+    LT_Steady,
+    LT_Pulse,
+    LT_Blink,
+    LT_Flicker,
+    LT_Strobe,
+    LT_BackdropLight,
+    LT_SubtlePulse,
+    LT_TexturePaletteOnce,
+    LT_TexturePaletteLoop
+} LightType;
+
+// Spatial light effect to use.
+var(Lighting) enum ELightEffect
+{
+    LE_None,
+    LE_TorchWaver,
+    LE_FireWaver,
+    LE_WateryShimmer,
+    LE_Searchlight,
+    LE_SlowWave,
+    LE_FastWave,
+    LE_CloudCast,
+    LE_StaticSpot,
+    LE_Shock,
+    LE_Disco,
+    LE_Warp,
+    LE_Spotlight,
+    LE_NonIncidence,
+    LE_Shell,
+    LE_OmniBumpMap,
+    LE_Interference,
+    LE_Cylinder,
+    LE_Rotor,
+    LE_Unused
+} LightEffect;
+
+// Lighting info.
+var(LightColor) byte
+    LightBrightness,
+    LightHue,
+    LightSaturation;
+
+// Light properties.
+var(Lighting) byte
+    LightRadius,
+    LightPeriod,
+    LightPhase,
+    LightCone,
+    VolumeBrightness,
+    VolumeRadius,
+    VolumeFog;
+
+// Lighting.
+var(Lighting) bool       bSpecialLit;    // Only affects special-lit surfaces.
+var(Lighting) bool       bActorShadows;  // Light casts actor shadows.
+var(Lighting) bool       bCorona;        // Light uses Skin as a corona.
+var(Lighting) bool       bLensFlare;     // Whether to use zone lens flare.
+
+//-----------------------------------------------------------------------------
+// Physics.
+
+// Options.
+var(Movement) bool        bBounce;           // Bounces when hits ground fast.
+var(Movement) bool        bFixedRotationDir; // Fixed direction of rotation.
+var(Movement) bool        bRotateToDesired;  // Rotate to DesiredRotation.
+var           bool        bInterpolating;    // Performing interpolating.
+var           const bool  bJustTeleported;   // Used by engine physics - not valid for scripts.
+
+// Dodge move direction.
+var enum EDodgeDir
+{
+    DODGE_None,
+    DODGE_Left,
+    DODGE_Right,
+    DODGE_Forward,
+    DODGE_Back,
+    DODGE_Active,
+    DODGE_Done
+} DodgeDir;
+
+// Physics properties.
+var(Movement) float       Mass;            // Mass of this actor.
+var(Movement) float       Buoyancy;        // Water buoyancy.
+var(Movement) rotator     RotationRate;    // Change in rotation per second.
+var(Movement) rotator     DesiredRotation; // Physics will rotate pawn to this if bRotateToDesired.
+var           float       PhysAlpha;       // Interpolating position, 0.0-1.0.
+var           float       PhysRate;        // Interpolation rate per second.
+var           Actor       PendingTouch;     // Actor touched during move which wants to add an effect after the movement completes 
+//-----------------------------------------------------------------------------
+// Animation.
+
+// Animation control.
+var          float        AnimLast;        // Last frame.
+var          float        AnimMinRate;     // Minimum rate for velocity-scaled animation.
+var          float        OldAnimRate;     // Animation rate of previous animation (= AnimRate until animation completes).
+var          plane        SimAnim;         // replicated to simulated proxies.
+
+// Blending Animation control - DEUS_EX CNN
+var          float        BlendAnimLast[4];        // Last frame.
+var          float        BlendAnimMinRate[4];     // Minimum rate for velocity-scaled animation.
+var          float        OldBlendAnimRate[4];     // Animation rate of previous animation (= AnimRate until animation completes).
+var          plane        SimBlendAnim[4];         // replicated to simulated proxies.
+
+// Conversation Related Variables - DEUS_EX AJY
+var(Conversation) String BindName;                  // Used to bind conversations
+var(Conversation) String BarkBindName;              // Used to bind Barks!
+var(Conversation) localized String FamiliarName;    // For display in Conversations
+var(Conversation) localized String UnfamiliarName;  // For display in Conversations
+var transient Object     ConListItems;              // List of ConListItems for this Actor
+var travel   float       LastConEndTime;            // Time when last conversation ended
+var(Conversation) float  ConStartInterval;          // Amount of time required between two convos.
+
+// Additional variables for AI - DEUS_EX STM
+var          float        VisUpdateTime;
+var          float        CurrentVisibility;
+var          float        LastVisibility;
+
+var(Smell)   class&lt;SmellNode&gt; SmellClass;
+var          SmellNode        LastSmellNode;
+
+var(Advanced) bool            bOwned;
+// End additional variables - DEUS_EX STM
+
+// DEUS_EX AMSD Added to make vision aug run faster.  If true, the vision aug needs to check this object more closely.
+// Used for heat sources as well as things that blind.
+var bool bVisionImportant;
+
+//-----------------------------------------------------------------------------
+// Networking.
+
+// Network control.
+var(Networking) float NetPriority; // Higher priorities means update it more frequently.
+var(Networking) float NetUpdateFrequency; // How many seconds between net updates.
+var(Networking) float RelevantRadius; //Radius in which things are always relevant.
+
+// Symmetric network flags, valid during replication only.
+var const bool bNetInitial;       // Initial network update.
+var const bool bNetOwner;         // Player owns this actor.
+var const bool bNetRelevant;      // Actor is currently relevant. Only valid server side, only when replicating variables.
+var const bool bNetSee;           // Player sees it in network play.
+var const bool bNetHear;          // Player hears it in network play.
+var const bool bNetFeel;          // Player collides with/feels it in network play.
+var const bool bSimulatedPawn;    // True if Pawn and simulated proxy.
+var const bool bDemoRecording;    // True we are currently demo recording
+var const bool bClientDemoRecording;// True we are currently recording a client-side demo
+var const bool bClientDemoNetFunc;// True if we're client-side demo recording and this call originated from the remote.
+
+
+//-----------------------------------------------------------------------------
+// Enums.
+
+// Travelling from server to server.
+enum ETravelType
+{
+    TRAVEL_Absolute,    // Absolute URL.
+    TRAVEL_Partial,     // Partial (carry name, reset server).
+    TRAVEL_Relative,    // Relative URL.
+};
+
+// Input system states.
+enum EInputAction
+{
+    IST_None,    // Not performing special input processing.
+    IST_Press,   // Handling a keypress or button press.
+    IST_Hold,    // Handling holding a key or button.
+    IST_Release, // Handling a key or button release.
+    IST_Axis,    // Handling analog axis movement.
+};
+
+// Input keys.
+enum EInputKey
+{
+/*00*/  IK_None         ,IK_LeftMouse   ,IK_RightMouse  ,IK_Cancel      ,
+/*04*/  IK_MiddleMouse  ,IK_Unknown05   ,IK_Unknown06   ,IK_Unknown07   ,
+/*08*/  IK_Backspace    ,IK_Tab         ,IK_Unknown0A   ,IK_Unknown0B   ,
+/*0C*/  IK_Unknown0C    ,IK_Enter       ,IK_Unknown0E   ,IK_Unknown0F   ,
+/*10*/  IK_Shift        ,IK_Ctrl        ,IK_Alt         ,IK_Pause       ,
+/*14*/  IK_CapsLock     ,IK_Unknown15   ,IK_Unknown16   ,IK_Unknown17   ,
+/*18*/  IK_Unknown18    ,IK_Unknown19   ,IK_Unknown1A   ,IK_Escape      ,
+/*1C*/  IK_Unknown1C    ,IK_Unknown1D   ,IK_Unknown1E   ,IK_Unknown1F   ,
+/*20*/  IK_Space        ,IK_PageUp      ,IK_PageDown    ,IK_End         ,
+/*24*/  IK_Home         ,IK_Left        ,IK_Up          ,IK_Right       ,
+/*28*/  IK_Down         ,IK_Select      ,IK_Print       ,IK_Execute     ,
+/*2C*/  IK_PrintScrn    ,IK_Insert      ,IK_Delete      ,IK_Help        ,
+/*30*/  IK_0            ,IK_1           ,IK_2           ,IK_3           ,
+/*34*/  IK_4            ,IK_5           ,IK_6           ,IK_7           ,
+/*38*/  IK_8            ,IK_9           ,IK_Unknown3A   ,IK_Unknown3B   ,
+/*3C*/  IK_Unknown3C    ,IK_Unknown3D   ,IK_Unknown3E   ,IK_Unknown3F   ,
+/*40*/  IK_Unknown40    ,IK_A           ,IK_B           ,IK_C           ,
+/*44*/  IK_D            ,IK_E           ,IK_F           ,IK_G           ,
+/*48*/  IK_H            ,IK_I           ,IK_J           ,IK_K           ,
+/*4C*/  IK_L            ,IK_M           ,IK_N           ,IK_O           ,
+/*50*/  IK_P            ,IK_Q           ,IK_R           ,IK_S           ,
+/*54*/  IK_T            ,IK_U           ,IK_V           ,IK_W           ,
+/*58*/  IK_X            ,IK_Y           ,IK_Z           ,IK_Unknown5B   ,
+/*5C*/  IK_Unknown5C    ,IK_Unknown5D   ,IK_Unknown5E   ,IK_Unknown5F   ,
+/*60*/  IK_NumPad0      ,IK_NumPad1     ,IK_NumPad2     ,IK_NumPad3     ,
+/*64*/  IK_NumPad4      ,IK_NumPad5     ,IK_NumPad6     ,IK_NumPad7     ,
+/*68*/  IK_NumPad8      ,IK_NumPad9     ,IK_GreyStar    ,IK_GreyPlus    ,
+/*6C*/  IK_Separator    ,IK_GreyMinus   ,IK_NumPadPeriod,IK_GreySlash   ,
+/*70*/  IK_F1           ,IK_F2          ,IK_F3          ,IK_F4          ,
+/*74*/  IK_F5           ,IK_F6          ,IK_F7          ,IK_F8          ,
+/*78*/  IK_F9           ,IK_F10         ,IK_F11         ,IK_F12         ,
+/*7C*/  IK_F13          ,IK_F14         ,IK_F15         ,IK_F16         ,
+/*80*/  IK_F17          ,IK_F18         ,IK_F19         ,IK_F20         ,
+/*84*/  IK_F21          ,IK_F22         ,IK_F23         ,IK_F24         ,
+/*88*/  IK_Unknown88    ,IK_Unknown89   ,IK_Unknown8A   ,IK_Unknown8B   ,
+/*8C*/  IK_Unknown8C    ,IK_Unknown8D   ,IK_Unknown8E   ,IK_Unknown8F   ,
+/*90*/  IK_NumLock      ,IK_ScrollLock  ,IK_Unknown92   ,IK_Unknown93   ,
+/*94*/  IK_Unknown94    ,IK_Unknown95   ,IK_Unknown96   ,IK_Unknown97   ,
+/*98*/  IK_Unknown98    ,IK_Unknown99   ,IK_Unknown9A   ,IK_Unknown9B   ,
+/*9C*/  IK_Unknown9C    ,IK_Unknown9D   ,IK_Unknown9E   ,IK_Unknown9F   ,
+/*A0*/  IK_LShift       ,IK_RShift      ,IK_LControl    ,IK_RControl    ,
+/*A4*/  IK_UnknownA4    ,IK_UnknownA5   ,IK_UnknownA6   ,IK_UnknownA7   ,
+/*A8*/  IK_UnknownA8    ,IK_UnknownA9   ,IK_UnknownAA   ,IK_UnknownAB   ,
+/*AC*/  IK_UnknownAC    ,IK_UnknownAD   ,IK_UnknownAE   ,IK_UnknownAF   ,
+/*B0*/  IK_UnknownB0    ,IK_UnknownB1   ,IK_UnknownB2   ,IK_UnknownB3   ,
+/*B4*/  IK_UnknownB4    ,IK_UnknownB5   ,IK_UnknownB6   ,IK_UnknownB7   ,
+/*B8*/  IK_UnknownB8    ,IK_UnknownB9   ,IK_Semicolon   ,IK_Equals      ,
+/*BC*/  IK_Comma        ,IK_Minus       ,IK_Period      ,IK_Slash       ,
+/*C0*/  IK_Tilde        ,IK_UnknownC1   ,IK_UnknownC2   ,IK_UnknownC3   ,
+/*C4*/  IK_UnknownC4    ,IK_UnknownC5   ,IK_UnknownC6   ,IK_UnknownC7   ,
+/*C8*/  IK_Joy1         ,IK_Joy2        ,IK_Joy3        ,IK_Joy4        ,
+/*CC*/  IK_Joy5         ,IK_Joy6        ,IK_Joy7        ,IK_Joy8        ,
+/*D0*/  IK_Joy9         ,IK_Joy10       ,IK_Joy11       ,IK_Joy12       ,
+/*D4*/  IK_Joy13        ,IK_Joy14       ,IK_Joy15       ,IK_Joy16       ,
+/*D8*/  IK_UnknownD8    ,IK_UnknownD9   ,IK_UnknownDA   ,IK_LeftBracket ,
+/*DC*/  IK_Backslash    ,IK_RightBracket,IK_SingleQuote ,IK_UnknownDF   ,
+/*E0*/  IK_JoyX         ,IK_JoyY        ,IK_JoyZ        ,IK_JoyR        ,
+/*E4*/  IK_MouseX       ,IK_MouseY      ,IK_MouseZ      ,IK_MouseW      ,
+/*E8*/  IK_JoyU         ,IK_JoyV        ,IK_UnknownEA   ,IK_UnknownEB   ,
+/*EC*/  IK_MouseWheelUp ,IK_MouseWheelDown,IK_Unknown10E,UK_Unknown10F  ,
+/*F0*/  IK_JoyPovUp     ,IK_JoyPovDown  ,IK_JoyPovLeft  ,IK_JoyPovRight ,
+/*F4*/  IK_UnknownF4    ,IK_UnknownF5   ,IK_Attn        ,IK_CrSel       ,
+/*F8*/  IK_ExSel        ,IK_ErEof       ,IK_Play        ,IK_Zoom        ,
+/*FC*/  IK_NoName       ,IK_PA1         ,IK_OEMClear
+};
+
+var(Display) class&lt;RenderIterator&gt; RenderIteratorClass; // class to instantiate as the actor's RenderInterface
+var transient RenderIterator RenderInterface;       // abstract iterator initialized in the Rendering engine
+</code></pre>
+
+<h3 id="network-replication">Network replication</h3>
+<pre><code class="java">replication
+{
+    // Relationships.
+    unreliable if( Role==ROLE_Authority )
+        Owner, Role, RemoteRole;
+    unreliable if( bNetOwner &amp;&amp; Role==ROLE_Authority )
+        bNetOwner, Inventory;
+    unreliable if( bReplicateInstigator &amp;&amp; (RemoteRole&gt;=ROLE_SimulatedProxy) &amp;&amp; (Role==ROLE_Authority) )
+        Instigator;
+
+    // Ambient sound.
+    unreliable if( (Role==ROLE_Authority) &amp;&amp; (!bNetOwner || !bClientAnim) )
+        AmbientSound;
+    unreliable if( AmbientSound!=None &amp;&amp; Role==ROLE_Authority  &amp;&amp; (!bNetOwner || !bClientAnim) )
+        SoundRadius, SoundVolume, SoundPitch;
+    unreliable if( bDemoRecording )
+        DemoPlaySound;
+
+    // Collision.
+    unreliable if( Role==ROLE_Authority )
+        bCollideActors, bCollideWorld;
+    unreliable if( (bCollideActors || bCollideWorld) &amp;&amp; Role==ROLE_Authority )
+        bProjTarget, bBlockActors, bBlockPlayers, CollisionRadius, CollisionHeight;
+
+    // Location.
+    unreliable if( !bCarriedItem &amp;&amp; (bNetInitial || bSimulatedPawn || RemoteRole&lt;ROLE_SimulatedProxy) &amp;&amp; Role==ROLE_Authority )
+        Location;
+    unreliable if( !bCarriedItem &amp;&amp; (DrawType==DT_Mesh || DrawType==DT_Brush) &amp;&amp; (bNetInitial || bSimulatedPawn || RemoteRole&lt;ROLE_SimulatedProxy) &amp;&amp; Role==ROLE_Authority )
+        Rotation;
+    unreliable if( RemoteRole==ROLE_SimulatedProxy )
+        Base;
+
+   // Events
+   unreliable if( Role==ROLE_authority)
+      Event, Tag;
+
+    // Velocity.
+    unreliable if( bSimFall || ((RemoteRole==ROLE_SimulatedProxy &amp;&amp; (bNetInitial || bSimulatedPawn)) || bIsMover) )
+        Velocity;
+
+    // Physics.
+    unreliable if( bSimFall || (RemoteRole==ROLE_SimulatedProxy &amp;&amp; bNetInitial &amp;&amp; !bSimulatedPawn) )
+        Physics, Acceleration, bBounce;
+    unreliable if( RemoteRole==ROLE_SimulatedProxy &amp;&amp; Physics==PHYS_Rotating &amp;&amp; bNetInitial )
+        bFixedRotationDir, bRotateToDesired, RotationRate, DesiredRotation;
+
+    // Animation. 
+    unreliable if( DrawType==DT_Mesh &amp;&amp; ((RemoteRole&lt;=ROLE_SimulatedProxy &amp;&amp; (!bNetOwner || !bClientAnim)) || bDemoRecording) )
+        AnimSequence, BlendAnimSequence;                        // blended anims added - DEUS_EX CNN
+    unreliable if( DrawType==DT_Mesh &amp;&amp; (RemoteRole==ROLE_SimulatedProxy))
+        bAnimNotify;
+    unreliable if( DrawType==DT_Mesh &amp;&amp; (RemoteRole&lt;ROLE_SimulatedProxy))
+        SimAnim, AnimMinRate, SimBlendAnim, BlendAnimMinRate;   // blended anims added - DEUS_EX CNN
+
+
+    // Rendering.
+    unreliable if( Role==ROLE_Authority )
+        bHidden, bOnlyOwnerSee;
+    unreliable if( Role==ROLE_Authority )
+        Texture, DrawScale, PrePivot, DrawType, AmbientGlow, Fatness, ScaleGlow, bUnlit, Style;
+    unreliable if( DrawType==DT_Sprite &amp;&amp; !bHidden &amp;&amp; (!bOnlyOwnerSee || bNetOwner) &amp;&amp; Role==ROLE_Authority)
+        Sprite;
+    unreliable if( DrawType==DT_Mesh &amp;&amp; Role==ROLE_Authority )
+        Mesh, bMeshEnviroMap, Skin, MultiSkins;
+    unreliable if( DrawType==DT_Brush &amp;&amp; Role==ROLE_Authority )
+        Brush;
+
+    // Lighting.
+    unreliable if( Role==ROLE_Authority )
+        LightType;
+    unreliable if( LightType!=LT_None &amp;&amp; Role==ROLE_Authority )
+        LightEffect, LightBrightness, LightHue, LightSaturation,
+        LightRadius, LightPeriod, LightPhase,
+        VolumeBrightness, VolumeRadius,
+        bSpecialLit;
+
+    // Messages
+    reliable if( Role&lt;ROLE_Authority )
+        BroadcastMessage, BroadcastLocalizedMessage;
+}
+</code></pre>
+
+<h2 id="functions">Functions</h2>
+<h3 id="consolecommand">ConsoleCommand</h3>
+<p><code>Execute a console command in the context of the current level and game engine.</code></p>
+<pre><code class="java">native function string ConsoleCommand( string Command );
+</code></pre>
+
+<h3 id="error">Error</h3>
+<p><code>Actor error handling.</code>
+<code>Handle an error and kill this one actor.</code></p>
+<pre><code>native(233) final function Error( coerce string S );
+</code></pre>
+
+<h3 id="sleep">Sleep</h3>
+<pre><code>native(256) final latent function Sleep( float Seconds );
+</code></pre>
+
+<h3 id="collision">Collision</h3>
+<pre><code>native(262) final function SetCollision( optional bool NewColActors, optional bool NewBlockActors, optional bool NewBlockPlayers );
+native(283) final function bool SetCollisionSize( float NewRadius, float NewHeight );
+</code></pre>
+
+<h3 id="movement">Movement</h3>
+<pre><code>native(266) final function bool Move( vector Delta );
+native(267) final function bool SetLocation( vector NewLocation );
+native(299) final function bool SetRotation( rotator NewRotation );
+native(3969) final function bool MoveSmooth( vector Delta );
+native(3971) final function AutonomousPhysics(float DeltaSeconds);
+</code></pre>
+
+<h3 id="relations">Relations</h3>
+<pre><code>native(298) final function SetBase( actor NewBase );
+native(272) final function SetOwner( actor NewOwner );
+</code></pre>
+
+<h3 id="ai-functions">AI Functions</h3>
+<p><code>added DEUS_EX STM</code></p>
+<pre><code>native(700) final function float AIGetLightLevel( vector Location );
+native(701) final function float AIVisibility(optional bool bIncludeVelocity);
+native(710) final function AISetEventCallback(name eventName, name callback,
+                                              optional name scoreCallback,
+                                              optional bool bCheckVisibility,
+                                              optional bool bCheckDir,
+                                              optional bool bCheckCylinder,
+                                              optional bool bCheckLOS);
+native(711) final function AIClearEventCallback(name eventName);
+native(713) final function AISendEvent(name eventName, EAIEventType eventType,
+                                       optional float Value, optional float Radius);
+native(714) final function AIStartEvent(name eventName, EAIEventType eventType,
+                                        optional float Value, optional float Radius);
+native(715) final function AIEndEvent(name eventName, EAIEventType eventType);
+native(716) final function AIClearEvent(name eventName);
+native(717) final function rotator RandomBiasedRotation(int centralYaw, float yawDistribution,
+                                                        int centralPitch, float pitchDistribution);
+native(718) final function bool IsOverlapping(actor checkActor);
+native(720) final function PlayerPawn GetPlayerPawn();
+native(721) final function bool InStasis();
+native(722) final function float ParabolicTrace(out      vector finalLocation,
+                                                optional vector startVelocity,
+                                                optional vector startLocation,
+                                                optional bool   bCheckActors,
+                                                optional vector cylinder,
+                                                optional float  maxTime,
+                                                optional float  elasticity,
+                                                optional bool   bBounce,
+                                                optional float  landingSpeed,
+                                                optional float  granularity);
+native(723) final function float LastRendered();
+native(724) final function bool GetBoundingBox(out vector MinVect, out vector MaxVect,
+                                               optional bool bExact,
+                                               optional vector testLocation,
+                                               optional rotator testRotation);
+</code></pre>
+
+<h3 id="animation">Animation</h3>
+<pre><code>native(259) final function PlayAnim( name Sequence, optional float Rate, optional float TweenTime );
+native(260) final function LoopAnim( name Sequence, optional float Rate, optional float TweenTime, optional float MinRate );
+native(294) final function TweenAnim( name Sequence, float Time );
+native(282) final function bool IsAnimating();
+native(293) final function name GetAnimGroup( name Sequence );
+native(261) final latent function FinishAnim();
+native(263) final function bool HasAnim( name Sequence );
+
+// Blending animation function - DEUS_EX CNN
+native(1010) final function PlayBlendAnim( name Sequence, optional float Rate, optional float TweenTime, optional int BlendSlot );
+native(1012) final function TweenBlendAnim( name Sequence, float Time, optional int BlendSlot );
+
+// Gets any numbered texture from a mesh - DEUS_EX CNN
+native(1013) final function Texture GetMeshTexture( optional int texnum );
+
+// Animation notifications.
+event AnimEnd();
+
+</code></pre>
+
+<h3 id="physics">Physics</h3>
+<pre><code>// Physics control.
+native(301) final latent function FinishInterpolation();
+// DEUS_EX STM - added optional param to SetPhysics()
+//native(3970) final function SetPhysics( EPhysics newPhysics );
+native(3970) final function SetPhysics( EPhysics newPhysics, optional Actor newFloor );
+</code></pre>
+
+<h2 id="engine-notification-functions">Engine notification functions</h2>
+<h3 id="major-notifications">Major notifications</h3>
+<h4 id="spawned">Spawned</h4>
+<p><code>event Spawned();</code><br>
+Called when actor is Spawned. See also <code>PostBeginPlay</code>, <code>BeginPlay</code>, <code>PreBeginPlay</code>, <code>PostPostBeginPlay</code>.</p>
+<h4 id="destroyed">Destroyed</h4>
+<p><code>event Destroyed();</code><br>
+Called when actor is destroyed and removed from the game.</p>
+<h4 id="expired">Expired</h4>
+<p><code>event Expired();</code><br>
+Unknown.</p>
+<h4 id="children">Children</h4>
+<p><code>event GainedChild( Actor Other );</code><br>
+<code>event LostChild( Actor Other );</code><br>
+Called when actor gains/looses a child actor.</p>
+<h4 id="tick">Tick</h4>
+<p><code>event Tick( float DeltaTime );</code><br>
+Called every tick, or frame, of the game.</p>
+<h3 id="triggers">Triggers</h3>
+<p><code>event Trigger( Actor Other, Pawn EventInstigator );</code><br></p>
+<blockquote>
+<p>Called when actor is 'Triggered' by the Trigger function.</p>
+</blockquote>
+<p><code>event UnTrigger( Actor Other, Pawn EventInstigator );</code><br></p>
+<blockquote>
+<p>Called when actor de-activates, e.i. triggered again to turn off.</p>
+</blockquote>
+<p><code>event BeginEvent();</code><br>
+<code>event EndEvent();</code><br></p>
+<blockquote>
+<p>Unknown effects.</p>
+</blockquote>
+<h3 id="physics-world-interaction">Physics &amp; world interaction.</h3>
+<h4 id="timer">Timer</h4>
+<p><code>event Timer();</code><br></p>
+<blockquote>
+<p>Called when <code>SetTimer()</code> expires. (See <code>SetTimer</code>)<br></p>
+</blockquote>
+<h4 id="hitwall">HitWall</h4>
+<p><code>event HitWall( vector HitNormal, actor HitWall );</code><br></p>
+<blockquote>
+<p>Called when object hits the wall.
+<code>HitNormal</code>: The vector direction that the actor hit from.
+<code>HitWall</code>: The wall being hit.</p>
+</blockquote>
+<h4 id="falling">Falling</h4>
+<p><code>event Falling();</code><br></p>
+<blockquote>
+<p>Called when actor is falling through the air.</p>
+</blockquote>
+<h4 id="landed">Landed</h4>
+<p><code>event Landed( vector HitNormal );</code><br></p>
+<blockquote>
+<p>Called when actor hits the ground.
+<code>HitNormal</code>: Firection actor landed from</p>
+</blockquote>
+<h4 id="zonechange">ZoneChange</h4>
+<p><code>event ZoneChange( ZoneInfo NewZone );</code><br></p>
+<blockquote>
+<p>Called when actor changes between Zones in the world.
+<code>NewZone</code>: The ZoneInfo actor controlling the entered zone.</p>
+</blockquote>
+<h4 id="bumptouch">Bump/Touch</h4>
+<p><code>event Bump( Actor Other );</code><br>
+<code>event Touch( Actor Other );</code><br></p>
+<blockquote>
+<p>Called when actor hits in to another actor physically.<br>
+<code>Other</code>: The actor being touched.</p>
+</blockquote>
+<p><code>event PostTouch( Actor Other );</code> <br>
+<code>event UnTouch( Actor Other );</code></p>
+<blockquote>
+<p>Called for PendingTouch actor after physics completes.</p>
+</blockquote>
+<h4 id="basechange">BaseChange</h4>
+<p><code>event BaseChange();</code><br></p>
+<blockquote>
+<p>Called when actor changes base, meaning the actor that is supporting this one. For example, players standing on a crate, and then standing on the floor, is a BaseChange.</p>
+</blockquote>
+<h4 id="attachment">Attachment</h4>
+<p><code>event Attach( Actor Other );</code><br>
+<code>event Detach( Actor Other );</code><br></p>
+<blockquote>
+<p>Used for attaching and detaching actors from another. Mostly used for making buttons and switches follow elevators.</p>
+</blockquote>
+<h4 id="killcredit">KillCredit</h4>
+<p><code>event KillCredit( Actor Other );</code><br></p>
+<blockquote>
+<p>Called when something is killed.<br>
+<code>Other</code>: Actor being credited for a kill.</p>
+</blockquote>
+<h4 id="interpolating">Interpolating</h4>
+<p><code>event InterpolateEnd( actor Other );</code><br></p>
+<blockquote>
+<p>Called when actor finishes its interpolating path.</p>
+</blockquote>
+<h4 id="endedrotation">EndedRotation</h4>
+<p><code>event EndedRotation();</code><br></p>
+<blockquote>
+<p>Called when actor stops rotating.<br></p>
+</blockquote>
+<h4 id="others">Others</h4>
+<p><code>event Actor SpecialHandling(Pawn Other);</code><br>
+<code>event bool EncroachingOn( actor Other );</code><br>
+<code>event EncroachedBy( actor Other );</code><br></p>
+<p><code>DEUS_EX STM -- added</code></p>
+<h4 id="bumpwall">BumpWall</h4>
+<p><code>event BumpWall( vector HitLocation, vector HitNormal );</code></p>
+<blockquote>
+<p>Called when actor hits the wall.<br>
+<code>HitLocation</code>: The location of the wall being hit.<br>
+<code>HitNormal</code>: The direction being hit from.<br></p>
+</blockquote>
+<h4 id="supportactor">SupportActor</h4>
+<pre><code>event SupportActor( actor StandingActor )
+{
+    StandingActor.SetBase( self );
+}
+</code></pre>
+
+<blockquote>
+<p>Called when actor is being stood on.<br></p>
+</blockquote>
+<h4 id="outofworld">OutOfWorld</h4>
+<pre><code>event FellOutOfWorld()
+{
+    SetPhysics(PHYS_None);
+    Destroy();
+}   
+</code></pre>
+
+<blockquote>
+<p>Called when actor falls out of the world, e.g. fell through the geometry and no longer is in the normal play area.</p>
+</blockquote>
+<h4 id="damage-and-kills">Damage and kills</h4>
+<pre><code>event KilledBy( pawn EventInstigator );
+</code></pre>
+
+<blockquote>
+<p>Called when actor is killed.<br>
+<code>EventInstigator</code>: The <code>pawn</code> that killed this actor.</p>
+</blockquote>
+<pre><code>event TakeDamage( int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, name DamageType);
+</code></pre>
+
+<blockquote>
+<p>Called when the actor takes any damage.<br>
+<code>Damage</code>: The raw damage being dealt to this actor.<br>
+<code>EventInstigator</code>: The pawn dealing the damage.<br>
+<code>HitLocation</code>: The location this actor was hit at.<br>
+<code>Momentum</code>: The direction this actor will be pushed in.<br>
+<code>DamageType</code>: The string damage type being dealt.<br></p>
+</blockquote>
+<h2 id="tracing">Tracing</h2>
+<h3 id="trace">Trace</h3>
+<pre><code class="java">native(277) final function Actor Trace
+(
+    out vector      HitLocation,
+    out vector      HitNormal,
+    vector          TraceEnd,
+    optional vector TraceStart,
+    optional bool   bTraceActors,
+    optional vector Extent
+);
+</code></pre>
+
+<blockquote>
+<p>Traces a line and see what it collides with first.<br>
+Takes this actor's collision properties into account.<br>
+Returns first hit actor, Level if hit level, or None if hit nothing.<br>
+<code>HitLocation</code>: The location we've hit. (<code>out</code> means the variable is usable after the function is called)<br>
+<code>HitNormal</code>: Not sure. (WIP)<br>
+<code>TraceEnd</code>: Where we want to trace to.<br>
+<code>TraceStart</code>: Where the trace starts from. Uses <code>&lt;actor&gt;.location</code> if left out.<br>
+<code>bTraceActors</code>: Where we collide with actors or not.<br>
+<code>Extent</code>: The range of the trace <code>(?)</code><br></p>
+</blockquote>
+<h3 id="fasttrace">FastTrace</h3>
+<pre><code>native(548) final function bool FastTrace
+(
+    vector          TraceEnd,
+    optional vector TraceStart
+);
+</code></pre>
+
+<blockquote>
+<p>returns true if did not hit world geometry
+<code>TraceEnd</code>: Where we want to trace to.<br>
+<code>TraceStart</code>: Where the trace starts from. Uses <code>&lt;actor&gt;.location</code> if left out.<br></p>
+</blockquote>
+<h2 id="spawn">Spawn</h2>
+<pre><code>native(278) final function actor Spawn
+(
+    class&lt;actor&gt;      SpawnClass,
+    optional actor    SpawnOwner,
+    optional name     SpawnTag,
+    optional vector   SpawnLocation,
+    optional rotator  SpawnRotation
+);
+</code></pre>
+
+<blockquote>
+<p>Spawn an actor. <strong>Returns</strong> an actor of the specified class, not
+of class Actor (this is hardcoded in the compiler). Returns None
+if the actor could not be spawned (either the actor wouldn't fit in
+the specified location, or the actor list is full).<br>
+Defaults to spawning at the spawner's location.
+<code>SpawnClass</code>: The class we want to spawn. Example: <code>class'DeusEx.Medkit'</code>
+<code>SpawnOwner</code>: The actor that owns the newly spawned actor.
+<code>SpawnTag</code>: Sets the <code>Tag</code> of the new actor.
+<code>SpawnLocation</code>: Location to spawn at. Uses <code>&lt;actor&gt;.location</code> if left out.
+<code>SpawnRotation</code>: Rocation to spawn at. Uses <code>&lt;actor&gt;.rotation</code> if left out.</p>
+</blockquote>
+<h2 id="destroy">Destroy</h2>
+<pre><code>native(279) final function bool Destroy();
+</code></pre>
+
+<blockquote>
+<p>Destroy this actor. <strong>Returns</strong> true if destroyed, false if indestructable.
+Destruction is latent. It occurs at the end of the tick.</p>
+</blockquote>
+<h2 id="timer_1">Timer</h2>
+<pre><code>native(280) final function SetTimer( float NewTimerRate, bool bLoop );
+</code></pre>
+
+<blockquote>
+<p>Triggers the <code>Timer()</code> event after <code>NewTimerRate</code> ticks. <br>
+If <code>bLoop</code> is <code>True</code> then then timer will continue looping, else only triggers once.<br></p>
+</blockquote>
+<h2 id="sound">Sound</h2>
+<h3 id="playsound">PlaySound</h3>
+<pre><code>native(264) final function int PlaySound
+(
+    sound               Sound,
+    optional ESoundSlot Slot,
+    optional float      Volume,
+    optional bool       bNoOverride,
+    optional float      Radius,
+    optional float      Pitch
+);
+
+//Same as PlaySound, but only plays for the client. (No server propogation)
+native simulated final function PlayOwnedSound();
+
+//PlaySound call used for Demorec system.
+native simulated event DemoPlaySound();
+</code></pre>
+
+<blockquote>
+<p>Play a sound effect.<br>
+<code>*DEUS_EX - CNN* changed to return the channel ID of the sound so you can call StopSound later</code><br>
+<code>Sound</code>: A sound class in the game. Example: <code>sound'LogNoteAdded'</code><br>
+<code>ESoundSlot</code>: The slot to play the sound in to. See <code>ESoundSlot</code> variable.<br>
+<code>Volume</code>: Volume of the sound.<br>
+<code>bNoOverride</code>: Wether this sound can be overwritten with other sounds on the same slot or not.<br>
+<code>Radius</code>: Physical hearable radius of the sound.<br>
+<code>Pitch</code>: Sounds pitch modifier.<br></p>
+</blockquote>
+<h3 id="stopsound">StopSound</h3>
+<pre><code>native(265) final function StopSound(int Id);
+</code></pre>
+
+<blockquote>
+<p>DEUS_EX CNN - Stop a sound given the sound's ID</p>
+</blockquote>
+<h3 id="setinstantvolume">SetInstantVolume</h3>
+<pre><code>native(268) final function SetInstantSoundVolume(byte newSoundVolume);
+native(269) final function SetInstantSpeechVolume(byte newSpeechVolume);
+native(270) final function SetInstantMusicVolume(byte newMusicVolume);
+</code></pre>
+
+<blockquote>
+<p>DEUS_EX CNN - Set the sound system volumes without waiting for a tick event</p>
+</blockquote>
+<h3 id="getsoundduration">GetSoundDuration</h3>
+<pre><code>native final function float GetSoundDuration( sound Sound );
+</code></pre>
+
+<blockquote>
+<p>Get a sound duration.</p>
+</blockquote>
+<h2 id="ai-functions_1">AI functions.</h2>
+<h3 id="makenoise">MakeNoise</h3>
+<pre><code>native(512) final function MakeNoise( float Loudness );
+</code></pre>
+
+<blockquote>
+<p>Inform other creatures that you've made a noise
+they might hear (they are sent a HearNoise message)<br>
+Senders of MakeNoise should have an instigator if they are not pawns.</p>
+</blockquote>
+<h3 id="playercanseeme">PlayerCanSeeMe</h3>
+<pre><code>native(532) final function bool PlayerCanSeeMe();
+</code></pre>
+
+<blockquote>
+<p><code>Returns</code> true if some player has a line of sight to actor's location.</p>
+</blockquote>
+<h2 id="teleportation">Teleportation</h2>
+<pre><code>event bool PreTeleport( Teleporter InTeleporter );
+</code></pre>
+
+<blockquote>
+<p>Called before actor teleports using a <code>Teleporter</code> actor.</p>
+</blockquote>
+<pre><code>event PostTeleport( Teleporter OutTeleporter );
+</code></pre>
+
+<blockquote>
+<p>Called after actor teleports using a <code>Teleporter</code> actor.</p>
+</blockquote>
+<h2 id="beginplay">BeginPlay</h2>
+<pre><code>event BeginPlay();
+</code></pre>
+
+<blockquote>
+<p>Called when actor enters the game.</p>
+</blockquote>
+<pre><code>event PostBeginPlay();
+</code></pre>
+
+<blockquote>
+<p>Called immediately after gameplay begins.</p>
+</blockquote>
+<pre><code>event PostPostBeginPlay();
+</code></pre>
+
+<blockquote>
+<p><code>DEUS_EX AJY</code>
+Called immediately after Initial State, and always
+called when loading a map <em>AND</em> when loading savegame</p>
+</blockquote>
+<pre><code>simulated event SetInitialState()
+{
+    if( InitialState!='' )
+        GotoState( InitialState );
+    else
+        GotoState( 'Auto' );
+}
+</code></pre>
+
+<blockquote>
+<p>Called after PostBeginPlay.</p>
+</blockquote>
+<pre><code>simulated event PostNetBeginPlay();
+</code></pre>
+
+<blockquote>
+<p><code>MBCODE</code>
+Called after a net game begins.</p>
+</blockquote>
+<pre><code>event PreBeginPlay()
+{
+    // fake shrink to fix faked collision with floor problems - DEUS_EX CNN
+    if ((IsA('Decoration') || IsA('Inventory')) &amp;&amp; (CollisionHeight &gt; 0.75))
+        SetCollisionSize(CollisionRadius, CollisionHeight - 0.75);
+    else if (IsA('Pawn'))
+    {
+        if (CollisionHeight &gt; 9)
+            SetCollisionSize(CollisionRadius, CollisionHeight - 4.5);
+        else
+            SetCollisionSize(CollisionRadius, CollisionHeight*0.5);
+    }
+
+    // Handle autodestruction if desired.
+    if( !bGameRelevant &amp;&amp; (Level.NetMode != NM_Client) &amp;&amp; !Level.Game.IsRelevant(Self) )
+        Destroy();
+}
+</code></pre>
+
+<blockquote>
+<p>Called immediately before gameplay begins.</p>
+</blockquote>
+<h2 id="disk-access">Disk access.</h2>
+<pre><code>// Find files.
+native(539) final function string GetMapName( string NameEnding, string MapName, int Dir );
+native(545) final function GetNextSkin( string Prefix, string CurrentSkin, int Dir, out string SkinName, out string SkinDesc );
+native(547) final function string GetURLMap();
+native final function string GetNextInt( string ClassName, int Num );
+native final function GetNextIntDesc( string ClassName, int Num, out string Entry, out string Description );
+</code></pre>
+
+<h2 id="iterator-functions">Iterator functions.</h2>
+<pre><code>native(304) final iterator function AllActors     ( class&lt;actor&gt; BaseClass, out actor Actor, optional name MatchTag );
+native(305) final iterator function ChildActors   ( class&lt;actor&gt; BaseClass, out actor Actor );
+native(306) final iterator function BasedActors   ( class&lt;actor&gt; BaseClass, out actor Actor );
+native(307) final iterator function TouchingActors( class&lt;actor&gt; BaseClass, out actor Actor );
+native(309) final iterator function TraceActors   ( class&lt;actor&gt; BaseClass, out actor Actor, out vector HitLoc, out vector HitNorm, vector End, optional vector Start, optional vector Extent );
+native(310) final iterator function RadiusActors  ( class&lt;actor&gt; BaseClass, out actor Actor, float Radius, optional vector Loc );
+native(311) final iterator function VisibleActors ( class&lt;actor&gt; BaseClass, out actor Actor, optional float Radius, optional vector Loc );
+native(312) final iterator function VisibleCollidingActors ( class&lt;actor&gt; BaseClass, out actor Actor, optional float Radius, optional vector Loc, optional bool bIgnoreHidden );
+
+// added by DEUS_EX CNN
+native(1000) final iterator function TraceTexture (class&lt;actor&gt; BaseClass, out actor Actor, out name texName, out name texGroup, out int flags, out vector HitLoc, out vector HitNorm, vector End, optional vector Start, optional vector Extent);
+
+// added by DEUS_EX STM
+native(1002) final iterator function CycleActors (class&lt;actor&gt; BaseClass, out actor Actor, out int Index );
+native(1003) final iterator function TraceVisibleActors(class&lt;actor&gt; BaseClass, out actor Actor, out vector HitLoc, out vector HitNorm, vector End, optional vector Start, optional vector Extent );
+</code></pre>
+
+<blockquote>
+<p>Iterators are used in the format of;</p>
+</blockquote>
+<pre><code>//Destroy all medkits
+local Medkit MD;
+foreach AllActors(class'DeusEx.Medkit', MD)
+    MD.Destroy()
+</code></pre>
+
+<h2 id="color-operators">Color operators</h2>
+<pre><code>native(549) static final operator(20)  color -     ( color A, color B );
+native(550) static final operator(16) color *     ( float A, color B );
+native(551) static final operator(20) color +     ( color A, color B );
+native(552) static final operator(16) color *     ( color A, float B );
+</code></pre>
+
+<h2 id="scripted-actor-functions">Scripted Actor functions</h2>
+<pre><code>event RenderOverlays( canvas Canvas );
+</code></pre>
+
+<blockquote>
+<p>draw on canvas before flash and fog are applied (used for drawing weapons)</p>
+</blockquote>
+<h3 id="broadcastmessage">BroadcastMessage</h3>
+<pre><code>event BroadcastMessage( coerce string Msg, optional bool bBeep, optional name Type )
+{
+    local Pawn P;
+
+    if (Type == '')
+        Type = 'Event';
+
+//  if ( Level.Game.AllowsBroadcast(self, Len(Msg)) )
+        for( P=Level.PawnList; P!=None; P=P.nextPawn )
+            if( P.bIsPlayer || P.IsA('MessagingSpectator') )
+                P.ClientMessage( Msg, Type, bBeep );
+}
+</code></pre>
+
+<blockquote>
+<p>Broadcast a message to all players.<br>
+Can be called as a function; <code>BroadcastMessage("This is seen by everyone.")</code><br>
+<code>bBeep</code>: Defines if the message triggers a chat message beep. (Maybe doesn't work?)<br>
+<code>Type</code>: Unsure.<br></p>
+</blockquote>
+<pre><code>event BroadcastLocalizedMessage( class&lt;LocalMessage&gt; Message, optional int Switch, optional PlayerReplicationInfo RelatedPRI_1, optional PlayerReplicationInfo RelatedPRI_2, optional Object OptionalObject )
+{
+    local Pawn P;
+
+    for ( P=Level.PawnList; P != None; P=P.nextPawn )
+        if ( P.bIsPlayer || P.IsA('MessagingSpectator') )
+            P.ReceiveLocalizedMessage( Message, Switch, RelatedPRI_1, RelatedPRI_2, OptionalObject );
+}
+</code></pre>
+
+<blockquote>
+<p>Broadcast a localized message to all players.<br>
+Most message deal with 0 to 2 related PRIs.<br>
+The LocalMessage class defines how the PRI's and optional actor are used.<br></p>
+</blockquote>
+<h3 id="hurtradius">HurtRadius</h3>
+<pre><code>final function HurtRadius( float DamageAmount, float DamageRadius, name DamageName, float Momentum, vector HitLocation, optional bool bIgnoreLOS )
+{
+    local actor Victims;
+    local float damageScale, dist;
+    local vector dir;
+
+    // DEUS_EX CNN
+    local Mover M;              
+
+    if( bHurtEntry )
+        return;
+
+    bHurtEntry = true;
+   if (!bIgnoreLOS)
+   {
+      foreach VisibleCollidingActors( class 'Actor', Victims, DamageRadius, HitLocation )
+      {
+         if( Victims != self )
+         {
+            dir = Victims.Location - HitLocation;
+            dist = FMax(1,VSize(dir));
+            dir = dir/dist; 
+            damageScale = 1 - FMax(0,(dist - Victims.CollisionRadius)/DamageRadius);
+            Victims.TakeDamage
+               (
+               damageScale * DamageAmount,
+               Instigator, 
+               Victims.Location - 0.5 * (Victims.CollisionHeight + Victims.CollisionRadius) * dir,
+               (damageScale * Momentum * dir),
+               DamageName
+               );
+         } 
+      }
+   }
+   else
+   {
+      foreach RadiusActors(class 'Actor', Victims, DamageRadius, HitLocation )
+      {
+         if( Victims != self )
+         {
+            dir = Victims.Location - HitLocation;
+            dist = FMax(1,VSize(dir));
+            dir = dir/dist; 
+            damageScale = 1 - FMax(0,(dist - Victims.CollisionRadius)/DamageRadius);
+            Victims.TakeDamage
+               (
+               damageScale * DamageAmount,
+               Instigator, 
+               Victims.Location - 0.5 * (Victims.CollisionHeight + Victims.CollisionRadius) * dir,
+               (damageScale * Momentum * dir),
+               DamageName
+               );
+         } 
+      }
+   }
+
+    //
+    // DEUS_EX - CNN - damage the movers, also
+    //
+    foreach RadiusActors(class 'Mover', M, DamageRadius, HitLocation)
+    {
+        if( M != self )
+        {
+            dir = M.Location - HitLocation;
+            dist = FMax(1,VSize(dir));
+            dir = dir/dist; 
+            damageScale = 1 - FMax(0,(dist - M.CollisionRadius)/DamageRadius);
+            M.TakeDamage
+            (
+                damageScale * DamageAmount,
+                Instigator, 
+                M.Location - 0.5 * (M.CollisionHeight + M.CollisionRadius) * dir,
+                (damageScale * Momentum * dir),
+                DamageName
+            );
+        } 
+    }
+
+    bHurtEntry = false;
+}
+</code></pre>
+
+<blockquote>
+<p>Hurt actors within the radius.<br>
+<code>DamageAmount</code>: Damage done to the actors.
+<code>DamageRadius</code>: Range of actors to damage.
+<code>DamageName</code>: Name of the damage.
+<code>Momentum</code>: Vector to push the damaged actor in.
+<code>HitLocation</code>: Location to deal the damage to. Only relevant for Pawn actors to damage body parts.
+<code>bIgnoreLOS</code> : Unsure.</p>
+</blockquote>
+<h3 id="travel">Travel</h3>
+<pre><code>event TravelPreAccept();
+</code></pre>
+
+<blockquote>
+<p>Called when carried onto a new level, before AcceptInventory.</p>
+</blockquote>
+<pre><code>event TravelPostAccept();
+</code></pre>
+
+<blockquote>
+<p>Called when carried into a new level, after AcceptInventory.</p>
+</blockquote>
+<h3 id="frob">Frob</h3>
+<pre><code>function Frob(Actor Frobber, Inventory frobWith)
+{
+}
+</code></pre>
+
+<blockquote>
+<p><code>DEUS_EX CNN</code>
+Called to frob an object, the subclass is responsible for implementing this
+<code>Frobber</code> will be the actor frobbing this actor.
+<code>frobWith</code>: Unsure.</p>
+</blockquote>
+<h3 id="stopblendanims">StopBlendAnims</h3>
+<pre><code>function StopBlendAnims()
+{
+    local int i;
+
+    for (i=0; i&lt;ArrayCount(BlendAnimSequence); i++)
+        BlendAnimSequence[i] = '';
+}
+</code></pre>
+
+<blockquote>
+<p><code>DEUS_EX CNN</code>
+Stops animations from blending</p>
+</blockquote>
+<h3 id="rendertexture">RenderTexture</h3>
+<pre><code>event RenderTexture(ScriptedTexture Tex);
+</code></pre>
+
+<blockquote>
+<p>Called when a scripted texture needs rendering</p>
+</blockquote>
+<h3 id="becomeviewtarget">BecomeViewTarget</h3>
+<pre><code>function BecomeViewTarget();
+</code></pre>
+
+<blockquote>
+<p>Called by PlayerPawn when this actor becomes its ViewTarget.</p>
+</blockquote>
+<h3 id="getitemname">GetItemName</h3>
+<pre><code>function String GetItemName( string FullName )
+{
+    local int pos;
+
+    pos = InStr(FullName, &quot;.&quot;);
+    While ( pos != -1 )
+    {
+        FullName = Right(FullName, Len(FullName) - pos - 1);
+        pos = InStr(FullName, &quot;.&quot;);
+    }
+
+    return FullName;
+}
+</code></pre>
+
+<blockquote>
+<p>Returns the string representation of the name of an object without the package prefixes.</p>
+</blockquote>
+<h3 id="gethumanname">GetHumanName</h3>
+<pre><code>function String GetHumanName()
+{
+    return GetItemName(string(class));
+}
+</code></pre>
+
+<blockquote>
+<p>Returns the human readable string representation of an object.</p>
+</blockquote>
+<h3 id="setdisplayproperties">SetDisplayProperties</h3>
+<pre><code>function SetDisplayProperties(ERenderStyle NewStyle, texture NewTexture, bool bLighting, bool bEnviroMap )
+{
+    Style = NewStyle;
+    texture = NewTexture;
+    bUnlit = bLighting;
+    bMeshEnviromap = bEnviromap;
+}
+
+function SetDefaultDisplayProperties()
+{
+    Style = Default.Style;
+    texture = Default.Texture;
+    bUnlit = Default.bUnlit;
+    bMeshEnviromap = Default.bMeshEnviromap;
+}
+</code></pre>
+
+<blockquote>
+<p>Set the display properties of an actor.  By setting them through this function, it allows
+the actor to modify other components (such as a Pawn's weapon) or to adjust the result
+based on other factors (such as a Pawn's other inventory wanting to affect the result)</p>
+</blockquote>
+<h3 id="endconversation">EndConversation</h3>
+<pre><code>function EndConversation()
+{
+    LastConEndTime = Level.TimeSeconds;
+}
+</code></pre>
+
+<blockquote>
+<p>Save the time this conversation ended <code>DEUS_EX AJY</code></p>
+</blockquote>
+<h2 id="defaultproperties">DefaultProperties</h2>
+<pre><code>defaultproperties
+{
+     bMovable=True
+     bDetectable=True
+     Role=ROLE_Authority
+     RemoteRole=ROLE_DumbProxy
+     LastRenderTime=-10.000000
+     LODBias=1.000000
+     bDifficulty0=True
+     bDifficulty1=True
+     bDifficulty2=True
+     bDifficulty3=True
+     bSinglePlayer=True
+     bNet=True
+     bNetSpecial=True
+     OddsOfAppearing=1.000000
+     DrawType=DT_Sprite
+     Style=STY_Normal
+     Texture=Texture'Engine.S_Actor'
+     DrawScale=1.000000
+     ScaleGlow=1.000000
+     Fatness=128
+     SoundRadius=32
+     SoundVolume=128
+     SoundPitch=64
+     TransientSoundVolume=1.000000
+     CollisionRadius=22.000000
+     CollisionHeight=22.000000
+     bJustTeleported=True
+     Mass=100.000000
+     ConStartInterval=5.000000
+     NetPriority=1.000000
+     NetUpdateFrequency=100.000000
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../game/" class="btn btn-neutral float-right" title="Game">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../object/" class="btn btn-neutral" title="Object"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../object/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../game/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

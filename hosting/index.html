@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Hosting - Deus Ex</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Hosting";
+    var mkdocs_page_input_path = "hosting.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Deus Ex</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="http://discord.gg/KUAgb">Discord</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../community/">Community</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../coding/">Coding</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Hosting</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#hosting">HOSTING</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#server-starter">Server Starter</a></li>
+        
+            <li><a class="toctree-l3" href="#installing-mods">Installing mods</a></li>
+        
+            <li><a class="toctree-l3" href="#port-forwarding">Port Forwarding</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../object/">Object</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../actor/">Actor</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../game/">Game</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../inventory/">Inventory</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../pawn/">Pawn</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../player/">Player</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Deus Ex</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Hosting</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="hosting">HOSTING</h1>
+<h2 id="server-starter">Server Starter</h2>
+<p><h3>Windows</h3>
+Create a text file in your Deus Ex/System folder. Open it up, and place in the following code: <br></p>
+<pre><code>@ECHO OFF title Server starter
+
+echo. Starting...
+
+deusex.exe DXMP_CMD?Game=DXMTL152b1.MTLTeam -server -LOG=server.log &gt; NUL
+</code></pre>
+
+<p><br>
+<br>Edit the code to your desire. 
+<br>
+<br><code>DXMP_CMD</code> - Your map of choice.
+<br>
+<br><code>?Game=xxx</code> - Your gametype, leave default if you don't know what you're doing. THIS requires the DXMTL mod installed. Other options include DXMTL152b1.MTLDeathmatch. It is possible to use without MTL, but it is NOT RECOMMENDED. But if you insist, the format is DeusEx.DeathMatchGame or DeusEx.TeamDeathmatch
+<br>
+<br>Additional, adding <code>?Mutator=x</code> after the Game string lets you force load mutators, example; <code>map?Game=gametypestring?Mutator=mPack1.WeaponSelector</code>
+<br>
+<br>The <code>-Log=xxx</code> flag lets you define a custom log file name, default is Server.log, which keeps a track of your entire server log while running. Renaming this isn't important really, but its an option.
+<br>Another optional flag is <code>-ini=xxx</code>, which lets you define a seperate .ini file, instead of using the default <code>DeusEx.ini</code>.
+<br>
+<br>Once modified to your choice, save the file as <code>ServerStarter.bat</code> From now on, clicking on the new file will execute that code, starting the server. To edit it later, just right click and Edit.
+<br>
+<h3>Linux</h3>
+<br>(Specifically Debian XFCE environment, others may vary. Also assuming you installed via Wine and running the Windows install since DX isn't officially supported.)
+<br>In your environment of choice, create a new Launcher file or .desktop file, through whatever package you use to manage those. For the Command, enter
+<br></p>
+<pre><code>wine &quot;C:\Deus Ex GOTY\System\deusex.exe&quot; DXMP_CMD?Game=DXMTL152b1.MTLTeam -server -LOG=server.log &gt; NUL
+</code></pre>
+
+<p><br>
+<br>The Path to the deusex.exe varies, this is the default for GOG. And varies depending on how you installed it, through Wine or Steam Linux, check that up yourself. The rest of the code functions the same as the Windows version.
+<br>
+<br>Give it a name, untick Run in Terminal to save screen clutter and make it run more seamlessly, and save. </p>
+<p><em>Written by Kaiser</em></p>
+<h2 id="installing-mods">Installing mods</h2>
+<p>Place files in the propor directories inside the Deus Ex game folder;</p>
+<pre><code>.u - /System/
+.utx - /Textures/
+.uax - /Sounds/
+.umx - /Music/
+.int - /System/
+.ini - /System/
+</code></pre>
+
+<p>Open up <code>DeusEx.ini</code> and find the ServerPackages list, it'll look like;</p>
+<pre><code>[DeusEx.DeusExGameEngine]
+CacheSizeMegs=4
+UseSound=True
+ServerActors=IpDrv.UdpBeacon
+ServerActors=Nephthys.NptServerQuery
+ServerActors=Nephthys.NptServerUplink MasterServerAddress=master.333networks.com MasterServerPort=27900 ServerActors=Nephthys.NptServerUplink
+MasterServerAddress=master0.gamespy.com MasterServerPort=27900 ServerActors=Nephthys.NptServerUplink MasterServerAddress=master.epicgames.com MasterServerPort=27900
+ServerActors=Nephthys.NptServerUplink MasterServerAddress=master.fragaholic.com MasterServerPort=27900
+ServerPackages=DXMTL152b1
+</code></pre>
+
+<p>At the end of that list, add the .u file name to the list, without the .u, for example, if we have a mod called <code>AM.u</code>, we'll add <code>ServerPackages=AM</code>
+If the mod has a mutator or actor that should be spawned always in the server, the format is <code>ServerActors=PackageName.ClassName</code>, example; <code>ServerActors=AM.AMutator</code></p>
+<h2 id="port-forwarding">Port Forwarding</h2>
+<p><strong>Note; Some information here may be outdated.</strong>
+<p>
+    A router blocks a lot of unknown Internet connections, so if you try to host a Deus Ex server, and you have a router, it
+    is possible that your server will not show up in the server list. We are going to solve that.
+</p>
+<p>
+    First, go
+    <a href="http://www.portforward.com/routers.htm" target="_blank">here</a> and look up your router for the manual on how-to-forward-ports (in the list of games find &quot;Dues Ex&quot;,
+    apparently it&#39;s mispelt there). When you fully understand the manual on portforward.com, we may continue.
+</p>
+<p>
+    For a Deus Ex server, you need to forward the following ports: 7790, 7791, 7792, 8777, 27900. You need to open these ports
+    in these ways: TCP + UDP. I have no experience in TCP or UDP alone, so if you can&#39;t choose both, try TCP first.
+</p>
+<p>
+    So... if you know how to forward ports, and you forwarded those ports, it should be just fine, and you should be able to
+    host. Sometimes it is not only the router which blocks it. After you opened the ports, and it&#39;s still not solved, disable
+    the Windows Firewall, just for a test, you can enable this again after testing your server.
+</p>
+<p>
+    <h3>How to disable Windows Firewall (it&#39;s present only in Windows XP):</h3><br /> Start -&gt; Configuration -&gt; Classic
+    View (only if you have Windows XP) -&gt; Network Connections -&gt; Right click on your connection -&gt; Properties -&gt;
+    Advanced. In that window, you may disable it. Notice: It is possible that your Windows Firewall configuraration is somewhere
+    else. Try to
+    <a href="http://www.google.com/">Google</a> where it is located in your operational system.
+</p>
+<p>
+    <em>Written by Alex.</em>
+</p></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../object/" class="btn btn-neutral float-right" title="Object">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../coding/" class="btn btn-neutral" title="Coding"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../coding/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../object/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

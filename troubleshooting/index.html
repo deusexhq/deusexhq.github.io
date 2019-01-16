@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Kaiser">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Troubleshooting - Deus Ex</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../kaiser.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Troubleshooting";
+    var mkdocs_page_input_path = "troubleshooting.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Deus Ex</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://discord.gg/KUA8acb"><img src="https://cdn.discordapp.com/emojis/457155649831305219.png" width="20" height="20" border="0" />Discord</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Deus Ex General Documentation</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../dxms/">Masterserver Fix</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../community/">Community</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coding/">Coding</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hosting/">Hosting</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../files/">Files</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../improvements/">Improvements</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mapping/">Mapping</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../multiplayer/">Multiplayer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playing/">Playing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../singleplayer/">Singleplayer Mods</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Troubleshooting</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#procedure-entry-point-error">Procedure Entry Point error</a></li>
+    
+
+    <li class="toctree-l3"><a href="#mismatching">Mismatching</a></li>
+    
+
+    <li class="toctree-l3"><a href="#fixing-mismatch-errors">#Fixing MisMatch Errors</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#why-do-mismatch-errors-occur">Why do MisMatch Errors occur?</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#bad-name-error-andor-newnone-actor-channel">Bad Name error and/or New/None Actor Channel</a></li>
+    
+
+    <li class="toctree-l3"><a href="#clientdeath">Clientdeath</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#what-is-it">What is it?</a></li>
+        
+            <li><a class="toctree-l4" href="#fixing">Fixing</a></li>
+        
+            <li><a class="toctree-l4" href="#causes">Causes</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#bad-name-index">Bad Name Index</a></li>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Object Documentation</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../object/">Object</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../actor/">Actor</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../game/">Game</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../inventory/">Inventory</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pawn/">Pawn</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../player/">Player</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Deus Ex</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Deus Ex General Documentation &raquo;</li>
+        
+      
+    
+    <li>Troubleshooting</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h4 id="procedure-entry-point-error">Procedure Entry Point error<a class="headerlink" href="#procedure-entry-point-error" title="Permanent link">#</a></h4>
+<p><p>
+It&#39;s <em>most likely</em> caused by improperly installed renderer&#39;s driver. The majority of people get this error when they try to change to OpenGL renderer &mdash; because they download a wrong driver for Unreal Tournament from <a href="http://cwdohnal.home.mindspring.com/utglr/">Chris Dohnal&#39;s website</a>. To solve the problem, re-download the driver which is meant to be used with Deus Ex, not Unreal Tournament. The section with Deus Ex drivers is below section with UT drivers. Unreal Tournament drivers don&#39;t work with the game and cause this error.
+</p></p>
+<h4 id="mismatching">Mismatching<a class="headerlink" href="#mismatching" title="Permanent link">#</a></h4>
+<p><p>
+So, you see a server with your favourite map on, or your fellow clan mate playing on it. You swiftly attempt to join the
+server when <em>SMASH</em>, you're stopped in your tracks by a large "<em>Filename</em>_MisMatch error", or a similar message.
+I&rsquo;ve had enough of these in the past, and although not life-threatening, they can be a hefty nuisance. I'm going
+to briefly go over the simplest way to fix this problem, let's look at probably the most common example:
+</p></p>
+<h4 id="fixing-mismatch-errors">#Fixing MisMatch Errors<a class="headerlink" href="#fixing-mismatch-errors" title="Permanent link">#</a></h4>
+<p><p>
+You see a popular server, 8/10 slots full, 80 ping, playing on DXMP_Cathedral. You attempt to join and you get the old MisMatch
+error (I'll explain why later). Now the best way to fix this is:
+</p>
+<ol start="1">
+<li>Close down all instances of Deus Ex. </li>
+<li>Locate your Maps folder, generally in MyComputer&gt;C:&gt;DeusEx&gt;Maps. </li>
+<li>Locate DXMP_Cathedral, most likely near the bottom. </li>
+<li>Either Drag this onto your desktop or some other place, or delete it. </li>
+<li>Now attempt to re-join the server. You should be able to join without error. </li>
+</ol>
+<p>
+If you still get the MisMatch error, and you have definitely taken DXMP_Cathedral away from your Deus Ex folder, it may be
+required that you purge your cache. The cache, in brief, stores all of the Downloads you have taken from servers, so Gun
+Mods, Maps, Anti-Cheating Mods, etc. Either delete all of that or take about 3-5 out at a time, then try to re-join the
+server.
+</p></p>
+<h5 id="why-do-mismatch-errors-occur">Why do MisMatch Errors occur?<a class="headerlink" href="#why-do-mismatch-errors-occur" title="Permanent link">#</a></h5>
+<p><p>
+If we take DXMP_Cathedral for example, several versions of the same map were released under the name DXMP_Cathedral. That
+means that it attempts to fetch the DXMP_Cathedral in your /Maps folder, because it sees you are joining a map with the
+name DXMP_Cathedral. If the server is running a different version however, Deus Ex tends to just get confused and give
+up, leaving you to mop up the pieces and sort it out!
+</p>
+<p>
+Another typical example is CaroneElevatorSet.u, a clever mod used to help make lift-making simpler in Deus Ex Editor/SDK.
+The maker, Carone I believe, released several versions under the same name. The map DXMP_RPGCity apparently uses it, must
+be in the crane or something - but I will usually get a MisMatch Error if I have been using CaroneElevator in a map I was
+making, and forgotten to remove it from /System.
+</p>
+<p>
+So to re-cap, if you get MisMatch errors, look at what the filename/map it is, then close Deus Ex and take that map/file
+out of your /DeusEx Folder!
+</p></p>
+<h4 id="bad-name-error-andor-newnone-actor-channel">Bad Name error and/or New/None Actor Channel<a class="headerlink" href="#bad-name-error-andor-newnone-actor-channel" title="Permanent link">#</a></h4>
+<p><p>
+This problem appears when one of the system files of Deus Ex is corrupted, usually it&#39;s "DeusEx.u" or "Engine.u". Other issues may also be involved.
+There are various ways to solve this:
+<ul>
+<li>Insert your Deus Ex CD, open it for browsing. Find System/ folder and copy "DeusEx.u" to your DeusEx/System/ folder. If it doesn&#39;t work, try copying all the files with .u extension to your DeusEx/System/ folder. </li>
+<li>Ask someone to give you the file(s). </li>
+<li>The easiest way is to reinstall Deus Ex. If you don&#39;t want to lose the settings, move/copy User.ini, Defuser.ini, DeusEx.ini and Default.ini from DeusEx/System to a safe place during installation and when it&#39;s finished, move them back.</li>
+</ul></p>
+<p><strong>Other things to try</strong>:
+Try turning off GUI fix/other fixes in Kenteis.
+Either change renderer, then change back to original, 
+or ingame type <code>debug gpf</code> then restart.</p>
+<p><em>Thanks to Clix for the solution.</em>
+</p></p>
+<h4 id="clientdeath">Clientdeath<a class="headerlink" href="#clientdeath" title="Permanent link">#</a></h4>
+<h5 id="what-is-it">What is it?<a class="headerlink" href="#what-is-it" title="Permanent link">#</a></h5>
+<p>This is a bug of the game, called "client death". "Client death" is when you hear your own death scream, your user interface disappears, but you can still move (from a technical point of view, the player dies on <em>your</em> computer, but it doesn't die on the server, so the server doesn't clean your inventory, respawn and fine a death point on the scoreboard).</p>
+<h5 id="fixing">Fixing<a class="headerlink" href="#fixing" title="Permanent link">#</a></h5>
+<p>When happened, just press "Esc" button on your keyboard, it will show the main menu, then return to the game.
+Your interface should appear again. Don't pay attention to your "dead" body &mdash; the bug will go as soon as you're injured.</p>
+<h5 id="causes">Causes<a class="headerlink" href="#causes" title="Permanent link">#</a></h5>
+<p>The glitch occurs when the multiplayer replication code de-syncs between the client and server, which can happen for many reasons, including server lag, bad coding or other rare glitches.
+Basically, the server didn't expect the death to occur, but something on the client forced the death, which causes the desync.</p>
+<h4 id="bad-name-index">Bad Name Index<a class="headerlink" href="#bad-name-index" title="Permanent link">#</a></h4>
+<p>This problem appears when one of the system files of Deus Ex is corrupted, usually it's "DeusEx.u" or "Engine.u". Other issues may also be involved.
+There are various ways to solve this:
+<ul>
+    <li>Insert your Deus Ex CD, open it for browsing. Find System/ folder and copy "DeusEx.u" to your DeusEx/System/
+        folder. If it doesn't work, try copying all the files with .u extension to your DeusEx/System/ folder. </li>
+    <li>Ask someone to give you the file(s). </li>
+    <li>The easiest way is to reinstall Deus Ex. If you don't want to lose the settings, move/copy User.ini, Defuser.ini, DeusEx.ini
+        and Default.ini from DeusEx/System to a safe place during installation and when it's finished, move them back.</li>
+</ul></p>
+<p><strong>Other things to try</strong>:
+Try turning off GUI fix/other fixes in Kenteis.
+New/None actor channel: Either change renderer, then change back to original, or ingame type <code>debug gpf</code> then restart.
+<p>
+    <em>Thanks to Clix for the solution.</em>
+</p></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../object/" class="btn btn-neutral float-right" title="Object">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../singleplayer/" class="btn btn-neutral" title="Singleplayer Mods"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Kaiser and the Deus Ex HQ, 2019</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/deusexhq/deusexhq.github.io" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../singleplayer/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../object/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

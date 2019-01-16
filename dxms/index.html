@@ -8,7 +8,7 @@
   
   <meta name="author" content="Kaiser">
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Pawn - Deus Ex</title>
+  <title>Masterserver Fix - Deus Ex</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Pawn";
-    var mkdocs_page_input_path = "pawn.md";
+    var mkdocs_page_name = "Masterserver Fix";
+    var mkdocs_page_input_path = "dxms.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -63,9 +63,26 @@
 		
     <span class="caption-text">Deus Ex General Documentation</span>
     <ul class="subnav">
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../dxms/">Masterserver Fix</a>
+    <a class="current" href="./">Masterserver Fix</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#what-happened-to-the-servers">What happened to the servers?</a></li>
+    
+
+    <li class="toctree-l3"><a href="#how-do-i-use-the-new-masterserver">How do I use the new masterserver?</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#finding-the-deusexini">Finding the DeusEx.ini</a></li>
+        
+            <li><a class="toctree-l4" href="#configuring-the-gameserver">Configuring the gameserver</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
@@ -130,15 +147,9 @@
                     
     <a class="" href="../inventory/">Inventory</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Pawn</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#deus-ex-knowledge-base">Deus Ex Knowledge Base</a></li>
-    
-
-    </ul>
+    <a class="" href="../pawn/">Pawn</a>
                 </li>
                 <li class="">
                     
@@ -174,11 +185,11 @@
     
       
         
-          <li>Object Documentation &raquo;</li>
+          <li>Deus Ex General Documentation &raquo;</li>
         
       
     
-    <li>Pawn</li>
+    <li>Masterserver Fix</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -188,8 +199,69 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="deus-ex-knowledge-base">Deus Ex Knowledge Base<a class="headerlink" href="#deus-ex-knowledge-base" title="Permanent link">#</a></h3>
-<p>WIP.</p>
+                <div class="tcalert">
+<b>The following steps can also be performed automatically!</b><br>
+<a href="https://deusexhq.gitlab.io/kb/dxmsfix.exe"><img src="https://cdn.discordapp.com/emojis/456853254748504097.png" alt="MS Fix" width="15" height="15" border="0" />Click here to download the automatic fix.</a><br />
+<small>This executable does the exact same as described below, but makes the process easier by finding the DeusEx.ini by itself and applying the fix.<br>
+Credits to Elliot/Machete for the patcher.</small>
+</div>
+
+<h4 id="what-happened-to-the-servers">What happened to the servers?<a class="headerlink" href="#what-happened-to-the-servers" title="Permanent link">#</a></h4>
+<p><p>
+All servers in the game rely on something called a Masterserver to be displayed to players in-game.
+Originally, the servers were hosted by Gamespy, but at some point Gamespy shut down their service, and since then, the new host has been 333networks. 
+Everything works as before, but in order to use the new masterserver, you need to change to it manually.
+</p></p>
+<h4 id="how-do-i-use-the-new-masterserver">How do I use the new masterserver?<a class="headerlink" href="#how-do-i-use-the-new-masterserver" title="Permanent link">#</a></h4>
+<p><p>
+Configuring the masterservers is done in the DeusEx.ini file.</p>
+<h5 id="finding-the-deusexini">Finding the DeusEx.ini<a class="headerlink" href="#finding-the-deusexini" title="Permanent link">#</a></h5>
+<p>The DeusEx.ini is usually in a directory named System in your DeusEx game directory. The DeusEx game directory can be in
+different locations:</p>
+<pre><code>C:\Deus Ex\
+C:\GOG Games\Deus Ex
+C:\Program Files\DeusEx\
+C:\Program Files (x86)\DeusEx\
+C:\Program Files\Steam\SteamApps\common\Deus Ex
+C:\Program Files (x86)\Steam\SteamApps\common\Deus Ex
+..\Somewhere in MyDocuments (If using Kenties Launcher)
+</code></pre>
+
+<p>The above list uses the C partition as example. 
+If you've picked a different location during installation, the above list of course does not apply.
+If you only play Deus Ex and never host a gameserver, this is the only step that is
+required. 
+Open DeusEx.ini and find the following:</p>
+<pre><code>[DeusEx.MenuScreenJoinGame]
+</code></pre>
+
+<p>Beneath this line, there will be something in the sorts of MasterServerAddress= with a value behind it. This value will most likely be similar to: <strong>master0.gamespy.com</strong>
+Replace this value with the following: <strong>master.deusexnetwork.com</strong>        or <strong>master.333networks.com</strong> Save the file and you're done! Everything should work without any problems but should you run into any issues or have further questions, feel free to leave a message via the <a href="http://discord.gg/KUA8acb">Discord</a><br>
+</p></p>
+<h5 id="configuring-the-gameserver">Configuring the gameserver<a class="headerlink" href="#configuring-the-gameserver" title="Permanent link">#</a></h5>
+<p><p>
+If you're also hosting a gameserver it's important to add the alternative masterserver to your server's uplink as well. This way players can also find your server on the new masterserver. Open DeusEx.ini and find the following:
+<code>[DeusEx.DeusExGameEngine]</code>
+Beneath this line, there will be one or multiple lines looking like the following:
+<code>ServerActors=IpServer.UdpServerUplink MasterServerAddress=</code>
+or
+<code>ServerActors=Nephthys.NptServerUplink MasterServerAddress=</code>
+You will have the first line if you don't use Nephthys (which you should, it adds vital protection to your server!), and second if you do use Nephthys.
+Change the value after <strong>MasterServerAddress=</strong> with either of the following: 
+<strong>master.deusexnetwork.com</strong> 
+or
+<strong>master.333networks.com</strong></p>
+<p>The value MasterServerPort does not need to be modified.
+In the end, it should look something like this:</p>
+<pre><code>ServerActors=IpServer.UdpServerUplink MasterServerAddress=master.333networks.com MasterServerPort=27900
+ServerActors=IpServer.UdpServerUplink MasterServerAddress=master.epicgames.com MasterServerPort=27900
+ServerActors=IpServer.UdpServerUplink MasterServerAddress=master.fragaholic.com MasterServerPort=27900
+</code></pre>
+
+<p>As long as one line contains either <strong>master.deusexnetwork.com</strong> or <strong>master.333networks.com</strong>, the server will connect.
+Save the file and you're done! Everything should work without any problems but should you run into any issues or have further
+questions, feel free to leave a message via the <a href="http://discord.gg/KUA8acb">Discord</a>.
+</p> </p>
               
             </div>
           </div>
@@ -197,10 +269,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../player/" class="btn btn-neutral float-right" title="Player">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../community/" class="btn btn-neutral float-right" title="Community">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../inventory/" class="btn btn-neutral" title="Inventory"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -230,10 +302,10 @@
           <a href="https://github.com/deusexhq/deusexhq.github.io" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../inventory/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../player/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../community/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

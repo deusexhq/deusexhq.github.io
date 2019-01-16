@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../kaiser.css" rel="stylesheet">
   
   <script>
     // Current page data
@@ -62,6 +63,10 @@
 		
     <span class="caption-text">Deus Ex General Documentation</span>
     <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../dxms/">Masterserver Fix</a>
+                </li>
                 <li class="">
                     
     <a class="" href="../community/">Community</a>
@@ -114,6 +119,34 @@
                 <li class="">
                     
     <a class="" href="../hosting/">Hosting</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../files/">Files</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../improvements/">Improvements</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mapping/">Mapping</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../multiplayer/">Multiplayer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playing/">Playing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../singleplayer/">Singleplayer Mods</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../troubleshooting/">Troubleshooting</a>
                 </li>
     </ul>
 	    </li>
@@ -190,7 +223,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="intro">Intro</h1>
+                <h3 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">#</a></h3>
 <p><p>First off, setting up files;<br />
 <br />
 <b>For editing code</b>, you can either use Notepad (windows) or the Linux equivelant (Gedit usually), it works. But the alternative is Notepad++ and the USCRIPT syntax highlighting, which colours in the code to make it easier to understand, and also will be helpful for a few other aspects.<br />
@@ -221,8 +254,8 @@ If you want a good base to start off, open up the SDK/Unreal Ed, and in the Clas
 <p>Once you're there, enter <strong><em>ucc make</em></strong></p></p>
 <p>It'll attempt to compile the list, if the .u files exist, it'll skip it, so it'll ignore all the default DX files, and attempt your custom file.</p>
 
-<h1 id="useful-functions">Useful Functions</h1>
-<h2 id="replicated-exec-how-to-remotely-execute-commands-on-players">Replicated Exec (How to remotely execute commands on players)</h2>
+<h3 id="useful-functions">Useful Functions<a class="headerlink" href="#useful-functions" title="Permanent link">#</a></h3>
+<h4 id="replicated-exec-how-to-remotely-execute-commands-on-players">Replicated Exec (How to remotely execute commands on players)<a class="headerlink" href="#replicated-exec-how-to-remotely-execute-commands-on-players" title="Permanent link">#</a></h4>
 <pre><code>replication
 {
     //Replicating the function so it executes on the client, not the server
@@ -239,7 +272,7 @@ simulated function ReplExec(DeusExPlayer Player, string Command)
 }
 </code></pre>
 
-<h2 id="string-splitting">String Splitting</h2>
+<h4 id="string-splitting">String Splitting<a class="headerlink" href="#string-splitting" title="Permanent link">#</a></h4>
 <pre><code>//Split - based on Python, by Kaiser
 //Takes the Original string, and returns the string found between LeftCut and RightCut, optionally having offsets on either side
 //Examples: 
@@ -260,7 +293,7 @@ function string Split(string Original, string LeftCut, string RightCut, optional
 }
 </code></pre>
 
-<h2 id="string-replacing">String Replacing</h2>
+<h4 id="string-replacing">String Replacing<a class="headerlink" href="#string-replacing" title="Permanent link">#</a></h4>
 <pre><code>//Repl -  based on Unreal 2 function, backported by Kaiser
 //Takes the Original string, returns the string with every instance of Target replaced with ReplaceWith
 //Example: str = &quot;one two four&quot; - Repl(str, &quot;four&quot;, &quot;three&quot;) returns &quot;one two three&quot;
@@ -278,7 +311,7 @@ function string Repl(string Original, string Target, string ReplaceWith)
 }
 </code></pre>
 
-<h2 id="getting-some-player-variables">Getting some player variables</h3></h2>
+<h4 id="getting-some-player-variables">Getting some player variables</h3><a class="headerlink" href="#getting-some-player-variables" title="Permanent link">#</a></h4>
 <pre><code>//Player variable functions
 
 //Gives you a readable name of whatever is inputted ~Kaiser
@@ -357,7 +390,7 @@ function PlayerPawn GetPlayerFromName(string str)
 }
 </code></pre>
 
-<h2 id="datetime">Date/time</h2>
+<h4 id="datetime">Date/time<a class="headerlink" href="#datetime" title="Permanent link">#</a></h4>
 <pre><code>function string GetDate()
 {
     return level.day$&quot;/&quot;$level.month$&quot;/&quot;$level.year;
@@ -384,7 +417,7 @@ function string GetTime()
 }
 </code></pre>
 
-<h2 id="laserscope-keys">Laser/Scope keys</h2>
+<h4 id="laserscope-keys">Laser/Scope keys<a class="headerlink" href="#laserscope-keys" title="Permanent link">#</a></h4>
 <p>This hopes to teach a little about how to make your own cool functions out of the Ammo Switching, Scope, and Laser Sight functions.</p>
 <p>First off, identifying the functions that'll be needed to be changed to edit the functionality of these functions.</p>
 <p>First off: Scope.
@@ -488,13 +521,13 @@ simulated function ScopeToggle()
 
 <p>The Pawn(Owner) parts are being used to get the location and rotation to fire the projectile at. Also, this can be used to modify the owner of a weapon in several other 'interesting' ways... Now, if you have a weapon with a scope on it, and this code in it's source, the scope will, instead of zooming in, spit out plasma bolts.</p>
 <p><em>Written by [A]llan.</em></p>
-<h2 id="obtaining-players-ip-address">Obtaining player's IP address</h2>
+<h4 id="obtaining-players-ip-address">Obtaining player's IP address<a class="headerlink" href="#obtaining-players-ip-address" title="Permanent link">#</a></h4>
 <pre><code>PlayerIP = Player.GetPlayerNetworkAddress(); 
 PlayerIP=left(PlayerIP,instr(PlayerIP,&quot;:&quot;));
 </code></pre>
 
 <p>The first line gets your IP and port (e.g. 213.170.168.2:4000, where 213.170.168.2 is a IP and 4000 is a port) and the second line filters port leaving only an IP address.</p>
-<h2 id="recognising-maps">Recognising maps</h2>
+<h4 id="recognising-maps">Recognising maps<a class="headerlink" href="#recognising-maps" title="Permanent link">#</a></h4>
 <pre><code>if (Level.NetMode != NM_Standalone) 
 {
     switch LevelString 
@@ -509,7 +542,7 @@ PlayerIP=left(PlayerIP,instr(PlayerIP,&quot;:&quot;));
 }
 </code></pre>
 
-<h2 id="recognising-custom-parameters">Recognising custom parameters</h2>
+<h4 id="recognising-custom-parameters">Recognising custom parameters<a class="headerlink" href="#recognising-custom-parameters" title="Permanent link">#</a></h4>
 <p>If you're planning to make functions of your mutator recognise user typed string, like, for example, user ID on the server , that's how you can do it:</p>
 <pre><code>function Mutate (String S, PlayerPawn Player) 
 {
@@ -527,21 +560,21 @@ PlayerIP=left(PlayerIP,instr(PlayerIP,&quot;:&quot;));
 }
 </code></pre>
 
-<h2 id="switching-teams">Switching teams</h2>
+<h4 id="switching-teams">Switching teams<a class="headerlink" href="#switching-teams" title="Permanent link">#</a></h4>
 <p>The essence of MMSwitcher, the code of switching player's team without killing him or her and with updating his or her user.ini. Team IDs: 0 - UNATCO 1 - NSF</p>
 <pre><code>local pawn victim;
 Level.Game.ChangeTeam(victim,0); // set to needed team PlayerPawn(victim).ClientChangeTeam(0); // set to needed
 team
 </code></pre>
 
-<h2 id="spawning">Spawning</h2>
+<h4 id="spawning">Spawning<a class="headerlink" href="#spawning" title="Permanent link">#</a></h4>
 <p>That's how we can find a suitable for spawning spawn point (thanks to Nobody for the code):</p>
 <pre><code>local navigationpoint navpoint;
 navpoint=Level.Game.FindPlayerStart(victim,0);
 // Move victim to it victim.setLocation(navpoint.location);
 </code></pre>
 
-<h3 id="managing-augmentations">Managing augmentations</h3>
+<h5 id="managing-augmentations">Managing augmentations<a class="headerlink" href="#managing-augmentations" title="Permanent link">#</a></h5>
 <p>If you want to delete all augs of a player and to add a specific one, that's how you can do it:</p>
 <pre><code>local augmentation aug;
 DeusExPlayer(Owner).AugmentationSystem.ResetAugmentations();
@@ -553,14 +586,14 @@ DeusExPlayer(Other).AugmentationSystem.GivePlayerAugmentation(class'DeusEx.AugLi
 <p><em>Written by Daedalus and Alex.</em></p>
 <hr />
 <p>Listed here are a few DeusEx type-fonts for use with ScriptedTextures and for making window text.</p>
-<h3 id="engine">Engine</h3>
+<h5 id="engine">Engine<a class="headerlink" href="#engine" title="Permanent link">#</a></h5>
 <pre><code>Engine.BigFont
 Engine.LargeFont
 Engine.MedFont
 Engine.SmallFont
 </code></pre>
 
-<h3 id="deusexui">DeusExUI</h3>
+<h5 id="deusexui">DeusExUI<a class="headerlink" href="#deusexui" title="Permanent link">#</a></h5>
 <pre><code>DeusExUI.FontComputer8x20_A
 DeusExUI.FontComputer8x20_B
 DeusExUI.FontComputer8x20_C
@@ -589,7 +622,7 @@ DeusExUI.FontMenuHeaders_DS
 
 <p>If I find more, I'll post em :-)</p>
 <p><em>Written by [A]llan.</em></p>
-<h1 id="training-guns">Training Guns</h1>
+<h3 id="training-guns">Training Guns<a class="headerlink" href="#training-guns" title="Permanent link">#</a></h3>
 <p>
 The idea of so-called "training guns" seems to be flying around a lot lately among clans (perhaps because of the
 rift between skilled players, and average players?), and some strange solutions have been put forward. In this, I will
@@ -737,7 +770,7 @@ Peace!
 <em>Written by Allan.</em>
 </p>
 
-<h1 id="anatomy-of-a-source-file">Anatomy of a Source File</h1>
+<h3 id="anatomy-of-a-source-file">Anatomy of a Source File<a class="headerlink" href="#anatomy-of-a-source-file" title="Permanent link">#</a></h3>
 <pre><code>//This page is formatted so that it will compile when pasted directly in to a UC file. 
 //===========================================
 //Commenting: Lines starting with &quot;//&quot; 

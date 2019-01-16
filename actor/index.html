@@ -1100,7 +1100,9 @@ Called every tick, or frame, of the game.</p>
 <code>event EncroachedBy( actor Other );</code><br></p>
 <p><code>DEUS_EX STM -- added</code></p>
 <h6 id="bumpwall">BumpWall<a class="headerlink" href="#bumpwall" title="Permanent link">#</a></h6>
-<p><code>event BumpWall( vector HitLocation, vector HitNormal );</code></p>
+<pre><code>event BumpWall( vector HitLocation, vector HitNormal );
+</code></pre>
+
 <blockquote>
 <p>Called when actor hits the wall.<br>
 <code>HitLocation</code>: The location of the wall being hit.<br>
@@ -1199,12 +1201,12 @@ Returns first hit actor, Level if hit level, or None if hit nothing.<br>
 of class Actor (this is hardcoded in the compiler). Returns None
 if the actor could not be spawned (either the actor wouldn't fit in
 the specified location, or the actor list is full).<br>
-Defaults to spawning at the spawner's location.
-<code>SpawnClass</code>: The class we want to spawn. Example: <code>class'DeusEx.Medkit'</code>
-<code>SpawnOwner</code>: The actor that owns the newly spawned actor.
-<code>SpawnTag</code>: Sets the <code>Tag</code> of the new actor.
-<code>SpawnLocation</code>: Location to spawn at. Uses <code>&lt;actor&gt;.location</code> if left out.
-<code>SpawnRotation</code>: Rocation to spawn at. Uses <code>&lt;actor&gt;.rotation</code> if left out.</p>
+Defaults to spawning at the spawner's location.<br>
+<code>SpawnClass</code>: The class we want to spawn. Example: <code>class'DeusEx.Medkit'</code><br>
+<code>SpawnOwner</code>: The actor that owns the newly spawned actor.<br>
+<code>SpawnTag</code>: Sets the <code>Tag</code> of the new actor.<br>
+<code>SpawnLocation</code>: Location to spawn at. Uses <code>self.location</code> if left out.<br>
+<code>SpawnRotation</code>: Rocation to spawn at. Uses <code>self.rotation</code> if left out.<br></p>
 </blockquote>
 <h4 id="destroy">Destroy<a class="headerlink" href="#destroy" title="Permanent link">#</a></h4>
 <pre><code>native(279) final function bool Destroy();
@@ -1537,12 +1539,12 @@ The LocalMessage class defines how the PRI's and optional actor are used.<br></p
 
 <blockquote>
 <p>Hurt actors within the radius.<br>
-<code>DamageAmount</code>: Damage done to the actors.
-<code>DamageRadius</code>: Range of actors to damage.
-<code>DamageName</code>: Name of the damage.
-<code>Momentum</code>: Vector to push the damaged actor in.
-<code>HitLocation</code>: Location to deal the damage to. Only relevant for Pawn actors to damage body parts.
-<code>bIgnoreLOS</code> : Unsure.</p>
+<code>DamageAmount</code>: Damage done to the actors.<br>
+<code>DamageRadius</code>: Range of actors to damage.<br>
+<code>DamageName</code>: Name of the damage.<br>
+<code>Momentum</code>: Vector to push the damaged actor in.<br>
+<code>HitLocation</code>: Location to deal the damage to. Only relevant for Pawn actors to damage body parts.<br>
+<code>bIgnoreLOS</code> : Unsure.<br></p>
 </blockquote>
 <h5 id="travel">Travel<a class="headerlink" href="#travel" title="Permanent link">#</a></h5>
 <pre><code>event TravelPreAccept();

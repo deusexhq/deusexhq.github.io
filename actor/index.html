@@ -893,16 +893,20 @@ var transient RenderIterator RenderInterface;       // abstract iterator initial
 
 <h4 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">#</a></h4>
 <h5 id="consolecommand">ConsoleCommand<a class="headerlink" href="#consolecommand" title="Permanent link">#</a></h5>
-<p><code>Execute a console command in the context of the current level and game engine.</code></p>
 <pre><code class="java">native function string ConsoleCommand( string Command );
 </code></pre>
 
+<blockquote>
+<p>Execute a console command in the context of the current level and game engine.</p>
+</blockquote>
 <h5 id="error">Error<a class="headerlink" href="#error" title="Permanent link">#</a></h5>
-<p><code>Actor error handling.</code>
-<code>Handle an error and kill this one actor.</code></p>
 <pre><code>native(233) final function Error( coerce string S );
 </code></pre>
 
+<blockquote>
+<p>Actor error handling.
+Handle an error and kill this one actor.</p>
+</blockquote>
 <h5 id="sleep">Sleep<a class="headerlink" href="#sleep" title="Permanent link">#</a></h5>
 <pre><code>native(256) final latent function Sleep( float Seconds );
 </code></pre>
@@ -999,29 +1003,38 @@ native(3970) final function SetPhysics( EPhysics newPhysics, optional Actor newF
 <pre><code>event Spawned();
 </code></pre>
 
+<blockquote>
 <p>Called when actor is Spawned. See also <code>PostBeginPlay</code>, <code>BeginPlay</code>, <code>PreBeginPlay</code>, <code>PostPostBeginPlay</code>.</p>
+</blockquote>
 <h6 id="destroyed">Destroyed<a class="headerlink" href="#destroyed" title="Permanent link">#</a></h6>
 <pre><code>event Destroyed();
-``
-Called when actor is destroyed and removed from the game.
-
-####Expired
 </code></pre>
 
-<p>event Expired();
-``
-Unknown.</p>
+<blockquote>
+<p>Called when actor is destroyed and removed from the game.</p>
+</blockquote>
+<h6 id="expired">Expired<a class="headerlink" href="#expired" title="Permanent link">#</a></h6>
+<pre><code>event Expired();
+</code></pre>
+
+<blockquote>
+<p>Unknown.</p>
+</blockquote>
 <h6 id="children">Children<a class="headerlink" href="#children" title="Permanent link">#</a></h6>
 <pre><code>event GainedChild( Actor Other );
 event LostChild( Actor Other );
 </code></pre>
 
+<blockquote>
 <p>Called when actor gains/looses a child actor.</p>
+</blockquote>
 <h6 id="tick">Tick<a class="headerlink" href="#tick" title="Permanent link">#</a></h6>
 <pre><code>event Tick( float DeltaTime );
 </code></pre>
 
+<blockquote>
 <p>Called every tick, or frame, of the game.</p>
+</blockquote>
 <h5 id="triggers">Triggers<a class="headerlink" href="#triggers" title="Permanent link">#</a></h5>
 <pre><code>event Trigger( Actor Other, Pawn EventInstigator );
 </code></pre>

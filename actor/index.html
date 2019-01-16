@@ -129,8 +129,6 @@
         
             <li><a class="toctree-l4" href="#engine-notification-functions">Engine notification functions</a></li>
         
-            <li><a class="toctree-l4" href="#tracing">Tracing</a></li>
-        
             <li><a class="toctree-l4" href="#spawn">Spawn</a></li>
         
             <li><a class="toctree-l4" href="#destroy">Destroy</a></li>
@@ -1099,100 +1097,99 @@ event UnTouch( Actor Other );
 <p>Called for PendingTouch actor after physics completes.</p>
 </blockquote>
 <h6 id="basechange">BaseChange<a class="headerlink" href="#basechange" title="Permanent link">#</a></h6>
-<p>````
-event BaseChange();</p>
-<pre><code>&gt; Called when actor changes base, meaning the actor that is supporting this one. For example, players standing on a crate, and then standing on the floor, is a BaseChange.
-
-
-####Attachment
-```event Attach( Actor Other );
-event Detach( Actor Other );
+<pre><code>event BaseChange();
 </code></pre>
 
 <blockquote>
-<p>Used for attaching and detaching actors from another. Mostly used for making buttons and switches follow elevators.</p>
+<p>Called when actor changes base, meaning the actor that is supporting this one. For example, players standing on a crate, and then standing on the floor, is a BaseChange.</p>
 </blockquote>
-<h6 id="killcredit">KillCredit<a class="headerlink" href="#killcredit" title="Permanent link">#</a></h6>
-<pre><code>event KillCredit( Actor Other );
+<h6 id="attachment">Attachment<a class="headerlink" href="#attachment" title="Permanent link">#</a></h6>
+<p>```event Attach( Actor Other );
+event Detach( Actor Other );</p>
+<pre><code>&gt; Used for attaching and detaching actors from another. Mostly used for making buttons and switches follow elevators.
+
+
+####KillCredit
 </code></pre>
 
-<blockquote>
-<p>Called when something is killed.<br>
-<code>Other</code>: Actor being credited for a kill.</p>
-</blockquote>
-<h6 id="interpolating">Interpolating<a class="headerlink" href="#interpolating" title="Permanent link">#</a></h6>
-<pre><code>event InterpolateEnd( actor Other );
+<p>event KillCredit( Actor Other );</p>
+<pre><code>&gt; Called when something is killed.&lt;br&gt;
+&gt;`Other`: Actor being credited for a kill.
+
+####Interpolating
 </code></pre>
 
-<blockquote>
-<p>Called when actor finishes its interpolating path.</p>
-</blockquote>
-<h6 id="endedrotation">EndedRotation<a class="headerlink" href="#endedrotation" title="Permanent link">#</a></h6>
-<pre><code>event EndedRotation();
+<p>event InterpolateEnd( actor Other );</p>
+<pre><code>&gt; Called when actor finishes its interpolating path.
+
+####EndedRotation
 </code></pre>
 
-<blockquote>
-<p>Called when actor stops rotating.<br></p>
-</blockquote>
-<h6 id="others">Others<a class="headerlink" href="#others" title="Permanent link">#</a></h6>
-<pre><code>event Actor SpecialHandling(Pawn Other);
+<p>event EndedRotation();</p>
+<pre><code>&gt; Called when actor stops rotating.&lt;br&gt;
+
+####Others
+</code></pre>
+
+<p>event Actor SpecialHandling(Pawn Other);
 event bool EncroachingOn( actor Other );
-event EncroachedBy( actor Other );
+event EncroachedBy( actor Other );</p>
+<pre><code>
+
+`DEUS_EX STM -- added`
+####BumpWall
 </code></pre>
 
-<p><code>DEUS_EX STM -- added</code></p>
-<h6 id="bumpwall">BumpWall<a class="headerlink" href="#bumpwall" title="Permanent link">#</a></h6>
-<pre><code>event BumpWall( vector HitLocation, vector HitNormal );
+<p>event BumpWall( vector HitLocation, vector HitNormal );</p>
+<pre><code>&gt;Called when actor hits the wall.&lt;br&gt;
+&gt;`HitLocation`: The location of the wall being hit.&lt;br&gt;
+&gt;`HitNormal`: The direction being hit from.&lt;br&gt;
+
+####SupportActor
 </code></pre>
 
-<blockquote>
-<p>Called when actor hits the wall.<br>
-<code>HitLocation</code>: The location of the wall being hit.<br>
-<code>HitNormal</code>: The direction being hit from.<br></p>
-</blockquote>
-<h6 id="supportactor">SupportActor<a class="headerlink" href="#supportactor" title="Permanent link">#</a></h6>
-<pre><code>event SupportActor( actor StandingActor )
+<p>event SupportActor( actor StandingActor )
 {
     StandingActor.SetBase( self );
-}
+}</p>
+<pre><code>&gt;Called when actor is being stood on.&lt;br&gt;
+
+
+####OutOfWorld
 </code></pre>
 
-<blockquote>
-<p>Called when actor is being stood on.<br></p>
-</blockquote>
-<h6 id="outofworld">OutOfWorld<a class="headerlink" href="#outofworld" title="Permanent link">#</a></h6>
-<pre><code>event FellOutOfWorld()
+<p>event FellOutOfWorld()
 {
     SetPhysics(PHYS_None);
     Destroy();
-}   
+}   </p>
+<pre><code>&gt;Called when actor falls out of the world, e.g. fell through the geometry and no longer is in the normal play area.
+
+####Damage and kills
 </code></pre>
 
-<blockquote>
-<p>Called when actor falls out of the world, e.g. fell through the geometry and no longer is in the normal play area.</p>
-</blockquote>
-<h6 id="damage-and-kills">Damage and kills<a class="headerlink" href="#damage-and-kills" title="Permanent link">#</a></h6>
-<pre><code>event KilledBy( pawn EventInstigator );
+<p>event KilledBy( pawn EventInstigator );</p>
+<pre><code>
+&gt;Called when actor is killed.&lt;br&gt;
+&gt;`EventInstigator`: The `pawn` that killed this actor.
+
 </code></pre>
 
-<blockquote>
-<p>Called when actor is killed.<br>
-<code>EventInstigator</code>: The <code>pawn</code> that killed this actor.</p>
-</blockquote>
-<pre><code>event TakeDamage( int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, name DamageType);
-</code></pre>
+<p>event TakeDamage( int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, name DamageType);</p>
+<pre><code>
+&gt;Called when the actor takes any damage.&lt;br&gt;
+&gt;`Damage`: The raw damage being dealt to this actor.&lt;br&gt;
+&gt;`EventInstigator`: The pawn dealing the damage.&lt;br&gt;
+&gt;`HitLocation`: The location this actor was hit at.&lt;br&gt;
+&gt;`Momentum`: The direction this actor will be pushed in.&lt;br&gt;
+&gt;`DamageType`: The string damage type being dealt.&lt;br&gt;
 
-<blockquote>
-<p>Called when the actor takes any damage.<br>
-<code>Damage</code>: The raw damage being dealt to this actor.<br>
-<code>EventInstigator</code>: The pawn dealing the damage.<br>
-<code>HitLocation</code>: The location this actor was hit at.<br>
-<code>Momentum</code>: The direction this actor will be pushed in.<br>
-<code>DamageType</code>: The string damage type being dealt.<br></p>
-</blockquote>
-<h4 id="tracing">Tracing<a class="headerlink" href="#tracing" title="Permanent link">#</a></h4>
-<h5 id="trace">Trace<a class="headerlink" href="#trace" title="Permanent link">#</a></h5>
-<pre><code class="java">native(277) final function Actor Trace
+
+##Tracing
+
+###Trace
+```java
+native(277) final function Actor Trace
 (
     out vector      HitLocation,
     out vector      HitNormal,

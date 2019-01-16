@@ -996,108 +996,150 @@ native(3970) final function SetPhysics( EPhysics newPhysics, optional Actor newF
 <h4 id="engine-notification-functions">Engine notification functions<a class="headerlink" href="#engine-notification-functions" title="Permanent link">#</a></h4>
 <h5 id="major-notifications">Major notifications<a class="headerlink" href="#major-notifications" title="Permanent link">#</a></h5>
 <h6 id="spawned">Spawned<a class="headerlink" href="#spawned" title="Permanent link">#</a></h6>
-<p><code>event Spawned();</code><br>
-Called when actor is Spawned. See also <code>PostBeginPlay</code>, <code>BeginPlay</code>, <code>PreBeginPlay</code>, <code>PostPostBeginPlay</code>.</p>
+<pre><code>event Spawned();
+</code></pre>
+
+<p>Called when actor is Spawned. See also <code>PostBeginPlay</code>, <code>BeginPlay</code>, <code>PreBeginPlay</code>, <code>PostPostBeginPlay</code>.</p>
 <h6 id="destroyed">Destroyed<a class="headerlink" href="#destroyed" title="Permanent link">#</a></h6>
-<p><code>event Destroyed();</code><br>
-Called when actor is destroyed and removed from the game.</p>
-<h6 id="expired">Expired<a class="headerlink" href="#expired" title="Permanent link">#</a></h6>
-<p><code>event Expired();</code><br>
+<pre><code>event Destroyed();
+``
+Called when actor is destroyed and removed from the game.
+
+####Expired
+</code></pre>
+
+<p>event Expired();
+``
 Unknown.</p>
 <h6 id="children">Children<a class="headerlink" href="#children" title="Permanent link">#</a></h6>
-<p><code>event GainedChild( Actor Other );</code><br>
-<code>event LostChild( Actor Other );</code><br>
-Called when actor gains/looses a child actor.</p>
+<pre><code>event GainedChild( Actor Other );
+event LostChild( Actor Other );
+</code></pre>
+
+<p>Called when actor gains/looses a child actor.</p>
 <h6 id="tick">Tick<a class="headerlink" href="#tick" title="Permanent link">#</a></h6>
-<p><code>event Tick( float DeltaTime );</code><br>
-Called every tick, or frame, of the game.</p>
+<pre><code>event Tick( float DeltaTime );
+</code></pre>
+
+<p>Called every tick, or frame, of the game.</p>
 <h5 id="triggers">Triggers<a class="headerlink" href="#triggers" title="Permanent link">#</a></h5>
-<p><code>event Trigger( Actor Other, Pawn EventInstigator );</code><br></p>
+<pre><code>event Trigger( Actor Other, Pawn EventInstigator );
+</code></pre>
+
 <blockquote>
 <p>Called when actor is 'Triggered' by the Trigger function.</p>
 </blockquote>
-<p><code>event UnTrigger( Actor Other, Pawn EventInstigator );</code><br></p>
+<pre><code>event UnTrigger( Actor Other, Pawn EventInstigator );
+</code></pre>
+
 <blockquote>
 <p>Called when actor de-activates, e.i. triggered again to turn off.</p>
 </blockquote>
-<p><code>event BeginEvent();</code><br>
-<code>event EndEvent();</code><br></p>
+<pre><code>event BeginEvent();
+event EndEvent();
+</code></pre>
+
 <blockquote>
 <p>Unknown effects.</p>
 </blockquote>
 <h5 id="physics-world-interaction">Physics &amp; world interaction.<a class="headerlink" href="#physics-world-interaction" title="Permanent link">#</a></h5>
 <h6 id="timer">Timer<a class="headerlink" href="#timer" title="Permanent link">#</a></h6>
-<p><code>event Timer();</code><br></p>
+<pre><code>event Timer();
+</code></pre>
+
 <blockquote>
 <p>Called when <code>SetTimer()</code> expires. (See <code>SetTimer</code>)<br></p>
 </blockquote>
 <h6 id="hitwall">HitWall<a class="headerlink" href="#hitwall" title="Permanent link">#</a></h6>
-<p><code>event HitWall( vector HitNormal, actor HitWall );</code><br></p>
+<pre><code>event HitWall( vector HitNormal, actor HitWall );
+</code></pre>
+
 <blockquote>
-<p>Called when object hits the wall.
-<code>HitNormal</code>: The vector direction that the actor hit from.
-<code>HitWall</code>: The wall being hit.</p>
+<p>Called when object hits the wall.<br>
+<code>HitNormal</code>: The vector direction that the actor hit from.<br>
+<code>HitWall</code>: The wall being hit.<br></p>
 </blockquote>
 <h6 id="falling">Falling<a class="headerlink" href="#falling" title="Permanent link">#</a></h6>
-<p><code>event Falling();</code><br></p>
+<pre><code>event Falling();
+</code></pre>
+
 <blockquote>
 <p>Called when actor is falling through the air.</p>
 </blockquote>
 <h6 id="landed">Landed<a class="headerlink" href="#landed" title="Permanent link">#</a></h6>
-<p><code>event Landed( vector HitNormal );</code><br></p>
+<pre><code>event Landed( vector HitNormal );
+</code></pre>
+
 <blockquote>
-<p>Called when actor hits the ground.
+<p>Called when actor hits the ground.<br>
 <code>HitNormal</code>: Firection actor landed from</p>
 </blockquote>
 <h6 id="zonechange">ZoneChange<a class="headerlink" href="#zonechange" title="Permanent link">#</a></h6>
-<p><code>event ZoneChange( ZoneInfo NewZone );</code><br></p>
+<pre><code>event ZoneChange( ZoneInfo NewZone );
+</code></pre>
+
 <blockquote>
-<p>Called when actor changes between Zones in the world.
+<p>Called when actor changes between Zones in the world.<br>
 <code>NewZone</code>: The ZoneInfo actor controlling the entered zone.</p>
 </blockquote>
 <h6 id="bumptouch">Bump/Touch<a class="headerlink" href="#bumptouch" title="Permanent link">#</a></h6>
-<p><code>event Bump( Actor Other );</code><br>
-<code>event Touch( Actor Other );</code><br></p>
+<pre><code>event Bump( Actor Other );
+event Touch( Actor Other );
+</code></pre>
+
 <blockquote>
 <p>Called when actor hits in to another actor physically.<br>
 <code>Other</code>: The actor being touched.</p>
 </blockquote>
-<p><code>event PostTouch( Actor Other );</code> <br>
-<code>event UnTouch( Actor Other );</code></p>
+<pre><code>event PostTouch( Actor Other );
+event UnTouch( Actor Other );
+</code></pre>
+
 <blockquote>
 <p>Called for PendingTouch actor after physics completes.</p>
 </blockquote>
 <h6 id="basechange">BaseChange<a class="headerlink" href="#basechange" title="Permanent link">#</a></h6>
-<p><code>event BaseChange();</code><br></p>
-<blockquote>
-<p>Called when actor changes base, meaning the actor that is supporting this one. For example, players standing on a crate, and then standing on the floor, is a BaseChange.</p>
-</blockquote>
-<h6 id="attachment">Attachment<a class="headerlink" href="#attachment" title="Permanent link">#</a></h6>
-<p><code>event Attach( Actor Other );</code><br>
-<code>event Detach( Actor Other );</code><br></p>
+<p>````
+event BaseChange();</p>
+<pre><code>&gt; Called when actor changes base, meaning the actor that is supporting this one. For example, players standing on a crate, and then standing on the floor, is a BaseChange.
+
+
+####Attachment
+```event Attach( Actor Other );
+event Detach( Actor Other );
+</code></pre>
+
 <blockquote>
 <p>Used for attaching and detaching actors from another. Mostly used for making buttons and switches follow elevators.</p>
 </blockquote>
 <h6 id="killcredit">KillCredit<a class="headerlink" href="#killcredit" title="Permanent link">#</a></h6>
-<p><code>event KillCredit( Actor Other );</code><br></p>
+<pre><code>event KillCredit( Actor Other );
+</code></pre>
+
 <blockquote>
 <p>Called when something is killed.<br>
 <code>Other</code>: Actor being credited for a kill.</p>
 </blockquote>
 <h6 id="interpolating">Interpolating<a class="headerlink" href="#interpolating" title="Permanent link">#</a></h6>
-<p><code>event InterpolateEnd( actor Other );</code><br></p>
+<pre><code>event InterpolateEnd( actor Other );
+</code></pre>
+
 <blockquote>
 <p>Called when actor finishes its interpolating path.</p>
 </blockquote>
 <h6 id="endedrotation">EndedRotation<a class="headerlink" href="#endedrotation" title="Permanent link">#</a></h6>
-<p><code>event EndedRotation();</code><br></p>
+<pre><code>event EndedRotation();
+</code></pre>
+
 <blockquote>
 <p>Called when actor stops rotating.<br></p>
 </blockquote>
 <h6 id="others">Others<a class="headerlink" href="#others" title="Permanent link">#</a></h6>
-<p><code>event Actor SpecialHandling(Pawn Other);</code><br>
-<code>event bool EncroachingOn( actor Other );</code><br>
-<code>event EncroachedBy( actor Other );</code><br></p>
+<pre><code>event Actor SpecialHandling(Pawn Other);
+event bool EncroachingOn( actor Other );
+event EncroachedBy( actor Other );
+</code></pre>
+
 <p><code>DEUS_EX STM -- added</code></p>
 <h6 id="bumpwall">BumpWall<a class="headerlink" href="#bumpwall" title="Permanent link">#</a></h6>
 <pre><code>event BumpWall( vector HitLocation, vector HitNormal );

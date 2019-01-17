@@ -342,7 +342,7 @@ function string GetNameFromID(int id)
 {
     local PlayerPawn P;
     foreach AllActors(class'PlayerPawn', P)
-        if(P.PlayerReplicationInfo.PlayerID == i)
+        if(P.PlayerReplicationInfo.PlayerID == id)
             return P.PlayerReplicationInfo.PlayerName;
 }
 
@@ -350,7 +350,7 @@ function string GetIDFromName(string playername)
 {
     local PlayerPawn P;
     foreach AllActors(class'PlayerPawn', P)
-        if(instr(caps(P.PlayerReplicationInfo.PlayerName), caps(str)) != -1)
+        if(instr(caps(P.PlayerReplicationInfo.PlayerName), caps(playername)) != -1)
             return P.PlayerReplicationInfo.PlayerID;
 }
 
@@ -373,19 +373,19 @@ function string GetIP(PlayerPawn P)
     else return &quot;[No player found]&quot;;
 }
 
-function PlayerPawn GetPlayerFromID(int i)
+function PlayerPawn GetPlayerFromID(int id)
 {
     local PlayerPawn P;
     foreach AllActors(class'PlayerPawn', P)
-        if(P.PlayerReplicationInfo.PlayerID == i)
+        if(P.PlayerReplicationInfo.PlayerID == id)
             return P;
 }
 
-function PlayerPawn GetPlayerFromName(string str)
+function PlayerPawn GetPlayerFromName(string playername)
 {
     local PlayerPawn P;
     foreach AllActors(class'PlayerPawn', P)
-        if(instr(caps(P.PlayerReplicationInfo.PlayerName), caps(str)) != -1)
+        if(instr(caps(P.PlayerReplicationInfo.PlayerName), caps(playername)) != -1)
             return P;
 }
 </code></pre>
@@ -435,7 +435,7 @@ function string GetTime()
     and their codes are:</p>
 <pre><code>function ScopeOn()
 {
-    if (bHasScope &amp;amp;&amp;amp; !bZoomed &amp;amp;&amp;amp; (Owner != None) &amp;amp;&amp;amp; Owner.IsA('DeusExPlayer'))
+    if (bHasScope &amp;&amp; !bZoomed &amp;&amp; (Owner != None) &amp;&amp; Owner.IsA('DeusExPlayer'))
     {
         // Show the Scope View
         bZoomed = True;
@@ -445,7 +445,7 @@ function string GetTime()
 
 function ScopeOff()
 {
-    if (bHasScope &amp;amp;&amp;amp; bZoomed &amp;amp;&amp;amp; (Owner != None) &amp;amp;&amp;amp; Owner.IsA('DeusExPlayer'))
+    if (bHasScope &amp;&amp; bZoomed &amp;&amp; (Owner != None) &amp;&amp; Owner.IsA('DeusExPlayer'))
     {
         bZoomed = False;
         // Hide the Scope View
@@ -458,7 +458,7 @@ simulated function ScopeToggle()
 {
     if (IsInState('Idle'))
     {
-        if (bHasScope &amp;amp;&amp;amp; (Owner != None) &amp;amp;&amp;amp; Owner.IsA('DeusExPlayer'))
+        if (bHasScope &amp;&amp; (Owner != None) &amp;&amp; Owner.IsA('DeusExPlayer'))
         {
             if (bZoomed)
                 ScopeOff();

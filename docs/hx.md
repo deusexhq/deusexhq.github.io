@@ -6,13 +6,10 @@ HX is a Deus Ex Overhaul mod that adds cooperative gameplay to the story mode, d
 On top of that, there is HXExt, a third-party mod developed by Bogie of OTP, which fixes a few bugs, adds new features, skins, taunts, etc. This guide will help to install HX and HXExt for playing, and hosting.
 
 ## Installing for Playing
-<div class="tcalert">
-Note: It is recommended that you use a fresh game install for this, it may not be needed since HX uses its own launcher and configs, but if you want to be safe, you've been warned.
-</div>
-<div class="tcalert">Note: HXExt is at version 2.1 at the time of writing. Latest files will always be available in the Discord #deusex-coop channel if this link becomes outdated.</div>
+<div class="tcalert">Note: It is recommended that you use a fresh game install for this, to avoid mistaking errors in setting up HX for just being mismatches with other mods.</div>
+<div class="tcalert">Note: HXExt is at version 2.2 at the time of writing. Latest files will always be available in the Discord #deusex-coop channel if this link becomes outdated.</div>
 
-
-First, grab the files, download [HX core files](https://builds.hx.hanfling.de/) and [HXExt files](https://drive.google.com/uc?id=1YSMjs2Go4HcKvSa583H4m7TA8YwDcNlI).
+First, grab the files, download [HX core files](https://builds.hx.hanfling.de/) and [HXExt files](https://drive.google.com/uc?id=1EbUNTZrsvc6OZM3Q8Sgk-PY3YK1-zxiR).
 
 Extract these files in to your games /System folder, which will be one of these;
 ```

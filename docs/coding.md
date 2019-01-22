@@ -1,15 +1,15 @@
 # Intro
 <p>First off, setting up files;<br />
 <br />
-<b>For editing code</b>, you can either use Notepad (windows) or the Linux equivelant (Gedit usually), it works. But the alternative is Notepad++ and the USCRIPT syntax highlighting, which colours in the code to make it easier to understand, and also will be helpful for a few other aspects.<br />
+<b>For editing code</b>, you can either use Notepad (windows) or the Linux equivelant (Gedit, Mouepad usually), it works. But the alternative is Notepad++ and the USCRIPT syntax highlighting, which colours in the code to make it easier to understand, and also will be helpful for a few other aspects.<br />
 Download <a class="link" href="https://notepad-plus-plus.org/" rel="nofollow" target="_blank">Notepad++</a> and <a class="link" href="http://deusex.ucoz.net/userDefineLang.xml" rel="nofollow" target="_blank">Language File for Uscript</a> (Right click and save-as to avoid it opening in-browser)<br />
 For Windows, install as normal.<br />
 For Linux, run the installer under Wine.<br />
 Once done and loaded, in Language drop down box, click User defined language and click Import, and select the .xml file. Save that and now any .uc files should load with the syntax highlighting.<br />
+Alternatives include Visual Studio Code, Codeblocks, or any other IDE with extension support.
 Another alternative for Linux is the <a class="link" href="https://www.geany.org/" rel="nofollow" target="_blank">Geany IDE</a>, which basically feels like a native N++ for Linux. It is also available on Windows.<br />
 <br />
 <b>For compiling code</b>, install the SDK through whatever means you want. I recommend either <a class="link" href="http://www.deusexnetwork.com/files/DX1/editing/tools/6089/DXEditingPACK_2_2_Full.exe" rel="nofollow" target="_blank">Deus Ex Editing Pack 2.2</a> or <a class="link" href="http://www.deusexnetwork.com/files/DX1/editing/tools/3568/UnrealEd2-fix-for-DX-upd.zip" rel="nofollow" target="_blank">Deus Ex Unreal Ed updated Installer.</a><br />
-Same install instructions as Notepad++.<br />
 Editing Pack includes a collection of software used for editing, most unneeded, but still handy. In the end, you should end up with a file in Deus Ex/System/ called ucc.exe. If thats there, its installed, and thats all we need.<br />
 <br />
 If you want a good base to start off, open up the SDK/Unreal Ed, and in the Classes browser, just click Export All. This decompiles the entire game source code in to the Deus Ex/ folder.</p>

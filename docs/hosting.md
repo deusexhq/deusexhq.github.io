@@ -1,5 +1,3 @@
-# HOSTING
-
 ## Server Starter
 <h3>Windows</h3>
 Create a text file in your Deus Ex/System folder. Open it up, and place in the following code: <br>

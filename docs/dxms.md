@@ -30,8 +30,6 @@ C:\Program Files (x86)\Steam\SteamApps\common\Deus Ex
 ..\Somewhere in MyDocuments (If using Kenties Launcher)
 ```
 
-The above list uses the C partition as example. 
-If you've picked a different location during installation, the above list of course does not apply.
 If you only play Deus Ex and never host a gameserver, this is the only step that is
 required. 
 Open DeusEx.ini and find the following:
@@ -69,4 +67,6 @@ ServerActors=IpServer.UdpServerUplink MasterServerAddress=master.fragaholic.com 
 As long as one line contains either <strong>master.deusexnetwork.com</strong> or <strong>master.333networks.com</strong>, the server will connect.
 Save the file and you're done! Everything should work without any problems but should you run into any issues or have further
 questions, feel free to leave a message via the <a href="http://discord.gg/KUA8acb">Discord</a>.
+
+<em>Page originally from DXAlpha, modified and updated by Kaiser. Patcher by Machete.</em>
 </p> 

@@ -1,4 +1,3 @@
-# HX
 ## What is HX?
 
 HX is a Deus Ex Overhaul mod that adds cooperative gameplay to the story mode, developed by Hanfling, a dev behind the Revision mod.

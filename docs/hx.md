@@ -113,6 +113,7 @@ ServerPackages=HXExtCharacters
 ServerPackages=HXExtSounds
 ServerPackages=HXExtUI
 ```
-3. (a) If you want to use a serverstarter batch file, check out [here](https://deusexhq.github.io/hosting/#server-starter), follow the same instructions but change the `game=` value to `HXExt.HXGameInfoExt`.
+3. (a) If you want to use a serverstarter batch file, check out [here](https://deusexhq.github.io/hosting/#server-starter), follow the same instructions but change batch code to the following.
+```HX.exe 01_NYC_UNATCOIsland ?Game=HXExt.HXGameInfoExt?CombatDifficulty=1?FriendlyFire=1.000000?Difficulty=0 -server```
 3. (b) To launch from the game, do like you usually would, in the server browser click Host, change settings as desired there.
 

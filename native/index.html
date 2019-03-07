@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Kaiser">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Native - Deus Ex</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../kaiser.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Native";
+    var mkdocs_page_input_path = "native.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Deus Ex</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="https://discord.gg/KUA8acb"><img src="https://cdn.discordapp.com/emojis/457155649831305219.png" width="20" height="20" border="0" />Discord</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Deus Ex General Documentation</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../dxms/">Masterserver Fix</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../community/">Community</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hx/">HX Co-op</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../coding/">Coding</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../hosting/">Hosting</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../improvements/">Improvements</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mapping/">Mapping</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../multiplayer/">Multiplayer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playing/">Playing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../singleplayer/">Singleplayer Mods</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../troubleshooting/">Troubleshooting</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Object Documentation</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../object/">Object</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../actor/">Actor</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../game/">Game</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../inventory/">Inventory</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pawn/">Pawn</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../player/">Player</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../file/">Files</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Deus Ex</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Native</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <div class="tcalert">
+Guide originally written by <em>Tom "Blitz" Conder</em> and <em>Carlos "c0mpi1e" Cuello</em>
+Dated: 9/13/1999 
+Directions also are written for Unreal rather than Deus Ex. You should be able to replace any references to Unreal with Deus Ex though.
+</div>
+
+<h4 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h4>
+<p>The Unreal engine has the ability to mix Unrealscript (UScript) and C++ code. In order
+to call C++ functions from UScript you must compile them into a dynamic-link library (DLL)
+file. Calling these functions, known as native functions, is probably one of most
+overlooked features of Unreal. This document will discuss implementing native functions,
+identify a few gotchas and give a step-by-step guide to a basic example.</p>
+<h5 id="consider-the-benefits">Consider the Benefits<a class="headerlink" href="#consider-the-benefits" title="Permanent link">#</a></h5>
+<p>By far one of the most impressive features of Unreal is its highly modularized and
+replaceable game code. Amateurs can modify the game by replacing or augmenting its code,
+sounds, meshes and levels with their own. These modifications called &#145;mods&#146; are
+the concern of an entire online community. Mods keep Unreal fresh and interesting and give
+it life long after most have solved the original. Native functions are one of the tools in
+the toolchest of mod authors. They allow for algorithmic textures, performance-critical
+artificial intelligence, access to the Win32 API and implementation hiding.</p>
+<h5 id="be-wary-of-the-thorns">Be Wary of the Thorns<a class="headerlink" href="#be-wary-of-the-thorns" title="Permanent link">#</a></h5>
+<p>There are disadvantages to using native functions. First of all, the process is
+complicated and not well documented. Although this document will shed some light on
+process, writing them is unsupported by Epic Games. Secondly, forget Mac compatibility.
+Writing DLLs means that your mod will only work in Microsoft Windows. Lastly, every patch
+will break your mod. UScript is more portable between patches, particularly beta patches.
+Also, C++ headers and library files are needed to compile DLLs. That means you need the
+latest public source to compile your DLL.</p>
+<h4 id="creation">Creation<a class="headerlink" href="#creation" title="Permanent link">#</a></h4>
+<h5 id="set-up-the-package">Set up the Package<a class="headerlink" href="#set-up-the-package" title="Permanent link">#</a></h5>
+<p>Mod authors should start by setting up a new package. A package file is a file that
+contains a collection of related objects, eg. textures, sounds and scripts. Package files
+containing UScript classes are identified with a <code>.u</code> extension.</p>
+<p>Unreal comes with its own compiler capable of producing package files. It is called
+<code>ucc.exe</code> and is found in the <code>Unreal\System</code> directory. We will
+discuss using the compiler later.</p>
+<p>Start your mod by making a directory under the Unreal folder with the name of your
+project. For example, if your project is named <code>Hazard</code>, then create a directory named
+<code>Unreal\Hazard</code>. </p>
+<p>Next, create four directories under your package folder named Classes, Inc, Src and
+Lib. The Classes directory will hold your UScript. The Inc directory will hold the public
+header files. The Src directory will hold your C++ files and private header files. The Lib
+directory will hold static library file created during the compilation.</p>
+<p>In order for your new package to be seen by the Unreal Editor, the ucc compiler and
+during gameplay you need to edit the Unreal.ini file. It is located in the <code>Unreal\System</code>
+directory. Find the <code>[Editor.EditorEngine]</code> section and add <code>Hazard</code> to the [EditPackages]
+list, eg. <code>EditPackages=Hazard</code>. </p>
+<p>We discussed how to set up a new package. We took a look at the Unreal compiler,
+created the needed directories and edited the appropriate initialization file. Now that
+the system is ready, it is time to use the Unreal compiler to automatically generate the
+public header file.</p>
+<h5 id="generate-the-public-header-file">Generate the Public Header File<a class="headerlink" href="#generate-the-public-header-file" title="Permanent link">#</a></h5>
+<p>Classes that use native functions must be declared as native in UScript. Unreal always
+looks for C++ implementation of native function in a DLL corresponding to the class's
+package name. For example, if your package is named <code>Hazard</code>, Unreal will look for a file
+named <code>Hazard.dll</code> in the System directory.</p>
+<p>The following example implements a class named <code>hzTest</code>. It is a subclass of
+another class named Actor. Notice we declare your class as native.</p>
+<p><code>class hzTest extends Actor 
+native;</code></p>
+<p>The Unreal compiler, ucc, will read the class file and
+automatically generate a header file which you can include in your DLL project. Be careful
+not to edit this file as the Unreal compiler will see that it has changed and offer to
+overwrite it. Although Epic's documentation recommends running the ucc compiler as an
+external tool through Visual C++, you do not want to do it for this step. Run the ucc
+compiler from the DOS prompt, eg. <code>ucc make</code>. Since the compiler prompts you for a
+response and the prompt does not show up in VC++ output window, it appears in fact to hang
+the C++ compiler.</p>
+<p>Running ucc from the DOS prompt is easy. Simply, go to the DOS prompt. Find the
+<code>Unreal\System</code> directory. Now type: <code>ucc make</code>. Eventually the resulting prompt
+will appear:</p>
+<pre><code>The file '..\Hazard\Inc\HazardClasses.h' needs to be
+updated. Do you want to overwrite the existing version? (Y/N)
+</code></pre>
+
+<p>When prompted, press the <code>Y</code> key to answer in the affirmative.</p>
+<p>We generated out public header file. This file exposes functions declarations and
+definitions to other classes. Lets move on implementing the private header file.</p>
+<h5 id="make-the-private-header-file">Make the Private Header File<a class="headerlink" href="#make-the-private-header-file" title="Permanent link">#</a></h5>
+<p>A private header file contains local definitions and structures that we do not want to
+expose to other classes. The private header file must include the engine, core and public
+header files. The following file, <code>HazardPrivate.h</code>, is an example of a private header file.</p>
+<pre><code>// =========================================================================== 
+// Project: Native Function Document 
+// 
+// Description: 
+// This is the header file for the native function document DLL. 
+// ===========================================================================
+
+#include &quot;Engine.h&quot; 
+#include &quot;Core.h&quot;
+
+// The HazardClasses header file is automatically generated by the ucc 
+// compiler. 
+#include &quot;HazardClasses.h&quot;
+</code></pre>
+
+<p>We wrote our private header file. Any private structure or
+definitions go here. Now we are to implement the C++ source file.</p>
+<h5 id="hack-the-c-source-code">Hack the C++ Source Code<a class="headerlink" href="#hack-the-c-source-code" title="Permanent link">#</a></h5>
+<p>Write your C++ file. Be sure to include your private header file. Take a look at the
+following example, a file named hzTest.cpp.</p>
+<pre><code>// =========================================================================== 
+// Project: Native Function Document 
+// 
+// Description: 
+// This file contains code for the native function document DLL. 
+// ===========================================================================
+
+#include &quot;HazardPrivate.h&quot;
+
+IMPLEMENT_PACKAGE(Hazard);
+
+IMPLEMENT_CLASS(AhzTest);
+
+IMPLEMENT_FUNCTION(AhzTest, 1700, execIncTest);
+
+// execIncTest - called as IncTest method in UScript 
+void 
+AhzTest::execIncTest (FFrame&amp; Stack, RESULT_DECL) 
+{ 
+    // input parameter handling 
+    guard(AhzTest::execIncTest); 
+    P_FINISH;
+
+    GLog-&gt;Logf(TEXT(&quot;in IncTest() &quot;));
+
+    iTest++;
+
+    // return the result 
+    *(DWORD*)Result = iTest;
+
+    unguardexec; 
+}
+</code></pre>
+
+<p>This example simply increments the value of a variable named <code>iTest</code> by one and returns
+the resulting value. The next section explains the macros used in this example and
+describes a few more.</p>
+<h5 id="mind-the-macros">Mind the Macros<a class="headerlink" href="#mind-the-macros" title="Permanent link">#</a></h5>
+<p>When implementing native functions in C++ you need to learn some of the macros found in
+the source code. The above code example uses a few of them: <code>IMPLEMENT_PACKAGE</code>,
+<code>IMPLEMENT_CLASS</code>, <code>IMPLEMENT_FUNCTION</code> and <code>P_FINISH</code>, <code>guard()</code>, <code>unguard</code>.</p>
+<p><code>IMPLEMENT_PACKAGE()</code> - takes as a parameter the name of the
+package;takes the parameter in the form <code>IMPLEMENT_PACKAGE(MyPackage);</code> </p>
+<p><code>IMPLEMENT_CLASS()</code> - takes as a parameter the name of the class in the form:
+<code>IMPLEMENT_CLASS(MyClassName);</code> </p>
+<p><code>IMPLEMENT_FUNCTION()</code> - declaration macro to expose the function to the source file;
+takes three parameters in the form: <code>IMPLEMENT_FUNCTION( AClassName, UniqueID,AFunctionName);</code></p>
+<p>where <code>AClassName</code> is the name of your class, <code>UniqueID*</code> is an integer that
+is to uniquely identify the function. This number must be unique to any package loaded in
+Unreal. For example you can have multiple functions with the same name in your package,
+they could be in different classes, the numbers are what tells the Unreal which function
+to call. Unreal uses several numbers for its functions throughout the
+<code>Engine/Unreali/UnrealShare/Core/Fire</code> etc package files. However, most of those stay below
+approximately 500, and depending on which packages are loaded by Unreal, you may use
+those, too. Personally, I try and keep all of mine above 1000.</p>
+<p><code>P_GET_UBOOL</code>, <code>P_GET_STRUCT</code>, <code>P_GET_INT</code>, etc. - These macros grab the variable off of
+the call stack.</p>
+<p>Let us take the following example with a native function declared in UScript and C++: </p>
+<pre><code>native function FunctionName( int x, int y, bool bDo
+); // UScript
+</code></pre>
+
+<pre><code>void execFunctionName( FFrame &amp;amp;Stack, void* Result ); // C++
+</code></pre>
+
+<p>Now those two declarations look very different. How do you get those parameters?
+Well, the answer lies in the use of the Stack and the <code>P_</code> macros. The stack frame contains
+the current function states, including the parameters. FFrame &amp;Stack is a reference to
+the current stack frame and state. The <code>P_GET*</code> macros grab the parameters off of the stack.
+You must use the <code>P_GET*</code> calls to grab the parameter types in the same order
+as is defined in UScript. </p>
+<p>In our example, we would want to do the following </p>
+<pre><code>void MyClass::execFunctionName( FFrame &amp;amp;Stack,
+void const *Result )
+{ 
+ guard( MyClass::execFunctionName ); 
+
+ P_GET_INT( x ); 
+ P_GET_INT( y ); 
+ P_GET_UBOOL( bDo ); 
+
+ P_FINISH;
+
+
+ // Do what we want. 
+
+unguard; 
+} 
+</code></pre>
+
+<p>The <code>P_GET*</code> macros all perform the same function functions
+although they might look a little different depending on the type. For a complete listing
+of all of the macros, look at <code>Unreal\Core\Inc\UnScript.h</code> </p>
+<p><code>P_GET_UBOOL_OPTX</code>, <code>P_GET_INT_OPTX</code>, etc. - used in the same way as the regular <code>P_GET</code>
+macros, but add on an extra parameter, the default value. For example, following the
+previous code listing:</p>
+<pre><code>native function Foo( optional int x = 10, optional int y = 10 ); 
+void MyClass::execFoo( FFrame &amp;Stack, void const *Result )
+{ 
+     guard( MyClass::execFoo ); 
+     P_GET_INT_OPTX( x, 10 ); 
+     P_GET_INT_OPTX( x, 10 ); 
+     P_FINISH;
+
+     // Do what we want.
+
+
+     if ( x == 10 )
+          GLog-&gt;Log( TEXT( &quot;Using defaults&quot; ) ); 
+     unguard; 
+}
+</code></pre>
+
+<p><code>P_GET_ARRAY_REF</code>, <code>P_GET_STR_REF</code>, etc. - used in the
+exact same way as the <code>P_GET*</code> macros (not the optional macros), and allows
+parameters to be paseed by reference. For example: </p>
+<pre><code>native function Foo( out int x, out int y ); 
+void MyClass::execFoo( FFrame &amp;Stack, void const *Result )
+{ 
+     guard( MyClass::execFoo ); 
+     P_GET_INT_REF( x ); 
+     P_GET_INT_REF( x ); 
+     P_FINISH;
+
+     // Do what we want.
+
+     unguard; 
+}
+</code></pre>
+
+<p><code>P_FINISH</code> - indicates the end of the call stack. You must put this in your
+native functions or Unreal will crash by not closing up the stack and trying to
+load a new function, state or class.</p>
+<p><code>guard()</code>, <code>unguard</code> - creates an exception handler for the following block of code.
+Basically, it translates to a try/catch block, and adds a name to unwinding stack.
+Here is the usage:</p>
+<p><code>guard(MyClass::MyFunction)</code> or <code>guard(CoolBlockOfCode)</code></p>
+<p>If an exception is raised in the block of code wrapped by a guard, then the log file
+will show the relevant stack info, including the deepest stack name, eg.: </p>
+<pre><code>void MyFunc()
+{ 
+    guard(MyClass::MyFunc);
+
+    // Do something to raise an exception
+
+    unguard; 
+}
+</code></pre>
+
+<p>This code will cause the log file to give not only the relevant error, but also where in
+the code it happened. You can add as many <code>guard()</code>'s in a function as you want, the more
+you do it, the more specific an error will be. </p>
+<p>I once started a function that had about 20 lines of code. An error was being thrown
+somewhere. I started narrowing it down, adding <code>guard()</code>s and unguard statements everywhere.
+Finally I narrowed it down to the specific line.</p>
+<h5 id="return-the-result">Return the Result<a class="headerlink" href="#return-the-result" title="Permanent link">#</a></h5>
+<p>Native functions can return values. Unreal defined a variable named 'Result'. To return
+a value from a function set the value of the variable equal to the returned value. Since
+the returned value it cast to its desired type it is possible to return just about
+anything from a function including integers, float and references to user-defined
+structures.</p>
+<p>Now that we have taken a look at C++ source code, let us move on to the final step:
+compiling the source code into a DLL file. Unfortunately, in order to get your code to
+compile successfully you will need to customize the compiler setting. We will take a look
+at that in the next section.</p>
+<h5 id="tweak-the-c-compiler-settings">Tweak the C++ Compiler Settings<a class="headerlink" href="#tweak-the-c-compiler-settings" title="Permanent link">#</a></h5>
+<p>The Visual C++ compiler settings must be tweaked in order for the DLL to be compiled.
+First of all the preprocessor settings must be changed. In the Preprocessor category under
+the C/C++ compiler options tab, remove the existing preprocessor setting and replaced them
+with: <code>WIN32,WINDOWS,_WINDOWS,UNICODE,_UNICODE,HAZARD_API=__declspec(dllexport)</code> </p>
+<p>These settings tell the compiler to use the Win32 API, Unicode and to give the
+<code>HAZARD_API</code> a definition. The <code>HAZARD_API</code> defition is important become the generated header
+file has a bug where it sets <code>HAZARD_API</code> to <code>DLL_IMPORT</code>. In actually we want the defintion
+to indicate dll exports, so defining it here works around the problem without editing the
+automatically generated header file. </p>
+<p>Also, in the preprocessor tab set the additional include directories to point to the
+core, engine and package include directories. That is, set it to:
+<code>..\..\Core\Inc,..\..\Engine\Inc,..\Inc</code> </p>
+<p>Secondly, the link settings must be changed. In the General category under the Link
+options tab, set the output file name to: ....\System/Hazard.dll. Additionally, set the
+Object/library modules to point to the core and engine library files. That is, set it to:
+<code>..\..\Core\Lib\Core.lib ..\..\Engine\Lib\Engine.lib</code></p>
+<h4 id="step-by-step-guide">Step-by-step guide<a class="headerlink" href="#step-by-step-guide" title="Permanent link">#</a></h4>
+<h5 id="a-step-by-step-guide-to-native-functions">A Step-by-Step Guide to Native Functions<a class="headerlink" href="#a-step-by-step-guide-to-native-functions" title="Permanent link">#</a></h5>
+<p>What you need to have before starting:</p>
+<p>. a copy of Unreal; patched to version 224v 
+. a copy of the Unreal public source  224v, contains C++ headers and library files 
+. a copy of Microsoft Visual C++ 6.0; service packs recommended 
+. a simple text editor (notepad.exe works just fine)</p>
+<ol>
+<li>Make a new project folder below the Unreal folder. For this tutorial, we will use <code>Unreal\Hazard</code></li>
+</ol>
+<pre><code>Unreal\ 
++- Hazard 
++- Cache 
++- System 
++- ... 
+</code></pre>
+
+<ol>
+<li>In this folder, create four new folders: 'Classes', 'Inc', 'Src' and 'Lib' </li>
+</ol>
+<pre><code>Unreal\Hazard\ 
++- Classes 
++- Inc 
++- Src 
++- Lib
+</code></pre>
+
+<ol>
+<li>Change to the <code>Unreal\Hazard\Classes</code> directory. The next step will take place there. </li>
+<li>Create a file named <code>hzTest.uc</code>. Use your editor to edit it. </li>
+</ol>
+<pre><code>//============================================================================= 
+// hzTest 
+//============================================================================= 
+class hzTest extends Actor 
+native; 
+
+var int iTest; // test variable
+// native function - implemented in DLL 
+native(1700) final function int IncTest();
+
+auto state Default 
+{ 
+    event PreBeginPlay() 
+    { 
+        Super.PreBeginPlay(); 
+        Log (&quot;hzTest was called.&quot;); 
+    }
+
+function Timer()
+{ 
+    IncTest();
+    Log (&quot;Value = &quot; $ iTest); 
+}
+
+Begin: 
+    SetTimer(5.0, True); 
+}
+
+defaultproperties 
+{ 
+DrawType=DT_Mesh 
+Mesh=LodMesh'UnrealI.KrallM' 
+}
+</code></pre>
+
+<ol>
+<li>Change to the <code>Unreal\System directory</code>. The next three steps will take place there. </li>
+<li>Locate the Unreal.ini file. In the <code>[Editor.EditorEngine]</code> section add 'Hazard' to the <code>[EditPackages]</code> list. Eg. <code>EditPackages=Hazard</code></li>
+</ol>
+<p>This tells the Unreal Editor to load the package on startup. It also tells the ucc compiler to scan the directory when it does its compilation. </p>
+<ol>
+<li>In the <code>Unreal\System directory</code>, delete the <code>Hazard.u</code> file if it exists. </li>
+</ol>
+<p>Of course, if this is your first time through the tutorial, this file will not exist. However, if it does exist, it must be deleted. </p>
+<ol>
+<li>Type <code>ucc make</code> to run the Unreal compiler. </li>
+<li>Watch the progress of the compiler. You should eventually see a prompt like this:</li>
+</ol>
+<pre><code>The file '..\Hazard\Inc\HazardClasses.h' needs to be updated. Do you want to overwrite the existing version? (Y/N) 
+</code></pre>
+
+<p>Answer yes by pressing 'Y'. 
+10. Open the Microsoft Visual C++ compiler. Define a new workspace named <code>Hazard</code>. On my computer Unreal is installed to <code>E:\Games\Unreal</code>, adjust the directory name to match the directory where Unreal is installed on your computer. </p>
+<p>Go to <code>File-&gt;New-&gt;Workspaces</code></p>
+<p>Workspace name: <code>Hazard</code> 
+Location: <code>E:\Games\unreal\Hazard</code> </p>
+<ol>
+<li>Create a new project named <code>Hazard DLL</code>. </li>
+</ol>
+<p>Go to <code>File-&gt;New-&gt;Projects</code></p>
+<p>Win32 Dynamic-Link Library </p>
+<p>Project Name: <code>Hazard DLL</code>
+Location: <code>E:\Games\unreal\Hazard\Src</code></p>
+<p>Add to current workspace 
+An empty DLL project </p>
+<ol>
+<li>Create a new header file named <code>HazardPrivate.h</code>. </li>
+</ol>
+<p><code>File-&gt;New-&gt;Files</code></p>
+<p>C/C++ Header File </p>
+<p>Add to project: <code>Hazard DLL</code>
+File name: <code>HazardPrivate.h</code>
+Location: <code>E:\Games\unreal\Hazard\Src</code></p>
+<ol>
+<li>Edit HazardPrivate.h</li>
+</ol>
+<pre><code>// =========================================================================== 
+// Project: Native Function Tutorial 
+// 
+// Description: 
+// This is the header file for the native function tutorial DLL. 
+// ===========================================================================
+
+#include &quot;Engine.h&quot; 
+#include &quot;Core.h&quot;
+
+// The HazardClasses header file is automatically generated by the ucc 
+// compiler. 
+#include &quot;HazardClasses.h&quot; 
+</code></pre>
+
+<ol>
+<li>Add the automatically generated header file, <code>HazardClasses.h</code> to the project. 
+Right click on the 'Hazard DLL files' in FileView of the Workspace window </li>
+</ol>
+<p>Add Files to Project.. </p>
+<p>Choose <code>Inc</code>. Then select the file named <code>HazardClasses.h</code></p>
+<ol>
+<li>Create a new file named <code>hzTest.cpp</code>. </li>
+</ol>
+<p><code>File-&gt;New-&gt;Files</code></p>
+<p>C++ Source File </p>
+<p>Add to project: <code>Hazard DLL</code>
+File name: <code>hzTest.cpp</code>
+Location: <code>E:\Games\unreal\Hazard\Src</code></p>
+<ol>
+<li>Edit hzTest.cpp</li>
+</ol>
+<pre><code>// =========================================================================== 
+// Project: Native Function Tutorial 
+// 
+// Description: 
+// This file contains code for the native function tutorial DLL. 
+// ===========================================================================
+
+#include &quot;HazardPrivate.h&quot;
+
+IMPLEMENT_PACKAGE(Hazard);
+
+IMPLEMENT_CLASS(AhzTest);
+
+IMPLEMENT_FUNCTION (AhzTest, 1700, execIncTest);
+
+// execIncTest - called as IncTest method in UnrealScript 
+void 
+AhzTest::execIncTest (FFrame&amp; Stack, RESULT_DECL)
+{
+    // input parameter handling 
+    guard (AhzTest::execIncTest); 
+    P_FINISH;
+
+    GLog-&gt;Logf( TEXT(&quot;in IncTest() &quot;) );
+
+    iTest++;
+
+    // return the result 
+    *(DWORD*)Result = iTest;
+
+    unguardexec; 
+} 
+</code></pre>
+
+<ol>
+<li>Before we compile, we need to set a few compiler options. First of all, remove the Debug configuration. </li>
+</ol>
+<p><code>Build-&gt;Configurations..</code></p>
+<p>Remove the configuration named 'Win32 Debug' and close this window. </p>
+<ol>
+<li>Tweak the C/C++ compiler options. </li>
+</ol>
+<p><code>Project-&gt;Settings..</code> </p>
+<p>C/C++ tab in the Preprocessor category: </p>
+<p>Preprocesser Defintions: 
+<code>WIN32,WINDOWS,_WINDOWS,UNICODE,_UNICODE,HAZARD_API=__declspec(dllexport)</code></p>
+<p>Additional include directories: 
+<code>..\..\Core\Inc,..\..\Engine\Inc,..\Inc</code></p>
+<ol>
+<li>Change the Link compiler options </li>
+</ol>
+<p><code>Project-&gt;Settings..</code></p>
+<p>Link tab in the General category: </p>
+<p>Output file name: 
+<code>..\..\System/Hazard.dll</code></p>
+<p>Object/library modules: 
+<code>..\..\Core\Lib\Core.lib ..\..\Engine\Lib\Engine.lib</code></p>
+<ol>
+<li>Now is a good time to save your work, <code>File-&gt;Save All</code> </li>
+<li>Compile. <code>Build-&gt;Build Hazard.dll</code></li>
+<li>Run the game with a test map. For example, type this at the DOS prompt: <code>unreal DmAriza.unr ?log=hztest.log</code></li>
+<li>In the game go to the console, type: <code>showlog</code> </li>
+<li>After log window opens return to the console. Now type: <code>summon hazard.hztest</code></li>
+<li>A model of a Kraal should appear. Watch the log window. You see something like this:</li>
+</ol>
+<pre><code>    Log: in IncTest()  
+    ScriptLog: Value = 1 
+    Log: in IncTest()  
+    ScriptLog: Value = 2 
+</code></pre>
+
+<ol>
+<li>Now exit the game.  Excellent job on getting your first native function to run!</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>© Kaiser and the Deus Ex HQ team, 2019</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/deusexhq/deusexhq.github.io" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

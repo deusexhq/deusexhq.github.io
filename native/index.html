@@ -293,8 +293,10 @@ package name. For example, if your package is named <code>Hazard</code>, Unreal 
 named <code>Hazard.dll</code> in the System directory.</p>
 <p>The following example implements a class named <code>hzTest</code>. It is a subclass of
 another class named Actor. Notice we declare your class as native.</p>
-<p><code>class hzTest extends Actor 
-native;</code></p>
+<pre><code>class hzTest extends Actor 
+native;
+</code></pre>
+
 <p>The Unreal compiler, ucc, will read the class file and
 automatically generate a header file which you can include in your DLL project. Be careful
 not to edit this file as the Unreal compiler will see that it has changed and offer to
@@ -306,8 +308,7 @@ the C++ compiler.</p>
 <p>Running ucc from the DOS prompt is easy. Simply, go to the DOS prompt. Find the
 <code>Unreal\System</code> directory. Now type: <code>ucc make</code>. Eventually the resulting prompt
 will appear:</p>
-<pre><code>The file '..\Hazard\Inc\HazardClasses.h' needs to be
-updated. Do you want to overwrite the existing version? (Y/N)
+<pre><code>The file '..\Hazard\Inc\HazardClasses.h' needs to be updated. Do you want to overwrite the existing version? (Y/N)
 </code></pre>
 
 <p>When prompted, press the <code>Y</code> key to answer in the affirmative.</p>
@@ -378,8 +379,7 @@ describes a few more.</p>
 <p>When implementing native functions in C++ you need to learn some of the macros found in
 the source code. The above code example uses a few of them: <code>IMPLEMENT_PACKAGE</code>,
 <code>IMPLEMENT_CLASS</code>, <code>IMPLEMENT_FUNCTION</code> and <code>P_FINISH</code>, <code>guard()</code>, <code>unguard</code>.</p>
-<p><code>IMPLEMENT_PACKAGE()</code> - takes as a parameter the name of the
-package;takes the parameter in the form <code>IMPLEMENT_PACKAGE(MyPackage);</code> </p>
+<p><code>IMPLEMENT_PACKAGE()</code> - takes as a parameter the name of the package; takes the parameter in the form <code>IMPLEMENT_PACKAGE(MyPackage);</code> </p>
 <p><code>IMPLEMENT_CLASS()</code> - takes as a parameter the name of the class in the form:
 <code>IMPLEMENT_CLASS(MyClassName);</code> </p>
 <p><code>IMPLEMENT_FUNCTION()</code> - declaration macro to expose the function to the source file;
@@ -395,11 +395,12 @@ those, too. Personally, I try and keep all of mine above 1000.</p>
 <p><code>P_GET_UBOOL</code>, <code>P_GET_STRUCT</code>, <code>P_GET_INT</code>, etc. - These macros grab the variable off of
 the call stack.</p>
 <p>Let us take the following example with a native function declared in UScript and C++: </p>
-<pre><code>native function FunctionName( int x, int y, bool bDo
-); // UScript
+<pre><code>native function FunctionName( int x, int y, bool bDo); 
+// UScript
 </code></pre>
 
-<pre><code>void execFunctionName( FFrame &amp;amp;Stack, void* Result ); // C++
+<pre><code>void execFunctionName( FFrame &amp;amp;Stack, void* Result ); 
+// C++
 </code></pre>
 
 <p>Now those two declarations look very different. How do you get those parameters?
@@ -427,12 +428,9 @@ unguard;
 } 
 </code></pre>
 
-<p>The <code>P_GET*</code> macros all perform the same function functions
-although they might look a little different depending on the type. For a complete listing
-of all of the macros, look at <code>Unreal\Core\Inc\UnScript.h</code> </p>
+<p>The <code>P_GET*</code> macros all perform the same function functions although they might look a little different depending on the type. For a complete listing of all of the macros, look at <code>Unreal\Core\Inc\UnScript.h</code> </p>
 <p><code>P_GET_UBOOL_OPTX</code>, <code>P_GET_INT_OPTX</code>, etc. - used in the same way as the regular <code>P_GET</code>
-macros, but add on an extra parameter, the default value. For example, following the
-previous code listing:</p>
+macros, but add on an extra parameter, the default value. For example, following the previous code listing:</p>
 <pre><code>native function Foo( optional int x = 10, optional int y = 10 ); 
 void MyClass::execFoo( FFrame &amp;Stack, void const *Result )
 { 
@@ -450,9 +448,7 @@ void MyClass::execFoo( FFrame &amp;Stack, void const *Result )
 }
 </code></pre>
 
-<p><code>P_GET_ARRAY_REF</code>, <code>P_GET_STR_REF</code>, etc. - used in the
-exact same way as the <code>P_GET*</code> macros (not the optional macros), and allows
-parameters to be paseed by reference. For example: </p>
+<p><code>P_GET_ARRAY_REF</code>, <code>P_GET_STR_REF</code>, etc. - used in the exact same way as the <code>P_GET*</code> macros (not the optional macros), and allows parameters to be paseed by reference. For example: </p>
 <pre><code>native function Foo( out int x, out int y ); 
 void MyClass::execFoo( FFrame &amp;Stack, void const *Result )
 { 

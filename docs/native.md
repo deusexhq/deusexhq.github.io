@@ -73,8 +73,10 @@ named `Hazard.dll` in the System directory.
 The following example implements a class named `hzTest`. It is a subclass of
 another class named Actor. Notice we declare your class as native.
 
-```class hzTest extends Actor 
-native;```
+```
+class hzTest extends Actor 
+native;
+```
 
 The Unreal compiler, ucc, will read the class file and
 automatically generate a header file which you can include in your DLL project. Be careful
@@ -90,8 +92,7 @@ Running ucc from the DOS prompt is easy. Simply, go to the DOS prompt. Find the
 will appear:
 
 ```
-The file '..\Hazard\Inc\HazardClasses.h' needs to be
-updated. Do you want to overwrite the existing version? (Y/N)
+The file '..\Hazard\Inc\HazardClasses.h' needs to be updated. Do you want to overwrite the existing version? (Y/N)
 ```
 
 When prompted, press the `Y` key to answer in the affirmative.
@@ -180,8 +181,7 @@ the source code. The above code example uses a few of them: `IMPLEMENT_PACKAGE`,
 `IMPLEMENT_CLASS`, `IMPLEMENT_FUNCTION` and `P_FINISH`, `guard()`, `unguard`.
 
 
-`IMPLEMENT_PACKAGE()` - takes as a parameter the name of the
-package;takes the parameter in the form `IMPLEMENT_PACKAGE(MyPackage);` 
+`IMPLEMENT_PACKAGE()` - takes as a parameter the name of the package; takes the parameter in the form `IMPLEMENT_PACKAGE(MyPackage);` 
 
 
 `IMPLEMENT_CLASS()` - takes as a parameter the name of the class in the form:
@@ -207,11 +207,12 @@ the call stack.
 Let us take the following example with a native function declared in UScript and C++: 
 
 ```
-native function FunctionName( int x, int y, bool bDo
-); // UScript
+native function FunctionName( int x, int y, bool bDo); 
+// UScript
 ```
 ```
-void execFunctionName( FFrame &amp;Stack, void* Result ); // C++
+void execFunctionName( FFrame &amp;Stack, void* Result ); 
+// C++
 ```
 
 Now those two declarations look very different. How do you get those parameters?
@@ -242,14 +243,11 @@ unguard;
 } 
 ```
 
-The `P_GET*` macros all perform the same function functions
-although they might look a little different depending on the type. For a complete listing
-of all of the macros, look at `Unreal\Core\Inc\UnScript.h` 
+The `P_GET*` macros all perform the same function functions although they might look a little different depending on the type. For a complete listing of all of the macros, look at `Unreal\Core\Inc\UnScript.h` 
 
 
 `P_GET_UBOOL_OPTX`, `P_GET_INT_OPTX`, etc. - used in the same way as the regular `P_GET`
-macros, but add on an extra parameter, the default value. For example, following the
-previous code listing:
+macros, but add on an extra parameter, the default value. For example, following the previous code listing:
 
 ```
 native function Foo( optional int x = 10, optional int y = 10 ); 
@@ -269,9 +267,7 @@ void MyClass::execFoo( FFrame &Stack, void const *Result )
 }
 ```
 
-`P_GET_ARRAY_REF`, `P_GET_STR_REF`, etc. - used in the
-exact same way as the `P_GET*` macros (not the optional macros), and allows
-parameters to be paseed by reference. For example: 
+`P_GET_ARRAY_REF`, `P_GET_STR_REF`, etc. - used in the exact same way as the `P_GET*` macros (not the optional macros), and allows parameters to be paseed by reference. For example: 
 
 ```
 native function Foo( out int x, out int y ); 

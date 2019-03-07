@@ -1,21 +1,21 @@
 ## Discords
 ### General
-![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Deus Ex HQ: [https://discord.gg/KUA8acb](https://discord.gg/KUA8acb)
-![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Frozen Hell: [https://discord.gg/syg8q8Y](https://discord.gg/syg8q8Y)
-![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Deus Ex Reddit's Server: [https://discord.gg/FTCtTPw](https://discord.gg/FTCtTPw)
-![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Off Topic Productions: [https://discord.gg/ZxSpWHK](https://discord.gg/ZxSpWHK)
+* Deus Ex HQ: [https://discord.gg/KUA8acb](https://discord.gg/KUA8acb)
+* Frozen Hell: [https://discord.gg/syg8q8Y](https://discord.gg/syg8q8Y)
+* Deus Ex Reddit's Server: [https://discord.gg/FTCtTPw](https://discord.gg/FTCtTPw)
+* Off Topic Productions: [https://discord.gg/ZxSpWHK](https://discord.gg/ZxSpWHK)
 
 
 ### Mods
-![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Markieland/Vanilla Matters: [https://discord.gg/GDcXCCw](https://discord.gg/GDcXCCw)
-![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Deus Ex Revision: [https://discord.gg/5pNtjXh](https://discord.gg/5pNtjXh)
-![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) GMDX: [https://discord.gg/FfqNWSj](https://discord.gg/FfqNWSj)
+* Markieland/Vanilla Matters: [https://discord.gg/GDcXCCw](https://discord.gg/GDcXCCw)
+* Deus Ex Revision: [https://discord.gg/5pNtjXh](https://discord.gg/5pNtjXh)
+* GMDX: [https://discord.gg/FfqNWSj](https://discord.gg/FfqNWSj)
 
 
 ### Remakes
-![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Deus Ex Reborn (Unreal Engine 2 Remake): [https://discord.gg/xVWCUpj](https://discord.gg/xVWCUpj)
-![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Deus Ex Machina (Unreal Engine 4 Remake): [https://discord.gg/DDgWP8k](https://discord.gg/DDgWP8k)
-![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Another Deus Ex UE4 Project: [https://discord.gg/XhkDanf](https://discord.gg/XhkDanf)
+* Deus Ex Reborn (Unreal Engine 2 Remake): [https://discord.gg/xVWCUpj](https://discord.gg/xVWCUpj)
+* Deus Ex Machina (Unreal Engine 4 Remake): [https://discord.gg/DDgWP8k](https://discord.gg/DDgWP8k)
+* Another Deus Ex UE4 Project: [https://discord.gg/XhkDanf](https://discord.gg/XhkDanf)
 
 
 

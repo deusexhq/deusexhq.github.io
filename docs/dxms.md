@@ -4,6 +4,7 @@
 <small>This executable does the exact same as described below, but makes the process easier by finding the DeusEx.ini by itself and applying the fix.<br>
 Credits to Elliot/Machete for the patcher.</small>
 </div>
+<hr>
 
 ## What happened to the servers?
 <p>

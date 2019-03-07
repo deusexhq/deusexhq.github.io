@@ -1,22 +1,22 @@
 ## Discords
 ### General
-<p><img src="https://cdn.discordapp.com/emojis/457155649831305219.png" width="20" height="20" border="0" />Deus Ex HQ: <a href="https://discord.gg/KUA8acb">https://discord.gg/KUA8acb</a><br>
-<img src="https://cdn.discordapp.com/emojis/457155649831305219.png" width="20" height="20" border="0" />Frozen Hell: <a href="https://discord.gg/syg8q8Y">https://discord.gg/syg8q8Y</a><br>
-<img src="https://cdn.discordapp.com/emojis/457155649831305219.png" width="20" height="20" border="0" />Deus Ex Reddit's Server: <a href="https://discord.gg/FTCtTPw">https://discord.gg/FTCtTPw</a><br>
-<img src="https://cdn.discordapp.com/emojis/457155649831305219.png" width="20" height="20" border="0" />Off Topic Productions: <a href="https://discord.gg/ZxSpWHK">https://discord.gg/ZxSpWHK</a><br>
-</p>
+![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Deus Ex HQ: [https://discord.gg/KUA8acb](https://discord.gg/KUA8acb)
+![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Frozen Hell: [https://discord.gg/syg8q8Y](https://discord.gg/syg8q8Y)
+![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Deus Ex Reddit's Server: [https://discord.gg/FTCtTPw](https://discord.gg/FTCtTPw)
+![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Off Topic Productions: [https://discord.gg/ZxSpWHK](https://discord.gg/ZxSpWHK)
+
 
 ### Mods
-<p><img src="https://cdn.discordapp.com/emojis/457155649831305219.png" width="20" height="20" border="0" />Markieland/Vanilla Matters: <a href="https://discord.gg/GDcXCCw">https://discord.gg/GDcXCCw</a><br>
-<img src="https://cdn.discordapp.com/emojis/457155649831305219.png" width="20" height="20" border="0" />Deus Ex Revision: <a href="https://discord.gg/5pNtjXh">https://discord.gg/5pNtjXh</a><br>
-<img src="https://cdn.discordapp.com/emojis/457155649831305219.png" width="20" height="20" border="0" />GMDX: <a href="https://discord.gg/FfqNWSj">https://discord.gg/FfqNWSj</a><br>
-</p>
+![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Markieland/Vanilla Matters: [https://discord.gg/GDcXCCw](https://discord.gg/GDcXCCw)
+![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Deus Ex Revision: [https://discord.gg/5pNtjXh](https://discord.gg/5pNtjXh)
+![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) GMDX: [https://discord.gg/FfqNWSj](https://discord.gg/FfqNWSj)
+
 
 ### Remakes
-<p><img src="https://cdn.discordapp.com/emojis/457155649831305219.png" width="20" height="20" border="0" />Deus Ex Reborn (Unreal Engine 2 Remake): <a href="https://discord.gg/xVWCUpj">https://discord.gg/xVWCUpj</a><br>
-<img src="https://cdn.discordapp.com/emojis/457155649831305219.png" width="20" height="20" border="0" />Deus Ex Machina (Unreal Engine 4 Remake): <a href="https://discord.gg/DDgWP8k">https://discord.gg/DDgWP8k</a><br>
-<img src="https://cdn.discordapp.com/emojis/457155649831305219.png" width="20" height="20" border="0" />Another Deus Ex UE4 Project: <a href="https://discord.gg/XhkDanf">https://discord.gg/XhkDanf</a><br>
-</p>
+![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Deus Ex Reborn (Unreal Engine 2 Remake): [https://discord.gg/xVWCUpj](https://discord.gg/xVWCUpj)
+![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Deus Ex Machina (Unreal Engine 4 Remake): [https://discord.gg/DDgWP8k](https://discord.gg/DDgWP8k)
+![Discord](https://cdn.discordapp.com/emojis/457155649831305219.png) Another Deus Ex UE4 Project: [https://discord.gg/XhkDanf](https://discord.gg/XhkDanf)
+
 
 
 ## Terminology

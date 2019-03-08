@@ -1,9 +1,11 @@
+<hr>
 <div class="tcalert">
 Guide originally written by <em>Tom "Blitz" Conder</em> and <em>Carlos "c0mpi1e" Cuello</em>.<br>
 Dated: 9/13/1999<br> 
 Directions also are written for Unreal rather than Deus Ex. You should be able to replace any references to Unreal with Deus Ex though.
 </div>
 <hr>
+
 
 ## Introduction
 
@@ -12,6 +14,7 @@ to call C++ functions from UScript you must compile them into a dynamic-link lib
 file. Calling these functions, known as native functions, is probably one of most
 overlooked features of Unreal. This document will discuss implementing native functions,
 identify a few gotchas and give a step-by-step guide to a basic example.
+
 
 ### Consider the Benefits
 
@@ -23,6 +26,7 @@ it life long after most have solved the original. Native functions are one of th
 the toolchest of mod authors. They allow for algorithmic textures, performance-critical
 artificial intelligence, access to the Win32 API and implementation hiding.
 
+
 ### Be Wary of the Thorns
 
 There are disadvantages to using native functions. First of all, the process is
@@ -33,7 +37,9 @@ will break your mod. UScript is more portable between patches, particularly beta
 Also, C++ headers and library files are needed to compile DLLs. That means you need the
 latest public source to compile your DLL.
 
+
 ## Creation
+
 
 ### Set up the Package
 
@@ -63,6 +69,7 @@ We discussed how to set up a new package. We took a look at the Unreal compiler,
 created the needed directories and edited the appropriate initialization file. Now that
 the system is ready, it is time to use the Unreal compiler to automatically generate the
 public header file.
+
 
 ### Generate the Public Header File
 
@@ -101,6 +108,7 @@ When prompted, press the `Y` key to answer in the affirmative.
 We generated out public header file. This file exposes functions declarations and
 definitions to other classes. Lets move on implementing the private header file.
 
+
 ### Make the Private Header File
 
 A private header file contains local definitions and structures that we do not want to
@@ -128,7 +136,6 @@ definitions go here. Now we are to implement the C++ source file.
 
 
 ### Hack the C++ Source Code
-
 
 Write your C++ file. Be sure to include your private header file. Take a look at the
 following example, a file named hzTest.cpp.
@@ -175,7 +182,6 @@ describes a few more.
 
 
 ### Mind the Macros
-
 
 When implementing native functions in C++ you need to learn some of the macros found in
 the source code. The above code example uses a few of them: `IMPLEMENT_PACKAGE`,
@@ -322,7 +328,6 @@ Finally I narrowed it down to the specific line.
 
 ### Return the Result
 
-
 Native functions can return values. Unreal defined a variable named 'Result'. To return
 a value from a function set the value of the variable equal to the returned value. Since
 the returned value it cast to its desired type it is possible to return just about
@@ -336,7 +341,6 @@ at that in the next section.
 
 
 ### Tweak the C++ Compiler Settings
-
 
 The Visual C++ compiler settings must be tweaked in order for the DLL to be compiled.
 First of all the preprocessor settings must be changed. In the Preprocessor category under
@@ -357,6 +361,7 @@ Secondly, the link settings must be changed. In the General category under the L
 options tab, set the output file name to: ..\..\System/Hazard.dll. Additionally, set the
 Object/library modules to point to the core and engine library files. That is, set it to:
 `..\..\Core\Lib\Core.lib ..\..\Engine\Lib\Engine.lib`
+
 
 ## Step-by-step guide
 

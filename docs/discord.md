@@ -1,3 +1,4 @@
-<script>
+<body><script>
 window.location.replace("https://discord.gg/KUA8acb")
-</scrpt>
+</scrpt></body>
+Please wait...

@@ -1,6 +1,6 @@
 ## Discords
 ### General
-* Deus Ex HQ: [https://discord.gg/KUA8acb](https://discord.gg/KUA8acb)
+* Deus Ex HQ: [https://discord.gg/7NB768D](https://discord.gg/7NB768D)
 * Frozen Hell: [https://discord.gg/syg8q8Y](https://discord.gg/syg8q8Y)
 * Deus Ex Reddit's Server: [https://discord.gg/FTCtTPw](https://discord.gg/FTCtTPw)
 * Off Topic Productions: [https://discord.gg/ZxSpWHK](https://discord.gg/ZxSpWHK)

@@ -36,7 +36,6 @@
           {title: "What is HX?", url: "#_top", children: [
           ]},
           {title: "Installing for Playing", url: "#installing-for-playing", children: [
-              {title: "Skins", url: "#skins" },
           ]},
           {title: "Installing for Hosting", url: "#installing-for-hosting", children: [
           ]},
@@ -88,12 +87,10 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     <h4 id="what-is-hx">What is HX?<a class="headerlink" href="#what-is-hx" title="Permanent link">#</a></h4>
 <p>HX is a Deus Ex Overhaul mod that adds cooperative gameplay to the story mode, developed by Hanfling, a dev behind the Revision mod.</p>
-<p>On top of that, there is HXExt, a third-party mod developed by Bogie of OTP, which fixes a few bugs, adds new features, skins, taunts, etc. This guide will help to install HX and HXExt for playing, and hosting.</p>
 <h4 id="installing-for-playing">Installing for Playing<a class="headerlink" href="#installing-for-playing" title="Permanent link">#</a></h4>
-<p><div class="tcalert">Note: It is recommended that you use a fresh game install for this, to avoid mistaking errors in setting up HX for just being mismatches with other mods.</div>
-<div class="tcalert">Note: HXExt is at version 2.2 at the time of writing. Latest files will always be available in the Discord #deusex-coop channel if this link becomes outdated.</div></p>
-<p>First, grab the files, download <a href="https://builds.hx.hanfling.de/">HX core files</a> and <a href="https://drive.google.com/uc?id=1EbUNTZrsvc6OZM3Q8Sgk-PY3YK1-zxiR">HXExt files</a>.</p>
-<p>Extract these files in to your games /System folder, which will be one of these;</p>
+<p><div class="tcalert">Note: It is recommended that you use a fresh game install for this, to avoid mistaking errors in setting up HX for just being mismatches with other mods.</div></p>
+<p>First, grab the files, download <a href="https://builds.hx.hanfling.de/">HX core files</a>.
+Extract these files in to your games /System folder, which will be one of these;</p>
 <pre><code>C:\Deus Ex\System\
 C:\GOG Games\Deus Ex\System\
 C:\Program Files\DeusEx\System\
@@ -102,100 +99,17 @@ C:\Program Files\Steam\SteamApps\common\Deus Ex\System\
 C:\Program Files (x86)\Steam\SteamApps\common\Deus Ex\System\
 </code></pre>
 
-<p>Then, in your HX.ini (see text box below), find the line that reads <code>Root=HX.HXRootWindow</code> and change that to read <code>Root=HXExt.HXRootWindowExt</code>.</p>
-<div class="tcalert">
-HXDefault.ini if that HX.ini doesn't exist. If HX.ini doesn't exist, it generates one from HXDefault when you start the game, so any time you want to edit the config **AFTER** this, **THEN** edit HX.ini
-</div>
-
-<h5 id="skins">Skins<a class="headerlink" href="#skins" title="Permanent link">#</a></h5>
-<p>You can set up your player class by changing your <code>Class=</code> line in HXUser.ini 
-(or HXUserDefault.ini if that doesn't exist, see the note about HXDefault.ini above). There is a list of player classes included, in 
-<code>Player Class List.txt</code> or seen below this text. For example; <code>Class=HXExt.HXBobPage</code>, or <code>Class=HXExt.HXAlexDentonMale2</code>. Remember to add the <code>HXExt.</code> part otherwise you'll get a <code>Class not found</code> error when you try to start the game!</p>
-<p>Alternatively, classes can be changed in game using the <code>SetPlayerSkin</code> command, along side the class name. For example; <code>SetPlayerSkin HXExt.HXAlexDentonFemale</code>, or <code>SetPlayerSkin HXExt.HXPaulStrange</code> (Hidden skin discovered! Congratulations, you actually read the readme!).</p>
-<pre><code>HXJCDentonMale1Ext (JC Denton White)
-HXJCDentonMale2Ext (JC Denton Black)
-HXJCDentonMale3Ext (JC Denton Latino)
-HXJCDentonMale4Ext (JC Denton Ginger)
-HXJCDentonMale5Ext (JC Denton Pale)
-HXJCDentonUnaugged (JC Denton Unaugmented)
-_____________________________________
-
-HXJCDentonFemale1 (JC Denton White)
-HXJCDentonFemale2 (JC Denton Black)
-HXJCDentonFemale3 (JC Denton Latino)
-HXJCDentonFemale4 (JC Denton Ginger)
-HXJCDentonFemale5 (JC Denton Pale)
-_____________________________________
-
-HXPaulDentonMale1Ext (Paul Denton White)
-HXPaulDentonMale2Ext (Paul Denton Black)
-HXPaulDentonMale3Ext (Paul Denton Latino)
-HXPaulDentonMale4Ext (Paul Denton Ginger)
-HXPaulDentonMale5Ext (Paul Denton Pale)
-HXPaulDentonUnaugged (Paul Denton Unaugmented)
-_____________________________________
-
-HXAlexDentonMale1 (Alex Denton White)
-HXAlexDentonMale2 (Alex Denton Black)
-HXAlexDentonMale3 (Alex Denton Latino)
-HXAlexDentonMale4 (Alex Denton Ginger)
-HXAlexDentonMale5 (Alex Denton Pale)
-HXAlexDentonFemale (Alex Denton White)
-_____________________________________
-
-HXJCDentonMaleBeta1 (JC Denton White)
-HXJCDentonMaleBeta2 (JC Denton Pale)
-HXJCDentonMaleBeta3 (JC Denton Brunette)
-HXJCDentonMaleBeta4 (JC Denton White)
-HXJCDentonMaleBeta5 (JC Denton Black)
-_____________________________________
-
-HXPaulDentonMaleBeta1 (Paul Denton White)
-HXPaulDentonMaleBeta2 (Paul Denton Pale)
-HXPaulDentonMaleBeta3 (Paul Denton Brunette)
-HXPaulDentonMaleBeta4 (Paul Denton White)
-HXPaulDentonMaleBeta5 (Paul Denton Black)
-_____________________________________
-
-HXAdamJensen (Adam Jensen)
-HXWaltonSimonsExt (Walton Simons)
-HXWaltonSimonsAlt (Walton Simons Suit)
-HXBobPageExt (Bob Page)
-HXBobPageAlt (Bob Page Trench Coat)
-HXJockExt (Jock)
-_____________________________________
-HXArmageddon (Armageddon)
-HXCozmo (Cozmo)
-HXKaiser (Kaiser)
-HXKnifeworld (Knifeworld)
-HXLexichu (Lexichu)
-HXNobody ([FGS]Nobody)
-HXSolid (Solid)
-HXJohnCochranDenton (JS38)
-HXBogie (Bogie)
-HXDefaultPlayer001 (DefaultPlayer001)
-HXEvilEmperor (Evil Emperor)
-</code></pre>
-
 <h4 id="installing-for-hosting">Installing for Hosting<a class="headerlink" href="#installing-for-hosting" title="Permanent link">#</a></h4>
 <p><div class="tcalert">
-Firstly, make sure you check <a href="../hosting/">here</a> if you're unsure of how to host. The rest of this guide will assume you know how to host basic servers at least, and will only tell you how to install HX and HXExt.
-This also assumes you've installed HX and HXExt for Playing as seen above, as that is required to host it.
+Firstly, make sure you check <a href="../hosting/">here</a> if you're unsure of how to host. The rest of this guide will assume you know how to host basic servers at least, and will only tell you how to install HX.
+This also assumes you've installed HX for Playing as seen above, as that is required to host it.
 </div></p>
 <ol>
-<li>Open HX.ini and find the line that reads <code>DefaultServerGame=HX.HXGameInfo</code>, and change that to <code>DefaultServerGame=HXExt.HXGameInfoExt</code>.</li>
-<li>Find the block that starts with <code>[HX.HXGameEngine]</code>, and add the following to the end of that list;</li>
+<li>If you want to use a serverstarter batch file, check out <a href="https://deusexhq.github.io/hosting/#server-starter">here</a>, follow the same instructions but change batch code to the following.</li>
 </ol>
-<pre><code>ServerPackages=HXExt
-ServerPackages=HXExtCharacters
-ServerPackages=HXExtSounds
-ServerPackages=HXExtUI
-</code></pre>
-
+<p><code>HX.exe 01_NYC_UNATCOIsland ?Game=HX.HXGameInfo?CombatDifficulty=1?FriendlyFire=1.000000?Difficulty=0 -server</code></p>
 <ol>
-<li>(a) If you want to use a serverstarter batch file, check out <a href="https://deusexhq.github.io/hosting/#server-starter">here</a>, follow the same instructions but change batch code to the following.
-<code>HX.exe 01_NYC_UNATCOIsland ?Game=HXExt.HXGameInfoExt?CombatDifficulty=1?FriendlyFire=1.000000?Difficulty=0 -server</code></li>
-<li>(b) To launch from the game, do like you usually would, in the server browser click Host, change settings as desired there.</li>
+<li>To launch from the game, do like you usually would, in the server browser click Host, change settings as desired there.</li>
 </ol>
 
   <br>

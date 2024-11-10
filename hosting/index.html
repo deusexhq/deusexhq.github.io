@@ -90,15 +90,14 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
 
     <h4 id="server-starter">Server Starter<a class="headerlink" href="#server-starter" title="Permanent link">#</a></h4>
-<p><h3>Windows</h3>
-Create a text file in your Deus Ex/System folder. Open it up, and place in the following code: <br></p>
+<h3>Windows</h3>
+<p>Create a text file in your Deus Ex/System folder. Open it up, and place in the following code: <br></p>
 <pre><code>@ECHO OFF title Server starter
 
 echo. Starting...
 
 deusex.exe DXMP_CMD?Game=DXMTL152b1.MTLTeam -server -LOG=server.log &gt; NUL
 </code></pre>
-
 <p><br>
 <br>Edit the code to your desire. 
 <br>
@@ -112,21 +111,20 @@ deusex.exe DXMP_CMD?Game=DXMTL152b1.MTLTeam -server -LOG=server.log &gt; NUL
 <br>Another optional flag is <code>-ini=xxx</code>, which lets you define a seperate .ini file, instead of using the default <code>DeusEx.ini</code>.
 <br>
 <br>Once modified to your choice, save the file as <code>ServerStarter.bat</code> From now on, clicking on the new file will execute that code, starting the server. To edit it later, just right click and Edit.
-<br>
+<br></p>
 <h3>Linux</h3>
-<br>(Specifically Debian XFCE environment, others may vary. Also assuming you installed via Wine and running the Windows install since DX isn't officially supported.)
+<p><br>(Specifically Debian XFCE environment, others may vary. Also assuming you installed via Wine and running the Windows install since DX isn't officially supported.)
 <br>In your environment of choice, create a new Launcher file or .desktop file, through whatever package you use to manage those. For the Command, enter
 <br></p>
 <pre><code>wine &quot;C:\Deus Ex GOTY\System\deusex.exe&quot; DXMP_CMD?Game=DXMTL152b1.MTLTeam -server -LOG=server.log &gt; NUL
 </code></pre>
-
 <p><br>
 <br>The Path to the deusex.exe varies, this is the default for GOG. And varies depending on how you installed it, through Wine or Steam Linux, check that up yourself. The rest of the code functions the same as the Windows version.
 <br>
 <br>Give it a name, untick Run in Terminal to save screen clutter and make it run more seamlessly, and save. </p>
 <p><em>Written by Kaiser</em></p>
 <h4 id="victory-conditions">Victory Conditions<a class="headerlink" href="#victory-conditions" title="Permanent link">#</a></h4>
-<p><p>
+<p>
     Altering the Victory trigger of your server is a common alteration, and varies from server to server. The two default triggers
     are Frags and Time limit. Depending on the server, you will want to assign an appropiate &quot;trigger&quot;. When this
     trigger is reach (The time limit ends or a player gets enough kills) then the match will end.
@@ -231,7 +229,8 @@ deusex.exe DXMP_CMD?Game=DXMTL152b1.MTLTeam -server -LOG=server.log &gt; NUL
 </p>
 <p>
     Happy Hosting!
-</p></p>
+</p>
+
 <h4 id="installing-mods">Installing mods<a class="headerlink" href="#installing-mods" title="Permanent link">#</a></h4>
 <p>Place files in the propor directories inside the Deus Ex game folder;</p>
 <pre><code>.u - /System/
@@ -241,7 +240,6 @@ deusex.exe DXMP_CMD?Game=DXMTL152b1.MTLTeam -server -LOG=server.log &gt; NUL
 .int - /System/
 .ini - /System/
 </code></pre>
-
 <p>Open up <code>DeusEx.ini</code> and find the ServerPackages list, it'll look like;</p>
 <pre><code>[DeusEx.DeusExGameEngine]
 CacheSizeMegs=4
@@ -253,11 +251,10 @@ MasterServerAddress=master0.gamespy.com MasterServerPort=27900 ServerActors=Neph
 ServerActors=Nephthys.NptServerUplink MasterServerAddress=master.fragaholic.com MasterServerPort=27900
 ServerPackages=DXMTL152b1
 </code></pre>
-
 <p>At the end of that list, add the .u file name to the list, without the .u, for example, if we have a mod called <code>AM.u</code>, we'll add <code>ServerPackages=AM</code>
 If the mod has a mutator or actor that should be spawned always in the server, the format is <code>ServerActors=PackageName.ClassName</code>, example; <code>ServerActors=AM.AMutator</code></p>
 <h4 id="port-forwarding">Port Forwarding<a class="headerlink" href="#port-forwarding" title="Permanent link">#</a></h4>
-<p><strong>Note; Some information here may be outdated.</strong>
+<p><strong>Note; Some information here may be outdated.</strong></p>
 <p>
     A router blocks a lot of unknown Internet connections, so if you try to host a Deus Ex server, and you have a router, it
     is possible that your server will not show up in the server list. We are going to solve that.
@@ -285,69 +282,55 @@ If the mod has a mutator or actor that should be spawned always in the server, t
 </p>
 <p>
     <em>Written by Alex.</em>
-</p></p>
+</p>
+
 <h4 id="nephthys-web-support">Nephthys Web support<a class="headerlink" href="#nephthys-web-support" title="Permanent link">#</a></h4>
 <p>
     I will explain in detail how to operate Nephthys WebSupport on your server. I will split this tutorial up into 5 core sections.
 </p>
-
 <p>
     I. What does it do? <br /> II. Getting started (the basics) <br /> III. Starting WebSupport <br /> IV. Finer details <br
     /> V. Questions/comments.
 </p>
-
 <h3>What does it do? </h3>
-
 <p>
     Nephthys is a &quot;native mod for Unreal1 engine based servers which intends IpDrv by efficient attack blocking, banning,
     player logging and other features&quot; (taken from Nephthys Documentation). Simply put, it blocks attacks and other glitches/bugs
     on the server. It also includes other features such as WebSupport which we will be concentrating on today.
 </p>
-
 <h3>Getting started</h3>
-
 <p>
     Firstly, make sure you have at least one map or mod. You will require one of these before continuing. Next we need to place
     it in a ZIP Folder. If you&rsquo;re un-aware how to do this; Here&rsquo;s a brief explanation:
 </p>
-
 <p>
     Go to My Documents -&gt; File -&gt; New -&gt; ZIP folder.
 </p>
-
 <p>
     Depending on what program you have, it may look different or have a different name. The 3 most popular known to me are...
 </p>
-
 <p>
     WinRar. This looks like:
 </p>
-
 <p>
     &nbsp;
 </p>
-
 <div style="text-align: center">
     <img border="2" height="293" src="http://www.mafiawar.biz/imagehost/images/WinRarZip_19544.jpeg" width="353" />
 </div>
-
 <p>
     &nbsp;
 </p>
-
 <p>
     Default Zip Folder. Looks Like:
 </p>
-
 <p>
     &nbsp;
 </p>
-
 <div style="text-align: center">
     <img border="2" height="283" src="http://www.mafiawar.biz/imagehost/images/zip-zipped-folder_11445.jpeg" width="389" />
 </div>
-
-<p>&nbsp;
+<p>&nbsp;</p>
 <p>
     &nbsp;
 </p>
@@ -439,7 +422,7 @@ If the mod has a mutator or actor that should be spawned always in the server, t
     the URL into a web browser, where the address is displayed and you should be given the download.
 </p>
 <h3>Starting WebSupport </h3>
-<a href="/#Starting%20WebSupport" name="Starting WebSupport" title="Starting WebSupport"></a>
+<p><a href="/#Starting%20WebSupport" name="Starting WebSupport" title="Starting WebSupport"></a></p>
 <p>
     This part is quite simple in comparison to previous. Firstly, we need to run DeusEx and start a dedicated server (Multiplayer
     &gt; Internet games -&gt; Host a Server -&gt; Change Server Type to Dedicated -&gt; Start server). This can also be done
@@ -453,7 +436,7 @@ If the mod has a mutator or actor that should be spawned always in the server, t
     npt god (but you will be displayed with an error trying to do that command). For WebSupport, we need to type:
 </p>
 <p>
-    npt web support <em>URL</em> The URL being the one you got earlier from uploading your mod/map.
+    npt web support *URL* The URL being the one you got earlier from uploading your mod/map.
 </p>
 <p>
     So it may look something like...
@@ -462,7 +445,7 @@ If the mod has a mutator or actor that should be spawned always in the server, t
     npt web support http://www.ExampleHost.com/upload/ExampleLink/ServerFile.zip
 </p>
 <p>
-    You should now be displayed with &quot;Processing <em>URL</em>&quot; Then &quot;Downloading <em>URL</em>&quot; Then it should say something
+    You should now be displayed with &quot;Processing *URL*&quot; Then &quot;Downloading *URL*&quot; Then it should say something
     like...
 </p>
 <p>
@@ -479,7 +462,7 @@ If the mod has a mutator or actor that should be spawned always in the server, t
         width="847" />
 </div>
 <p>
-    &nbsp; (Sorry, picture is really blurry! But you can make out what it says; Needed <em>Then a URL</em>)
+    &nbsp; (Sorry, picture is really blurry! But you can make out what it says; Needed *Then a URL*)
 </p>
 <p>
     And were done! Restart your server and when someone with Nephthys installed needs to download a map/mod you have uploaded
@@ -516,7 +499,7 @@ If the mod has a mutator or actor that should be spawned always in the server, t
 </p>
 <p>
     Special Thanks to Zora for help, and of course Gishank for his Server as an example!
-</p></p>
+</p>
 
   <br>
     
@@ -551,12 +534,12 @@ If the mod has a mutator or actor that should be spawned always in the server, t
     <br>
 </div>
 
-<footer class="col-md-12 wm-page-content">
+<footer class="container-fluid wm-page-content">
       <p>
         <a href="https://github.com/deusexhq/deusexhq.github.io"><i class="fa fa-github"></i>
 GitHub</a>
       </p><p>© Kaiser and the Deus Ex HQ team, 2019</p>
-  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
 </footer>
 
 </body>

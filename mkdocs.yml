@@ -1,0 +1,46 @@
+site_name: Deus Ex
+repo_url: https://github.com/deusexhq/deusexhq.github.io
+edit_uri: ""
+site_description: Documentation for Deus Ex
+site_author: Kaiser
+copyright: © Kaiser and the Deus Ex HQ team, 2019
+markdown_extensions:
+    - toc:
+        permalink: "#"
+        baselevel: 3
+nav:
+    - Home: index.md
+    - <img src="https://cdn.discordapp.com/emojis/457155649831305219.png" width="20" height="20" border="0" />Discord: https://discord.gg/7NB768D
+    - <img src="https://cdn.discordapp.com/emojis/454501690112999424.png" width="20" height="20" border="0" />Project-DXMP Github: https://github.com/deusexhq/project-dxmp
+    - Files: file.md
+    - About: about.md
+    - Deus Ex:
+        - Masterserver Fix: dxms.md
+        - Community: community.md
+        - HX Co-op: hx.md 
+        - Coding: coding.md
+        - Native Coding: native.md
+        - Hosting: hosting.md
+        - Improvements: improvements.md
+        - Mapping: mapping.md
+        - Multiplayer: multiplayer.md
+        - Playing: playing.md
+        - Singleplayer Mods: singleplayer.md
+        - Troubleshooting: troubleshooting.md 
+
+    - Object API:
+        - Object: object.md
+        - Actor: actor.md
+        - Game: game.md
+        - Inventory: inventory.md
+        - Pawn: pawn.md
+        - Player: player.md
+
+theme: 
+    name: 'windmill'
+extra:
+    version: '22.03.2019'
+    extra.article_nav_top: false
+    extra.article_nav_bottom: false
+extra_css:
+    - kaiser.css

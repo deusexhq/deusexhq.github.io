@@ -1,5 +1,5 @@
 <div class="tcalert">
-<b>The following steps can also be performed automatically!</b><br>
+<b>The following steps can also be performed automatically! (Currently unavailable)</b><br>
 <a href="https://cdn.discordapp.com/attachments/421285829818974209/535045916185460757/dxmsfix.exe"><img src="https://cdn.discordapp.com/emojis/456853254748504097.png" alt="MS Fix" width="15" height="15" border="0" />Click here to download the automatic fix.</a><br />
 <small>This executable does the exact same as described below, but makes the process easier by finding the DeusEx.ini by itself and applying the fix.<br>
 Credits to Elliot/Machete for the patcher.</small>

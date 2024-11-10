@@ -94,13 +94,14 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <p><hr>
+    <hr>
 <div class="tcalert">
 Guide originally written by <em>Tom "Blitz" Conder</em> and <em>Carlos "c0mpi1e" Cuello</em>.<br>
 Dated: 9/13/1999<br> 
 Directions also are written for Unreal rather than Deus Ex. You should be able to replace any references to Unreal with Deus Ex though.
 </div>
-<hr></p>
+<hr>
+
 <h4 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h4>
 <p>The Unreal engine has the ability to mix Unrealscript (UScript) and C++ code. In order
 to call C++ functions from UScript you must compile them into a dynamic-link library (DLL)
@@ -156,7 +157,6 @@ another class named Actor. Notice we declare your class as native.</p>
 <pre><code>class hzTest extends Actor 
 native;
 </code></pre>
-
 <p>The Unreal compiler, ucc, will read the class file and
 automatically generate a header file which you can include in your DLL project. Be careful
 not to edit this file as the Unreal compiler will see that it has changed and offer to
@@ -170,7 +170,6 @@ the C++ compiler.</p>
 will appear:</p>
 <pre><code>The file '..\Hazard\Inc\HazardClasses.h' needs to be updated. Do you want to overwrite the existing version? (Y/N)
 </code></pre>
-
 <p>When prompted, press the <code>Y</code> key to answer in the affirmative.</p>
 <p>We generated out public header file. This file exposes functions declarations and
 definitions to other classes. Lets move on implementing the private header file.</p>
@@ -192,7 +191,6 @@ header files. The following file, <code>HazardPrivate.h</code>, is an example of
 // compiler. 
 #include &quot;HazardClasses.h&quot;
 </code></pre>
-
 <p>We wrote our private header file. Any private structure or
 definitions go here. Now we are to implement the C++ source file.</p>
 <h5 id="hack-the-c-source-code">Hack the C++ Source Code<a class="headerlink" href="#hack-the-c-source-code" title="Permanent link">#</a></h5>
@@ -231,7 +229,6 @@ AhzTest::execIncTest (FFrame&amp; Stack, RESULT_DECL)
     unguardexec; 
 }
 </code></pre>
-
 <p>This example simply increments the value of a variable named <code>iTest</code> by one and returns
 the resulting value. The next section explains the macros used in this example and
 describes a few more.</p>
@@ -258,11 +255,9 @@ the call stack.</p>
 <pre><code>native function FunctionName( int x, int y, bool bDo); 
 // UScript
 </code></pre>
-
 <pre><code>void execFunctionName( FFrame &amp;amp;Stack, void* Result ); 
 // C++
 </code></pre>
-
 <p>Now those two declarations look very different. How do you get those parameters?
 Well, the answer lies in the use of the Stack and the <code>P_</code> macros. The stack frame contains
 the current function states, including the parameters. FFrame &amp;Stack is a reference to
@@ -287,7 +282,6 @@ void const *Result )
 unguard; 
 } 
 </code></pre>
-
 <p>The <code>P_GET*</code> macros all perform the same function functions although they might look a little different depending on the type. For a complete listing of all of the macros, look at <code>Unreal\Core\Inc\UnScript.h</code> </p>
 <p><code>P_GET_UBOOL_OPTX</code>, <code>P_GET_INT_OPTX</code>, etc. - used in the same way as the regular <code>P_GET</code>
 macros, but add on an extra parameter, the default value. For example, following the previous code listing:</p>
@@ -307,7 +301,6 @@ void MyClass::execFoo( FFrame &amp;Stack, void const *Result )
      unguard; 
 }
 </code></pre>
-
 <p><code>P_GET_ARRAY_REF</code>, <code>P_GET_STR_REF</code>, etc. - used in the exact same way as the <code>P_GET*</code> macros (not the optional macros), and allows parameters to be paseed by reference. For example: </p>
 <pre><code>native function Foo( out int x, out int y ); 
 void MyClass::execFoo( FFrame &amp;Stack, void const *Result )
@@ -322,7 +315,6 @@ void MyClass::execFoo( FFrame &amp;Stack, void const *Result )
      unguard; 
 }
 </code></pre>
-
 <p><code>P_FINISH</code> - indicates the end of the call stack. You must put this in your
 native functions or Unreal will crash by not closing up the stack and trying to
 load a new function, state or class.</p>
@@ -341,7 +333,6 @@ will show the relevant stack info, including the deepest stack name, eg.: </p>
     unguard; 
 }
 </code></pre>
-
 <p>This code will cause the log file to give not only the relevant error, but also where in
 the code it happened. You can add as many <code>guard()</code>'s in a function as you want, the more
 you do it, the more specific an error will be. </p>
@@ -390,7 +381,6 @@ Object/library modules to point to the core and engine library files. That is, s
 +- System 
 +- ... 
 </code></pre>
-
 <ul>
 <li>In this folder, create four new folders: 'Classes', 'Inc', 'Src' and 'Lib' </li>
 </ul>
@@ -400,7 +390,6 @@ Object/library modules to point to the core and engine library files. That is, s
 +- Src 
 +- Lib
 </code></pre>
-
 <ul>
 <li>Change to the <code>Unreal\Hazard\Classes</code> directory. The next step will take place there. </li>
 <li>Create a file named <code>hzTest.uc</code>. Use your editor to edit it. </li>
@@ -439,7 +428,6 @@ DrawType=DT_Mesh
 Mesh=LodMesh'UnrealI.KrallM' 
 }
 </code></pre>
-
 <ul>
 <li>Change to the <code>Unreal\System directory</code>. The next three steps will take place there. </li>
 <li>Locate the Unreal.ini file. </li>
@@ -456,7 +444,6 @@ This tells the Unreal Editor to load the package on startup. It also tells the u
 </ul>
 <pre><code>The file '..\Hazard\Inc\HazardClasses.h' needs to be updated. Do you want to overwrite the existing version? (Y/N) 
 </code></pre>
-
 <p>Answer yes by pressing 'Y'. </p>
 <ul>
 <li>Open the Microsoft Visual C++ compiler. Define a new workspace named <code>Hazard</code>. On my computer Unreal is installed to <code>E:\Games\Unreal</code>, adjust the directory name to match the directory where Unreal is installed on your computer. </li>
@@ -497,7 +484,6 @@ Location: <code>E:\Games\unreal\Hazard\Src</code></p>
 // compiler. 
 #include &quot;HazardClasses.h&quot; 
 </code></pre>
-
 <ul>
 <li>Add the automatically generated header file, <code>HazardClasses.h</code> to the project. </li>
 </ul>
@@ -548,7 +534,6 @@ AhzTest::execIncTest (FFrame&amp; Stack, RESULT_DECL)
     unguardexec; 
 } 
 </code></pre>
-
 <ul>
 <li>Before we compile, we need to set a few compiler options. First of all, remove the Debug configuration. </li>
 </ul>
@@ -581,7 +566,6 @@ Object/library modules: <code>..\..\Core\Lib\Core.lib ..\..\Engine\Lib\Engine.li
     Log: in IncTest()  
     ScriptLog: Value = 2 
 </code></pre>
-
 <ul>
 <li>Now exit the game.  Excellent job on getting your first native function to run!</li>
 </ul>
@@ -619,12 +603,12 @@ Object/library modules: <code>..\..\Core\Lib\Core.lib ..\..\Engine\Lib\Engine.li
     <br>
 </div>
 
-<footer class="col-md-12 wm-page-content">
+<footer class="container-fluid wm-page-content">
       <p>
         <a href="https://github.com/deusexhq/deusexhq.github.io"><i class="fa fa-github"></i>
 GitHub</a>
       </p><p>© Kaiser and the Deus Ex HQ team, 2019</p>
-  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
 </footer>
 
 </body>

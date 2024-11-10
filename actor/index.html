@@ -102,9 +102,8 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <pre><code>Actor: The base class of all actors.
 This is a built-in Unreal class and it shouldn't be modified.
 </code></pre>
-
 <h4 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">#</a></h4>
-<pre><code class="java">// DEUS_EX STM
+<pre><code class="language-java">// DEUS_EX STM
 enum EAIEventState
 {
     EAISTATE_Begin,
@@ -684,9 +683,8 @@ enum EInputKey
 var(Display) class&lt;RenderIterator&gt; RenderIteratorClass; // class to instantiate as the actor's RenderInterface
 var transient RenderIterator RenderInterface;       // abstract iterator initialized in the Rendering engine
 </code></pre>
-
 <h5 id="network-replication">Network replication<a class="headerlink" href="#network-replication" title="Permanent link">#</a></h5>
-<pre><code class="java">replication
+<pre><code class="language-java">replication
 {
     // Relationships.
     unreliable if( Role==ROLE_Authority )
@@ -767,19 +765,16 @@ var transient RenderIterator RenderInterface;       // abstract iterator initial
         BroadcastMessage, BroadcastLocalizedMessage;
 }
 </code></pre>
-
 <h4 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">#</a></h4>
 <h5 id="consolecommand">ConsoleCommand<a class="headerlink" href="#consolecommand" title="Permanent link">#</a></h5>
-<pre><code class="java">native function string ConsoleCommand( string Command );
+<pre><code class="language-java">native function string ConsoleCommand( string Command );
 </code></pre>
-
 <blockquote>
 <p>Execute a console command in the context of the current level and game engine.</p>
 </blockquote>
 <h5 id="error">Error<a class="headerlink" href="#error" title="Permanent link">#</a></h5>
 <pre><code>native(233) final function Error( coerce string S );
 </code></pre>
-
 <blockquote>
 <p>Actor error handling.
 Handle an error and kill this one actor.</p>
@@ -787,12 +782,10 @@ Handle an error and kill this one actor.</p>
 <h5 id="sleep">Sleep<a class="headerlink" href="#sleep" title="Permanent link">#</a></h5>
 <pre><code>native(256) final latent function Sleep( float Seconds );
 </code></pre>
-
 <h5 id="collision">Collision<a class="headerlink" href="#collision" title="Permanent link">#</a></h5>
 <pre><code>native(262) final function SetCollision( optional bool NewColActors, optional bool NewBlockActors, optional bool NewBlockPlayers );
 native(283) final function bool SetCollisionSize( float NewRadius, float NewHeight );
 </code></pre>
-
 <h5 id="movement">Movement<a class="headerlink" href="#movement" title="Permanent link">#</a></h5>
 <pre><code>native(266) final function bool Move( vector Delta );
 native(267) final function bool SetLocation( vector NewLocation );
@@ -800,12 +793,10 @@ native(299) final function bool SetRotation( rotator NewRotation );
 native(3969) final function bool MoveSmooth( vector Delta );
 native(3971) final function AutonomousPhysics(float DeltaSeconds);
 </code></pre>
-
 <h5 id="relations">Relations<a class="headerlink" href="#relations" title="Permanent link">#</a></h5>
 <pre><code>native(298) final function SetBase( actor NewBase );
 native(272) final function SetOwner( actor NewOwner );
 </code></pre>
-
 <h5 id="ai-functions">AI Functions<a class="headerlink" href="#ai-functions" title="Permanent link">#</a></h5>
 <p><code>added DEUS_EX STM</code></p>
 <pre><code>native(700) final function float AIGetLightLevel( vector Location );
@@ -844,7 +835,6 @@ native(724) final function bool GetBoundingBox(out vector MinVect, out vector Ma
                                                optional vector testLocation,
                                                optional rotator testRotation);
 </code></pre>
-
 <h5 id="animation">Animation<a class="headerlink" href="#animation" title="Permanent link">#</a></h5>
 <pre><code>native(259) final function PlayAnim( name Sequence, optional float Rate, optional float TweenTime );
 native(260) final function LoopAnim( name Sequence, optional float Rate, optional float TweenTime, optional float MinRate );
@@ -865,7 +855,6 @@ native(1013) final function Texture GetMeshTexture( optional int texnum );
 event AnimEnd();
 
 </code></pre>
-
 <h5 id="physics">Physics<a class="headerlink" href="#physics" title="Permanent link">#</a></h5>
 <pre><code>// Physics control.
 native(301) final latent function FinishInterpolation();
@@ -873,27 +862,23 @@ native(301) final latent function FinishInterpolation();
 //native(3970) final function SetPhysics( EPhysics newPhysics );
 native(3970) final function SetPhysics( EPhysics newPhysics, optional Actor newFloor );
 </code></pre>
-
 <h4 id="engine-notification-functions">Engine notification functions<a class="headerlink" href="#engine-notification-functions" title="Permanent link">#</a></h4>
 <h5 id="major-notifications">Major notifications<a class="headerlink" href="#major-notifications" title="Permanent link">#</a></h5>
 <h6 id="spawned">Spawned<a class="headerlink" href="#spawned" title="Permanent link">#</a></h6>
 <pre><code>event Spawned();
 </code></pre>
-
 <blockquote>
 <p>Called when actor is Spawned. See also <code>PostBeginPlay</code>, <code>BeginPlay</code>, <code>PreBeginPlay</code>, <code>PostPostBeginPlay</code>.</p>
 </blockquote>
 <h6 id="destroyed">Destroyed<a class="headerlink" href="#destroyed" title="Permanent link">#</a></h6>
 <pre><code>event Destroyed();
 </code></pre>
-
 <blockquote>
 <p>Called when actor is destroyed and removed from the game.</p>
 </blockquote>
 <h6 id="expired">Expired<a class="headerlink" href="#expired" title="Permanent link">#</a></h6>
 <pre><code>event Expired();
 </code></pre>
-
 <blockquote>
 <p>Unknown.</p>
 </blockquote>
@@ -901,34 +886,29 @@ native(3970) final function SetPhysics( EPhysics newPhysics, optional Actor newF
 <pre><code>event GainedChild( Actor Other );
 event LostChild( Actor Other );
 </code></pre>
-
 <blockquote>
 <p>Called when actor gains/looses a child actor.</p>
 </blockquote>
 <h6 id="tick">Tick<a class="headerlink" href="#tick" title="Permanent link">#</a></h6>
 <pre><code>event Tick( float DeltaTime );
 </code></pre>
-
 <blockquote>
 <p>Called every tick, or frame, of the game.</p>
 </blockquote>
 <h5 id="triggers">Triggers<a class="headerlink" href="#triggers" title="Permanent link">#</a></h5>
 <pre><code>event Trigger( Actor Other, Pawn EventInstigator );
 </code></pre>
-
 <blockquote>
 <p>Called when actor is 'Triggered' by the Trigger function.</p>
 </blockquote>
 <pre><code>event UnTrigger( Actor Other, Pawn EventInstigator );
 </code></pre>
-
 <blockquote>
 <p>Called when actor de-activates, e.i. triggered again to turn off.</p>
 </blockquote>
 <pre><code>event BeginEvent();
 event EndEvent();
 </code></pre>
-
 <blockquote>
 <p>Unknown effects.</p>
 </blockquote>
@@ -936,14 +916,12 @@ event EndEvent();
 <h6 id="timer">Timer<a class="headerlink" href="#timer" title="Permanent link">#</a></h6>
 <pre><code>event Timer();
 </code></pre>
-
 <blockquote>
 <p>Called when <code>SetTimer()</code> expires. (See <code>SetTimer</code>)<br></p>
 </blockquote>
 <h6 id="hitwall">HitWall<a class="headerlink" href="#hitwall" title="Permanent link">#</a></h6>
 <pre><code>event HitWall( vector HitNormal, actor HitWall );
 </code></pre>
-
 <blockquote>
 <p>Called when object hits the wall.<br>
 <code>HitNormal</code>: The vector direction that the actor hit from.<br>
@@ -952,14 +930,12 @@ event EndEvent();
 <h6 id="falling">Falling<a class="headerlink" href="#falling" title="Permanent link">#</a></h6>
 <pre><code>event Falling();
 </code></pre>
-
 <blockquote>
 <p>Called when actor is falling through the air.</p>
 </blockquote>
 <h6 id="landed">Landed<a class="headerlink" href="#landed" title="Permanent link">#</a></h6>
 <pre><code>event Landed( vector HitNormal );
 </code></pre>
-
 <blockquote>
 <p>Called when actor hits the ground.<br>
 <code>HitNormal</code>: Firection actor landed from</p>
@@ -967,7 +943,6 @@ event EndEvent();
 <h6 id="zonechange">ZoneChange<a class="headerlink" href="#zonechange" title="Permanent link">#</a></h6>
 <pre><code>event ZoneChange( ZoneInfo NewZone );
 </code></pre>
-
 <blockquote>
 <p>Called when actor changes between Zones in the world.<br>
 <code>NewZone</code>: The ZoneInfo actor controlling the entered zone.</p>
@@ -976,7 +951,6 @@ event EndEvent();
 <pre><code>event Bump( Actor Other );
 event Touch( Actor Other );
 </code></pre>
-
 <blockquote>
 <p>Called when actor hits in to another actor physically.<br>
 <code>Other</code>: The actor being touched.</p>
@@ -984,14 +958,12 @@ event Touch( Actor Other );
 <pre><code>event PostTouch( Actor Other );
 event UnTouch( Actor Other );
 </code></pre>
-
 <blockquote>
 <p>Called for PendingTouch actor after physics completes.</p>
 </blockquote>
 <h6 id="basechange">BaseChange<a class="headerlink" href="#basechange" title="Permanent link">#</a></h6>
 <pre><code>event BaseChange();
 </code></pre>
-
 <blockquote>
 <p>Called when actor changes base, meaning the actor that is supporting this one. For example, players standing on a crate, and then standing on the floor, is a BaseChange.</p>
 </blockquote>
@@ -999,14 +971,12 @@ event UnTouch( Actor Other );
 <pre><code>event Attach( Actor Other );
 event Detach( Actor Other );
 </code></pre>
-
 <blockquote>
 <p>Used for attaching and detaching actors from another. Mostly used for making buttons and switches follow elevators.</p>
 </blockquote>
 <h6 id="killcredit">KillCredit<a class="headerlink" href="#killcredit" title="Permanent link">#</a></h6>
 <pre><code>event KillCredit( Actor Other );
 </code></pre>
-
 <blockquote>
 <p>Called when something is killed.<br>
 <code>Other</code>: Actor being credited for a kill.</p>
@@ -1014,14 +984,12 @@ event Detach( Actor Other );
 <h6 id="interpolating">Interpolating<a class="headerlink" href="#interpolating" title="Permanent link">#</a></h6>
 <pre><code>event InterpolateEnd( actor Other );
 </code></pre>
-
 <blockquote>
 <p>Called when actor finishes its interpolating path.</p>
 </blockquote>
 <h6 id="endedrotation">EndedRotation<a class="headerlink" href="#endedrotation" title="Permanent link">#</a></h6>
 <pre><code>event EndedRotation();
 </code></pre>
-
 <blockquote>
 <p>Called when actor stops rotating.<br></p>
 </blockquote>
@@ -1030,12 +998,10 @@ event Detach( Actor Other );
 event bool EncroachingOn( actor Other );
 event EncroachedBy( actor Other );
 </code></pre>
-
 <p><code>DEUS_EX STM -- added</code></p>
 <h6 id="bumpwall">BumpWall<a class="headerlink" href="#bumpwall" title="Permanent link">#</a></h6>
 <pre><code>event BumpWall( vector HitLocation, vector HitNormal );
 </code></pre>
-
 <blockquote>
 <p>Called when actor hits the wall.<br>
 <code>HitLocation</code>: The location of the wall being hit.<br>
@@ -1047,7 +1013,6 @@ event EncroachedBy( actor Other );
     StandingActor.SetBase( self );
 }
 </code></pre>
-
 <blockquote>
 <p>Called when actor is being stood on.<br></p>
 </blockquote>
@@ -1058,21 +1023,18 @@ event EncroachedBy( actor Other );
     Destroy();
 }   
 </code></pre>
-
 <blockquote>
 <p>Called when actor falls out of the world, e.g. fell through the geometry and no longer is in the normal play area.</p>
 </blockquote>
 <h6 id="damage-and-kills">Damage and kills<a class="headerlink" href="#damage-and-kills" title="Permanent link">#</a></h6>
 <pre><code>event KilledBy( pawn EventInstigator );
 </code></pre>
-
 <blockquote>
 <p>Called when actor is killed.<br>
 <code>EventInstigator</code>: The <code>pawn</code> that killed this actor.</p>
 </blockquote>
 <pre><code>event TakeDamage( int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, name DamageType);
 </code></pre>
-
 <blockquote>
 <p>Called when the actor takes any damage.<br>
 <code>Damage</code>: The raw damage being dealt to this actor.<br>
@@ -1083,7 +1045,7 @@ event EncroachedBy( actor Other );
 </blockquote>
 <h4 id="tracing">Tracing<a class="headerlink" href="#tracing" title="Permanent link">#</a></h4>
 <h5 id="trace">Trace<a class="headerlink" href="#trace" title="Permanent link">#</a></h5>
-<pre><code class="java">native(277) final function Actor Trace
+<pre><code class="language-java">native(277) final function Actor Trace
 (
     out vector      HitLocation,
     out vector      HitNormal,
@@ -1093,7 +1055,6 @@ event EncroachedBy( actor Other );
     optional vector Extent
 );
 </code></pre>
-
 <blockquote>
 <p>Traces a line and see what it collides with first.<br>
 Takes this actor's collision properties into account.<br>
@@ -1112,7 +1073,6 @@ Returns first hit actor, Level if hit level, or None if hit nothing.<br>
     optional vector TraceStart
 );
 </code></pre>
-
 <blockquote>
 <p>returns true if did not hit world geometry
 <code>TraceEnd</code>: Where we want to trace to.<br>
@@ -1128,7 +1088,6 @@ Returns first hit actor, Level if hit level, or None if hit nothing.<br>
     optional rotator  SpawnRotation
 );
 </code></pre>
-
 <blockquote>
 <p>Spawn an actor. <strong>Returns</strong> an actor of the specified class, not
 of class Actor (this is hardcoded in the compiler). Returns None
@@ -1144,7 +1103,6 @@ Defaults to spawning at the spawner's location.<br>
 <h4 id="destroy">Destroy<a class="headerlink" href="#destroy" title="Permanent link">#</a></h4>
 <pre><code>native(279) final function bool Destroy();
 </code></pre>
-
 <blockquote>
 <p>Destroy this actor. <strong>Returns</strong> true if destroyed, false if indestructable.
 Destruction is latent. It occurs at the end of the tick.</p>
@@ -1152,7 +1110,6 @@ Destruction is latent. It occurs at the end of the tick.</p>
 <h4 id="timer_1">Timer<a class="headerlink" href="#timer_1" title="Permanent link">#</a></h4>
 <pre><code>native(280) final function SetTimer( float NewTimerRate, bool bLoop );
 </code></pre>
-
 <blockquote>
 <p>Triggers the <code>Timer()</code> event after <code>NewTimerRate</code> ticks. <br>
 If <code>bLoop</code> is <code>True</code> then then timer will continue looping, else only triggers once.<br></p>
@@ -1175,7 +1132,6 @@ native simulated final function PlayOwnedSound();
 //PlaySound call used for Demorec system.
 native simulated event DemoPlaySound();
 </code></pre>
-
 <blockquote>
 <p>Play a sound effect.<br>
 <code>*DEUS_EX - CNN* changed to return the channel ID of the sound so you can call StopSound later</code><br>
@@ -1189,7 +1145,6 @@ native simulated event DemoPlaySound();
 <h5 id="stopsound">StopSound<a class="headerlink" href="#stopsound" title="Permanent link">#</a></h5>
 <pre><code>native(265) final function StopSound(int Id);
 </code></pre>
-
 <blockquote>
 <p>DEUS_EX CNN - Stop a sound given the sound's ID</p>
 </blockquote>
@@ -1198,14 +1153,12 @@ native simulated event DemoPlaySound();
 native(269) final function SetInstantSpeechVolume(byte newSpeechVolume);
 native(270) final function SetInstantMusicVolume(byte newMusicVolume);
 </code></pre>
-
 <blockquote>
 <p>DEUS_EX CNN - Set the sound system volumes without waiting for a tick event</p>
 </blockquote>
 <h5 id="getsoundduration">GetSoundDuration<a class="headerlink" href="#getsoundduration" title="Permanent link">#</a></h5>
 <pre><code>native final function float GetSoundDuration( sound Sound );
 </code></pre>
-
 <blockquote>
 <p>Get a sound duration.</p>
 </blockquote>
@@ -1213,7 +1166,6 @@ native(270) final function SetInstantMusicVolume(byte newMusicVolume);
 <h5 id="makenoise">MakeNoise<a class="headerlink" href="#makenoise" title="Permanent link">#</a></h5>
 <pre><code>native(512) final function MakeNoise( float Loudness );
 </code></pre>
-
 <blockquote>
 <p>Inform other creatures that you've made a noise
 they might hear (they are sent a HearNoise message)<br>
@@ -1222,39 +1174,33 @@ Senders of MakeNoise should have an instigator if they are not pawns.</p>
 <h5 id="playercanseeme">PlayerCanSeeMe<a class="headerlink" href="#playercanseeme" title="Permanent link">#</a></h5>
 <pre><code>native(532) final function bool PlayerCanSeeMe();
 </code></pre>
-
 <blockquote>
 <p><code>Returns</code> true if some player has a line of sight to actor's location.</p>
 </blockquote>
 <h4 id="teleportation">Teleportation<a class="headerlink" href="#teleportation" title="Permanent link">#</a></h4>
 <pre><code>event bool PreTeleport( Teleporter InTeleporter );
 </code></pre>
-
 <blockquote>
 <p>Called before actor teleports using a <code>Teleporter</code> actor.</p>
 </blockquote>
 <pre><code>event PostTeleport( Teleporter OutTeleporter );
 </code></pre>
-
 <blockquote>
 <p>Called after actor teleports using a <code>Teleporter</code> actor.</p>
 </blockquote>
 <h4 id="beginplay">BeginPlay<a class="headerlink" href="#beginplay" title="Permanent link">#</a></h4>
 <pre><code>event BeginPlay();
 </code></pre>
-
 <blockquote>
 <p>Called when actor enters the game.</p>
 </blockquote>
 <pre><code>event PostBeginPlay();
 </code></pre>
-
 <blockquote>
 <p>Called immediately after gameplay begins.</p>
 </blockquote>
 <pre><code>event PostPostBeginPlay();
 </code></pre>
-
 <blockquote>
 <p><code>DEUS_EX AJY</code>
 Called immediately after Initial State, and always
@@ -1268,13 +1214,11 @@ called when loading a map <em>AND</em> when loading savegame</p>
         GotoState( 'Auto' );
 }
 </code></pre>
-
 <blockquote>
 <p>Called after PostBeginPlay.</p>
 </blockquote>
 <pre><code>simulated event PostNetBeginPlay();
 </code></pre>
-
 <blockquote>
 <p><code>MBCODE</code>
 Called after a net game begins.</p>
@@ -1297,7 +1241,6 @@ Called after a net game begins.</p>
         Destroy();
 }
 </code></pre>
-
 <blockquote>
 <p>Called immediately before gameplay begins.</p>
 </blockquote>
@@ -1309,7 +1252,6 @@ native(547) final function string GetURLMap();
 native final function string GetNextInt( string ClassName, int Num );
 native final function GetNextIntDesc( string ClassName, int Num, out string Entry, out string Description );
 </code></pre>
-
 <h4 id="iterator-functions">Iterator functions.<a class="headerlink" href="#iterator-functions" title="Permanent link">#</a></h4>
 <pre><code>native(304) final iterator function AllActors     ( class&lt;actor&gt; BaseClass, out actor Actor, optional name MatchTag );
 native(305) final iterator function ChildActors   ( class&lt;actor&gt; BaseClass, out actor Actor );
@@ -1327,7 +1269,6 @@ native(1000) final iterator function TraceTexture (class&lt;actor&gt; BaseClass,
 native(1002) final iterator function CycleActors (class&lt;actor&gt; BaseClass, out actor Actor, out int Index );
 native(1003) final iterator function TraceVisibleActors(class&lt;actor&gt; BaseClass, out actor Actor, out vector HitLoc, out vector HitNorm, vector End, optional vector Start, optional vector Extent );
 </code></pre>
-
 <blockquote>
 <p>Iterators are used in the format of;</p>
 </blockquote>
@@ -1336,18 +1277,15 @@ local Medkit MD;
 foreach AllActors(class'DeusEx.Medkit', MD)
     MD.Destroy()
 </code></pre>
-
 <h4 id="color-operators">Color operators<a class="headerlink" href="#color-operators" title="Permanent link">#</a></h4>
 <pre><code>native(549) static final operator(20)  color -     ( color A, color B );
 native(550) static final operator(16) color *     ( float A, color B );
 native(551) static final operator(20) color +     ( color A, color B );
 native(552) static final operator(16) color *     ( color A, float B );
 </code></pre>
-
 <h4 id="scripted-actor-functions">Scripted Actor functions<a class="headerlink" href="#scripted-actor-functions" title="Permanent link">#</a></h4>
 <pre><code>event RenderOverlays( canvas Canvas );
 </code></pre>
-
 <blockquote>
 <p>draw on canvas before flash and fog are applied (used for drawing weapons)</p>
 </blockquote>
@@ -1365,7 +1303,6 @@ native(552) static final operator(16) color *     ( color A, float B );
                 P.ClientMessage( Msg, Type, bBeep );
 }
 </code></pre>
-
 <blockquote>
 <p>Broadcast a message to all players.<br>
 Can be called as a function; <code>BroadcastMessage("This is seen by everyone.")</code><br>
@@ -1381,7 +1318,6 @@ Can be called as a function; <code>BroadcastMessage("This is seen by everyone.")
             P.ReceiveLocalizedMessage( Message, Switch, RelatedPRI_1, RelatedPRI_2, OptionalObject );
 }
 </code></pre>
-
 <blockquote>
 <p>Broadcast a localized message to all players.<br>
 Most message deal with 0 to 2 related PRIs.<br>
@@ -1469,7 +1405,6 @@ The LocalMessage class defines how the PRI's and optional actor are used.<br></p
     bHurtEntry = false;
 }
 </code></pre>
-
 <blockquote>
 <p>Hurt actors within the radius.<br>
 <code>DamageAmount</code>: Damage done to the actors.<br>
@@ -1482,13 +1417,11 @@ The LocalMessage class defines how the PRI's and optional actor are used.<br></p
 <h5 id="travel">Travel<a class="headerlink" href="#travel" title="Permanent link">#</a></h5>
 <pre><code>event TravelPreAccept();
 </code></pre>
-
 <blockquote>
 <p>Called when carried onto a new level, before AcceptInventory.</p>
 </blockquote>
 <pre><code>event TravelPostAccept();
 </code></pre>
-
 <blockquote>
 <p>Called when carried into a new level, after AcceptInventory.</p>
 </blockquote>
@@ -1497,7 +1430,6 @@ The LocalMessage class defines how the PRI's and optional actor are used.<br></p
 {
 }
 </code></pre>
-
 <blockquote>
 <p><code>DEUS_EX CNN</code>
 Called to frob an object, the subclass is responsible for implementing this
@@ -1513,7 +1445,6 @@ Called to frob an object, the subclass is responsible for implementing this
         BlendAnimSequence[i] = '';
 }
 </code></pre>
-
 <blockquote>
 <p><code>DEUS_EX CNN</code>
 Stops animations from blending</p>
@@ -1521,14 +1452,12 @@ Stops animations from blending</p>
 <h5 id="rendertexture">RenderTexture<a class="headerlink" href="#rendertexture" title="Permanent link">#</a></h5>
 <pre><code>event RenderTexture(ScriptedTexture Tex);
 </code></pre>
-
 <blockquote>
 <p>Called when a scripted texture needs rendering</p>
 </blockquote>
 <h5 id="becomeviewtarget">BecomeViewTarget<a class="headerlink" href="#becomeviewtarget" title="Permanent link">#</a></h5>
 <pre><code>function BecomeViewTarget();
 </code></pre>
-
 <blockquote>
 <p>Called by PlayerPawn when this actor becomes its ViewTarget.</p>
 </blockquote>
@@ -1547,7 +1476,6 @@ Stops animations from blending</p>
     return FullName;
 }
 </code></pre>
-
 <blockquote>
 <p>Returns the string representation of the name of an object without the package prefixes.</p>
 </blockquote>
@@ -1557,7 +1485,6 @@ Stops animations from blending</p>
     return GetItemName(string(class));
 }
 </code></pre>
-
 <blockquote>
 <p>Returns the human readable string representation of an object.</p>
 </blockquote>
@@ -1578,7 +1505,6 @@ function SetDefaultDisplayProperties()
     bMeshEnviromap = Default.bMeshEnviromap;
 }
 </code></pre>
-
 <blockquote>
 <p>Set the display properties of an actor.  By setting them through this function, it allows
 the actor to modify other components (such as a Pawn's weapon) or to adjust the result
@@ -1590,7 +1516,6 @@ based on other factors (such as a Pawn's other inventory wanting to affect the r
     LastConEndTime = Level.TimeSeconds;
 }
 </code></pre>
-
 <blockquote>
 <p>Save the time this conversation ended <code>DEUS_EX AJY</code></p>
 </blockquote>
@@ -1664,12 +1589,12 @@ based on other factors (such as a Pawn's other inventory wanting to affect the r
     <br>
 </div>
 
-<footer class="col-md-12 wm-page-content">
+<footer class="container-fluid wm-page-content">
       <p>
         <a href="https://github.com/deusexhq/deusexhq.github.io"><i class="fa fa-github"></i>
 GitHub</a>
       </p><p>© Kaiser and the Deus Ex HQ team, 2019</p>
-  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
 </footer>
 
 </body>

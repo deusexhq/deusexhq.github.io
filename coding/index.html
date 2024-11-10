@@ -42,7 +42,7 @@
               {title: "Getting some player variables", url: "#getting-some-player-variables" },
               {title: "Date/time", url: "#datetime" },
               {title: "Laser/Scope keys", url: "#laserscope-keys" },
-              {title: "Obtaining player's IP address", url: "#obtaining-players-ip-address" },
+              {title: "Obtaining player\u0027s IP address", url: "#obtaining-players-ip-address" },
               {title: "Recognising maps", url: "#recognising-maps" },
               {title: "Recognising custom parameters", url: "#recognising-custom-parameters" },
               {title: "Switching teams", url: "#switching-teams" },
@@ -99,7 +99,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
 
     <h3 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">#</a></h3>
-<p><p>First off, setting up files;<br />
+<p>First off, setting up files;<br />
 <br />
 <b>For editing code</b>, you can either use Notepad (windows) or the Linux equivelant (Gedit, Mouepad usually), it works. But the alternative is Notepad++ and the USCRIPT syntax highlighting, which colours in the code to make it easier to understand, and also will be helpful for a few other aspects.<br />
 Download <a class="link" href="https://notepad-plus-plus.org/" rel="nofollow" target="_blank">Notepad++</a> and <a class="link" href="http://deusex.ucoz.net/userDefineLang.xml" rel="nofollow" target="_blank">Language File for Uscript</a> (Right click and save-as to avoid it opening in-browser)<br />
@@ -118,15 +118,16 @@ If you want a good base to start off, open up the SDK/Unreal Ed, and in the Clas
 <p>Inside THAT, create a folder called <em>Classes</em>.</p>
 <p>Inside THAT, put your .uc files.</p>
 <p>Open DeusEx.ini file, search for the list of EditPackages, and at the bottom of that list, add your own, E.g. EditPackages=MyMod</p>
-<br>
+<p><br></p>
 <p>This next part varies based on setups, but the end goal is to have the command line of your OS directed to Deus Ex/System.</p>
 <ul>
 <li><p><strong><u>Windows 7+</u></strong>: Shift-Right Click the background of the System folder with no files selected, and click Open Command Line Here.</p></li>
-<li><p><u><strong>Windows XP and earlier</strong></u>: Run &gt; cmd.exe, and enter cd followed by the path to your DX system, e.g. cd C:/Deus Ex/System/</p></li>
+<li><p><u><strong>Windows XP and earlier</strong></u>: Run > cmd.exe, and enter cd followed by the path to your DX system, e.g. cd C:/Deus Ex/System/</p></li>
 <li><p><u><strong>Linux</strong></u>: Theres many ways, the XP way works using the Terminal, but in the Thunar file editor, theres an option in the drop down box to Open Terminal Here.</p></li>
 </ul>
-<br>
-<p>Once you're there, enter <strong><em>ucc make</em></strong></p></p>
+<p><br></p>
+<p>Once you're there, enter <strong><em>ucc make</em></strong></p>
+
 <p>It'll attempt to compile the list, if the .u files exist, it'll skip it, so it'll ignore all the default DX files, and attempt your custom file.</p>
 
 <h3 id="useful-functions">Useful Functions<a class="headerlink" href="#useful-functions" title="Permanent link">#</a></h3>
@@ -146,7 +147,6 @@ simulated function ReplExec(DeusExPlayer Player, string Command)
     SetOwner(self);
 }
 </code></pre>
-
 <h4 id="string-splitting">String Splitting<a class="headerlink" href="#string-splitting" title="Permanent link">#</a></h4>
 <pre><code>//Split - based on Python, by Kaiser
 //Takes the Original string, and returns the string found between LeftCut and RightCut, optionally having offsets on either side
@@ -167,7 +167,6 @@ function string Split(string Original, string LeftCut, string RightCut, optional
     return Mid(Original, leftline, rightline-leftline);
 }
 </code></pre>
-
 <h4 id="string-replacing">String Replacing<a class="headerlink" href="#string-replacing" title="Permanent link">#</a></h4>
 <pre><code>//Repl -  based on Unreal 2 function, backported by Kaiser
 //Takes the Original string, returns the string with every instance of Target replaced with ReplaceWith
@@ -185,7 +184,6 @@ function string Repl(string Original, string Target, string ReplaceWith)
     return OutMessage;
 }
 </code></pre>
-
 <h4 id="getting-some-player-variables">Getting some player variables</h3><a class="headerlink" href="#getting-some-player-variables" title="Permanent link">#</a></h4>
 <pre><code>//Player variable functions
 
@@ -264,7 +262,6 @@ function PlayerPawn GetPlayerFromName(string playername)
             return P;
 }
 </code></pre>
-
 <h4 id="datetime">Date/time<a class="headerlink" href="#datetime" title="Permanent link">#</a></h4>
 <pre><code>function string GetDate()
 {
@@ -291,11 +288,10 @@ function string GetTime()
     return level.hour$&quot;:&quot;$formattedmin;
 }
 </code></pre>
-
 <h4 id="laserscope-keys">Laser/Scope keys<a class="headerlink" href="#laserscope-keys" title="Permanent link">#</a></h4>
 <p>This hopes to teach a little about how to make your own cool functions out of the Ammo Switching, Scope, and Laser Sight functions.</p>
 <p>First off, identifying the functions that'll be needed to be changed to edit the functionality of these functions.</p>
-<p>First off: Scope.
+<p>First off: Scope.</p>
 <ul>
     <li>
         ScopeOn();
@@ -307,7 +303,8 @@ function string GetTime()
         ScopeToggle();
     </li>
 </ul>
-    and their codes are:</p>
+<pre><code>and their codes are:
+</code></pre>
 <pre><code>function ScopeOn()
 {
     if (bHasScope &amp;&amp; !bZoomed &amp;&amp; (Owner != None) &amp;&amp; Owner.IsA('DeusExPlayer'))
@@ -343,7 +340,6 @@ simulated function ScopeToggle()
     }
 }
 </code></pre>
-
 <p>However, you don't want a boring old scope button thingy, do you? No? Well then, hang about. I'm going to show you how to get it to do something intresting... ;-) First, we strip out as much crap as possible..</p>
 <pre><code>function ScopeOn()
 {
@@ -368,7 +364,6 @@ simulated function ScopeToggle()
     }
 }
 </code></pre>
-
 <p>Right, that's gotten rid of everything that the original scope needs. (Note, this'll mean you can no longer use a scope, so make something decent to replace it...) Now, to make it do something cool. Hmm... ideas ideas ideas...</p>
 <p>Well, I suppose summoning a Plasma Bolt will have to do. I can't think of anything better.</p>
 <pre><code>function ScopeOn()
@@ -393,14 +388,12 @@ simulated function ScopeToggle()
     }
 }
 </code></pre>
-
 <p>The Pawn(Owner) parts are being used to get the location and rotation to fire the projectile at. Also, this can be used to modify the owner of a weapon in several other 'interesting' ways... Now, if you have a weapon with a scope on it, and this code in it's source, the scope will, instead of zooming in, spit out plasma bolts.</p>
 <p><em>Written by [A]llan.</em></p>
 <h4 id="obtaining-players-ip-address">Obtaining player's IP address<a class="headerlink" href="#obtaining-players-ip-address" title="Permanent link">#</a></h4>
 <pre><code>PlayerIP = Player.GetPlayerNetworkAddress(); 
 PlayerIP=left(PlayerIP,instr(PlayerIP,&quot;:&quot;));
 </code></pre>
-
 <p>The first line gets your IP and port (e.g. 213.170.168.2:4000, where 213.170.168.2 is a IP and 4000 is a port) and the second line filters port leaving only an IP address.</p>
 <h4 id="recognising-maps">Recognising maps<a class="headerlink" href="#recognising-maps" title="Permanent link">#</a></h4>
 <pre><code>if (Level.NetMode != NM_Standalone) 
@@ -416,7 +409,6 @@ PlayerIP=left(PlayerIP,instr(PlayerIP,&quot;:&quot;));
     }
 }
 </code></pre>
-
 <h4 id="recognising-custom-parameters">Recognising custom parameters<a class="headerlink" href="#recognising-custom-parameters" title="Permanent link">#</a></h4>
 <p>If you're planning to make functions of your mutator recognise user typed string, like, for example, user ID on the server , that's how you can do it:</p>
 <pre><code>function Mutate (String S, PlayerPawn Player) 
@@ -434,21 +426,18 @@ PlayerIP=left(PlayerIP,instr(PlayerIP,&quot;:&quot;));
     Super.Mutate(S,Player);
 }
 </code></pre>
-
 <h4 id="switching-teams">Switching teams<a class="headerlink" href="#switching-teams" title="Permanent link">#</a></h4>
 <p>The essence of MMSwitcher, the code of switching player's team without killing him or her and with updating his or her user.ini. Team IDs: 0 - UNATCO 1 - NSF</p>
 <pre><code>local pawn victim;
 Level.Game.ChangeTeam(victim,0); // set to needed team PlayerPawn(victim).ClientChangeTeam(0); // set to needed
 team
 </code></pre>
-
 <h4 id="spawning">Spawning<a class="headerlink" href="#spawning" title="Permanent link">#</a></h4>
 <p>That's how we can find a suitable for spawning spawn point (thanks to Nobody for the code):</p>
 <pre><code>local navigationpoint navpoint;
 navpoint=Level.Game.FindPlayerStart(victim,0);
 // Move victim to it victim.setLocation(navpoint.location);
 </code></pre>
-
 <h5 id="managing-augmentations">Managing augmentations<a class="headerlink" href="#managing-augmentations" title="Permanent link">#</a></h5>
 <p>If you want to delete all augs of a player and to add a specific one, that's how you can do it:</p>
 <pre><code>local augmentation aug;
@@ -457,7 +446,6 @@ aug = DeusExPlayer(Other).AugmentationSystem.Spawn(class'DeusEx.AugLight', DeusE
 DeusExPlayer(Other).AugmentationSystem.FirstAug = aug; 
 DeusExPlayer(Other).AugmentationSystem.GivePlayerAugmentation(class'DeusEx.AugLight')
 </code></pre>
-
 <p><em>Written by Daedalus and Alex.</em></p>
 <hr />
 <p>Listed here are a few DeusEx type-fonts for use with ScriptedTextures and for making window text.</p>
@@ -467,7 +455,6 @@ Engine.LargeFont
 Engine.MedFont
 Engine.SmallFont
 </code></pre>
-
 <h5 id="deusexui">DeusExUI<a class="headerlink" href="#deusexui" title="Permanent link">#</a></h5>
 <pre><code>DeusExUI.FontComputer8x20_A
 DeusExUI.FontComputer8x20_B
@@ -494,7 +481,6 @@ DeusExUI.FontSpinningDX
 DeusExUI.FontTitleLarge
 DeusExUI.FontMenuHeaders_DS
 </code></pre>
-
 <p>If I find more, I'll post em :-)</p>
 <p><em>Written by [A]llan.</em></p>
 <h3 id="training-guns">Training Guns<a class="headerlink" href="#training-guns" title="Permanent link">#</a></h3>
@@ -503,11 +489,9 @@ The idea of so-called "training guns" seems to be flying around a lot lately amo
 rift between skilled players, and average players?), and some strange solutions have been put forward. In this, I will
 show you the code needed to figure out what damage has been done to the player hit, as well as where it was done.
 </p>
-
 <p>
 This code is for classes branching from WeaponRifle:
 </p>
-
 <p class="code">
 function ProcessTraceHit(Actor Other, Vector HitLocation, Vector HitNormal, Vector X, Vector Y, Vector Z) <br /> { <br
 /> &nbsp; &nbsp;local int MPHitLoc; // used to reference where we last hit. <br /> &nbsp; &nbsp;local float Multuplier;
@@ -548,42 +532,34 @@ function ProcessTraceHit(Actor Other, Vector HitLocation, Vector HitNormal, Vect
 <br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break; <br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;default: <br /> &nbsp;
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break; <br /> &nbsp; &nbsp; &nbsp; } <br /> &nbsp; &nbsp;} <br /> }
 </p>
-
 <p>
 Right... some explanation to how this works:
 </p>
-
 <p class="code">
 &nbsp; &nbsp;// AugCombat increases our damage if hand to hand <br /> &nbsp; &nbsp;Multuplier = 1.0; <br />
 <br /> &nbsp; &nbsp;// skill also affects our damage <br /> &nbsp; &nbsp;// GetWeaponSkill returns 0.0 to -0.7 (max skill/aug)
 <br /> &nbsp; &nbsp;Multuplier += -2.0 * GetWeaponSkill();
 </p>
-
 <p>
 This is code to modify the amount of damage finally dealt. The proper version of this, that is used for damage modification
 is called in the Super.<em>whatever</em> call.
 </p>
-
 <p class="code">
 MPHitLoc = DeusExPlayer(Other).GetMPHitLocation(HitLocation);
 </p>
-
 <p>
 This code checks if the actor referenced as "Other" (this is what you end up hitting with the weapon shot in this
 case) is a DeusExPlayer, and if it is, runs the function GetMPHitLocation from the player that you hit. This then sets
 the variable MPHitLoc at a certain value (1 to 6, 0 for special damage types (i.e.: PoisonEffect (lingering poison from
 darts, TearGas, etc) and EMP, and NanoVirus, even though it has no effect on humans)), where it is then used in a "Switch".
 </p>
-
 <p class="code">
 switch(MPHitLoc)
 </p>
-
 <p>
 This runs through all the posibilities that you code into this section when it is called. If the value in the brackets of
 the switch (in this case, MPHitLoc) matches any of the coded values, something happens, based on what you coded, e.g.:
 </p>
-
 <p class="code">
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;case 4: <br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DeusExPlayer(Owner).ClientMessage("Arm
 Shot(Right)"); <br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If(!bZoomed) <br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -591,13 +567,11 @@ Shot(Right)"); <br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If(!bZoomed) <br
 <br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else <br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;DeusExPlayer(Owner).ClientMessage("Damage="$HitDamage*Multuplier$"");
 <br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;
 </p>
-
 <p>
 If the value MPHitLoc was 4, you would see a message saying you hit the player in their right arm. Then, you would be told
 how much damage you dealt. The formula is (if you're not scoped) &mdash; HitDamage(25)*Skill(0 to 3.4)*mpNoScopeMult(0.35)=Damage(?)
 However, if this is <em>not</em> to be used on a class branching off of WeaponRifle, you must use this code:
 </p>
-
 <p class="code">
 function ProcessTraceHit(Actor Other, Vector HitLocation, Vector HitNormal, Vector X, Vector Y, Vector Z) <br /> { <br
 /> &nbsp; &nbsp;local int MPHitLoc; // used to reference where we last hit. <br /> &nbsp; &nbsp;local float Multuplier;
@@ -631,16 +605,13 @@ DeusExPlayer(Owner).ClientMessage(&quot;Leg Shot(Right)&quot;); <br /> &nbsp; &n
 <br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break; <br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;default: <br /> &nbsp;
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break; <br /> &nbsp; &nbsp; &nbsp; } <br /> &nbsp; &nbsp;} <br /> }
 </p>
-
 <p>
 The difference in this code is, that there is no reference to mpNoScopeMult, as WeaponRifle is the only class to use it.
 That should be all for training guns.
 </p>
-
 <p>
 Peace!
 </p>
-
 <p>
 <em>Written by Allan.</em>
 </p>
@@ -809,12 +780,12 @@ defaultproperties
     <br>
 </div>
 
-<footer class="col-md-12 wm-page-content">
+<footer class="container-fluid wm-page-content">
       <p>
         <a href="https://github.com/deusexhq/deusexhq.github.io"><i class="fa fa-github"></i>
 GitHub</a>
       </p><p>© Kaiser and the Deus Ex HQ team, 2019</p>
-  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
 </footer>
 
 </body>

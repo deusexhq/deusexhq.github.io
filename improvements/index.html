@@ -111,14 +111,12 @@ Team=0
 Skin=
 Face=
 </code></pre>
-
 <p>Sections will be different for you however, such as the Name and Class. In this file is where all binding occurs. Binding
 is, however, very simple. We need to find an empty "Letter" somewhere in the .ini file first.
 For example, the letter "O" is empty by default, and will simply look like "O=".</p>
 <p>Now, we want to add something after this, for this guide, I am going to use a simple "say" bind. A say bind automatically   generates a set message for you when you press the key. After the empty letter, add the sentence</p>
 <pre><code>Say Taking Fire, need assistance!
 </code></pre>
-
 <p>Now, you may notice that each letter is repeated twice throughout the .ini file. This is because one affects singleplayer and one affects multiplayer. For safety's sake, I would advise placing the commands after both of the same letters to avoid confusion.</p>
 <p>Save the file, close it, and we're done! For more detailed information about what binds there are, view the other pages concerning  binding.</p>
 <p>Now in-game, pressing the 'o' button will execute your "Say" command, which can be anything you want it to be.
@@ -129,11 +127,9 @@ Make sure your team knows when you need help!</p>
 <p>Grabbing your medkit or biocell:</p>
 <pre><code>ActivateBelt 9|onrelease ParseLeftClick
 </code></pre>
-
 <p>Uses a med then pulls out weapon in belt 2:</p>
 <pre><code>ActivateBelt 9|onrelease ParseLeftClick|ActivateBelt 2
 </code></pre>
-
 <p>Advanced medkit bind (may have problems in lag or bad ping) <em>- bind was compiled by Clix:</em>
 * First create Aliases[...] bind <br />
     <code>Aliases[23]=(Command="ActivateBelt 9|onrelease ParseLeftClick",Alias=MedKit)</code>
@@ -143,43 +139,34 @@ Make sure your team knows when you need help!</p>
 Adjust "3" in it to an inventory slot, which you usually use to keep a sniper rifle:</p>
 <pre><code>Activatebelt 3|Onrelease ToggleScope
 </code></pre>
-
 <h6 id="movement">Movement<a class="headerlink" href="#movement" title="Permanent link">#</a></h6>
 <p>Strafes diagonally (forward left):</p>
 <pre><code>Aliases[22]=(Command=&quot;Axis aBaseY Speed=+300.0|Axis aStrafe Speed=-300.0&quot;,Alias=ForwardLeft)
 </code></pre>
-
 <p>Strafes diagonally (forward right):</p>
 <pre><code>Aliases[22]=(Command=&quot;Axis aBaseY Speed=+300.0|Axis aStrafe Speed=+300.0&quot;,Alias=ForwardRight)
 </code></pre>
-
 <p>Circles left:</p>
 <pre><code>Aliases[22]=(Command=&quot;Axis aBaseX Speed=-180.0|Axis aBaseY Speed=+050.0&quot;,Alias=CircleLeft)
 </code></pre>
-
 <p>Circles right:</p>
 <pre><code>Aliases[22]=(Command=&quot;Axis aBaseX Speed=+180.0|Axis aBaseY Speed=+050.0&quot;,Alias=CircleRight)
 </code></pre>
-
 <p>Turns you around, so you can face behind you instantly:</p>
 <pre><code>Aliases[22]=(Command=&quot;Axis aBaseX Speed=+2900.0&quot;,Alias=TurnAround)
 </code></pre>
-
 <h6 id="augmentations">Augmentations<a class="headerlink" href="#augmentations" title="Permanent link">#</a></h6>
 <p>This bind enables Targetting/Ballistic Protection, then fires, and when you let go of the mouse button, it disables Targetting/Ballistic
 Protection. Great if you want to conserve bio:</p>
 <pre><code>LeftMouse=ActivateAugmentation 3|Fire|onrelease ActivateAugmentation 3
 </code></pre>
-
 <p>Just keeps on ADS as long as you hold down the key; useful in fights when low on bio or if you want to conserve bio:</p>
 <pre><code>Aliases[22]=(Command=&quot;ActivateAugmentation 6|onrelease ActivateAugmentation 6&quot;,Alias=ADS)
 </code></pre>
-
 <p>Med bind + regeneration &mdash; will withdraw a medkit and activate the Regeneration aug. This is useful when you are in
 serious trouble in a fight:</p>
 <pre><code>Aliases[22]=(Command=&quot;ActivateBelt 9|ActivateAugmentation 1&quot;)
 </code></pre>
-
 <h6 id="skills">Skills<a class="headerlink" href="#skills" title="Permanent link">#</a></h6>
 <p>Updates skills and equips the relevent belt item. 1 is Heavy Weapons, 2 is Pistols, 3 is Rifles, 4 is Melee, 5 is Grenades,
 6 is Environment Resistance, 7 is Lockpicks, 8 is Multitools, 9 is Medicine, 0 is Hacking.</p>
@@ -190,16 +177,13 @@ serious trouble in a fight:</p>
 8&lt;br /&gt; ActivateBelt 9|BuySkills|ActivateBelt 9|BuySkills|ActivateBelt 9&lt;br /&gt; ActivateBelt 0|BuySkills|ActivateBelt 0|BuySkills|ActivateBelt
 0
 </code></pre>
-
 <h6 id="statistics">Statistics<a class="headerlink" href="#statistics" title="Permanent link">#</a></h6>
 <p>This shows the score as long as you keep the scores button pressed:</p>
 <pre><code>ShowScores|onRelease ShowScores
 </code></pre>
-
 <p>This shows your netstats (ping, packetloss etc), and your current FPS (<em>frame per second</em> value):</p>
 <pre><code>stat net|stat fps
 </code></pre>
-
 <h4 id="coloured-text-wip">Coloured text (WIP)<a class="headerlink" href="#coloured-text-wip" title="Permanent link">#</a></h4>
 <p><code>Editor's Note: Adding eventually.</code></p>
 <h4 id="no-cd-patch">No-CD patch<a class="headerlink" href="#no-cd-patch" title="Permanent link">#</a></h4>
@@ -208,11 +192,9 @@ serious trouble in a fight:</p>
     When installing, the game copies itself entirely to your hard drive, but it may require an original CD when you run it. Using
     CD slows down the game, takes more energy, activates the drive for no reason and restrains you from using other CDs instead.
 </p>
-
 <p>
     The problem is easy to solve:
 </p>
-
 <ul>
     <li style="font-weight: bold">Step 1.
         <ol>
@@ -246,7 +228,7 @@ serious trouble in a fight:</p>
 </ul>
 
 <h4 id="renderers">Renderers<a class="headerlink" href="#renderers" title="Permanent link">#</a></h4>
-<p><p>
+<p>
     In this tutorial I will explain how to change your 3D renderer to one that may enchance the performance of Deus Ex on your
     computer. A renderer is "a carefully engineered program, based on a selective mixture of disciplines related to: light
     physics, visual perception, mathematics, and software development" <em>(taken from Wikipedia)</em>. In other words,
@@ -303,7 +285,7 @@ serious trouble in a fight:</p>
     Finally, start Deus Ex and on the main screen (Before the menu appears, if the menu is there, press escape) Press your assigned
     talk button (T by default) and type :
 </p>
-<span class="code">Preferences</span>
+<p><span class="code">Preferences</span></p>
 <p>
     &nbsp;<strong>Before typing this, make sure you press Alt + Enter first! If you hae not, your Deus Ex will crash!</strong>&nbsp;
 </p>
@@ -334,9 +316,10 @@ serious trouble in a fight:</p>
 </p>
 <p>
     Once this is done, close the Preferences box and hit Alt + Enter again to resume your full-screen. Enjoy your new device!
-</p></p>
+</p>
+
 <h4 id="resolutions">Resolutions<a class="headerlink" href="#resolutions" title="Permanent link">#</a></h4>
-<p><p>
+<p>
     In some cases, Deus Ex doesn&#39;t recognise your screen resolution and doesn&#39;t add an option with your resolution to
     "Settings -&gt; Screen" window. Instead you may set it manually:
 </p>
@@ -355,29 +338,26 @@ serious trouble in a fight:</p>
 </p>
 <p>
     <em>Thanks to al&#39;be:do for the provided information.</em>
-</p></p>
+</p>
+
 <h4 id="virtual-memory">Virtual Memory<a class="headerlink" href="#virtual-memory" title="Permanent link">#</a></h4>
 <p>
     <em>The article was written by Clix and permitted to be published here.</em>
 </p>
-
 <p>
     Virtual Memory is a part of the total memory available on your Hard Disk assigned to act like normal RAM. While this isn&#39;t
     as good as actual RAM, it still is good enough to improve the overall performance, when setup proper that is. If you let
     Windows manage your Virtual memory, it often resizes the swap file (the part of the HD-memory that acts like ram), which
     might actually work out worse for your performance, as it uses some of the resources while resizing the swapfile.
 </p>
-
 <p>
     Anyway, there is a way to set the swap file size to a fixed amount, which will increase your overall performance.
 </p>
-
 <p>
     Go to Start -&gt; Control Panel -&gt; System -&gt; Performance -&gt; Virtual Memory. For best performance, it&#39;s recommended
     to assign twice your amount of RAM for the swap file size. Make both maximum and minimum swap file size the same. For example,
     if you have 512MB ram, specify 1024MB ram minimum and maximum for the swap file.
 </p>
-
 <p>
     Note: If you do not know how many MB RAM you have,
     <a href="http://hp.vector.co.jp/authors/VA002374/src/download.html">check this</a>
@@ -386,7 +366,7 @@ serious trouble in a fight:</p>
 </p>
 
 <h4 id="widescreen">Widescreen<a class="headerlink" href="#widescreen" title="Permanent link">#</a></h4>
-<p><p>
+<p>
     Hi!
 </p>
 <p>
@@ -462,17 +442,16 @@ DefaultFOV=<strong>85.28127</strong></span>
 </p>
 <p>
     al'be:do
-</p></p>
+</p>
+
 <h4 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">#</a></h4>
 <p>
     If your monitor is wide you might experience problems with sniping. You may try playing in a smaller window.
 </p>
-
 <p>
     The problem about it is that by default window mode in Deus Ex is very dark and you&#39;ll be unable to see anything even
     if brightness is on max level. Though there is a solution:
 </p>
-
 <ol>
     <li>
         <a href="kb/improvements/changing-rendering-devices">Download and install an enhanced OpenGL renderer</a>.</li>
@@ -490,11 +469,9 @@ DefaultFOV=<strong>85.28127</strong></span>
     <li>Save and close the file. <br />
     </li>
 </ol>
-
 <p>
     Tips for Windows users:
 </p>
-
 <ul>
     <li>If you want to change back to Windows, press "Windows" button on your keyboard if you have it. You may also try
         pressing Alt+Enter two times. </li>
@@ -1396,12 +1373,12 @@ augmentation)</strong><br />
     <br>
 </div>
 
-<footer class="col-md-12 wm-page-content">
+<footer class="container-fluid wm-page-content">
       <p>
         <a href="https://github.com/deusexhq/deusexhq.github.io"><i class="fa fa-github"></i>
 GitHub</a>
       </p><p>© Kaiser and the Deus Ex HQ team, 2019</p>
-  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
 </footer>
 
 </body>

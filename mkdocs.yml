@@ -2,8 +2,8 @@ site_name: Deus Ex
 repo_url: https://github.com/deusexhq/deusexhq.github.io
 edit_uri: ""
 site_description: Documentation for Deus Ex
-site_author: Kaiser
-copyright: © Kaiser and the Deus Ex HQ team, 2019
+site_author: Techno
+copyright: © Techno and the Deus Ex HQ team, 2024
 markdown_extensions:
     - toc:
         permalink: "#"
@@ -39,7 +39,7 @@ nav:
 theme: 
     name: 'windmill'
 extra:
-    version: '22.03.2019'
+    version: '10/11/2024'
     extra.article_nav_top: false
     extra.article_nav_bottom: false
 extra_css:

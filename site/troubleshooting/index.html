@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Techno">
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Troubleshooting - Deus Ex</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <link href="../kaiser.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Procedure Entry Point error", url: "#_top", children: [
+          ]},
+          {title: "Mismatching", url: "#mismatching", children: [
+              {title: "Fixing MisMatch Errors", url: "#fixing-mismatch-errors" },
+              {title: "Why do MisMatch Errors occur?", url: "#why-do-mismatch-errors-occur" },
+          ]},
+          {title: "Bad Name error and/or New/None Actor Channel", url: "#bad-name-error-andor-newnone-actor-channel", children: [
+          ]},
+          {title: "Clientdeath", url: "#clientdeath", children: [
+              {title: "What is it?", url: "#what-is-it" },
+              {title: "Fixing", url: "#fixing" },
+              {title: "Causes", url: "#causes" },
+          ]},
+          {title: "Bad Name Index", url: "#bad-name-index", children: [
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../object/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../object/" class="btn btn-xs btn-link">
+        Object
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../singleplayer/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../singleplayer/" class="btn btn-xs btn-link">
+        Singleplayer Mods
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h4 id="procedure-entry-point-error">Procedure Entry Point error<a class="headerlink" href="#procedure-entry-point-error" title="Permanent link">#</a></h4>
+<p>
+It&#39;s <em>most likely</em> caused by improperly installed renderer&#39;s driver. The majority of people get this error when they try to change to OpenGL renderer &mdash; because they download a wrong driver for Unreal Tournament from <a href="http://cwdohnal.home.mindspring.com/utglr/">Chris Dohnal&#39;s website</a>. To solve the problem, re-download the driver which is meant to be used with Deus Ex, not Unreal Tournament. The section with Deus Ex drivers is below section with UT drivers. Unreal Tournament drivers don&#39;t work with the game and cause this error.
+</p>
+
+<h4 id="mismatching">Mismatching<a class="headerlink" href="#mismatching" title="Permanent link">#</a></h4>
+<p>
+So, you see a server with your favourite map on, or your fellow clan mate playing on it. You swiftly attempt to join the
+server when *SMASH*, you're stopped in your tracks by a large "*Filename*_MisMatch error", or a similar message.
+I&rsquo;ve had enough of these in the past, and although not life-threatening, they can be a hefty nuisance. I'm going
+to briefly go over the simplest way to fix this problem, let's look at probably the most common example:
+</p>
+
+<h5 id="fixing-mismatch-errors">Fixing MisMatch Errors<a class="headerlink" href="#fixing-mismatch-errors" title="Permanent link">#</a></h5>
+<p>
+You see a popular server, 8/10 slots full, 80 ping, playing on DXMP_Cathedral. You attempt to join and you get the old MisMatch
+error (I'll explain why later). Now the best way to fix this is:
+</p>
+<ol start="1">
+<li>Close down all instances of Deus Ex. </li>
+<li>Locate your Maps folder, generally in MyComputer&gt;C:&gt;DeusEx&gt;Maps. </li>
+<li>Locate DXMP_Cathedral, most likely near the bottom. </li>
+<li>Either Drag this onto your desktop or some other place, or delete it. </li>
+<li>Now attempt to re-join the server. You should be able to join without error. </li>
+</ol>
+<p>
+If you still get the MisMatch error, and you have definitely taken DXMP_Cathedral away from your Deus Ex folder, it may be
+required that you purge your cache. The cache, in brief, stores all of the Downloads you have taken from servers, so Gun
+Mods, Maps, Anti-Cheating Mods, etc. Either delete all of that or take about 3-5 out at a time, then try to re-join the
+server.
+</p>
+<h5 id="why-do-mismatch-errors-occur">Why do MisMatch Errors occur?<a class="headerlink" href="#why-do-mismatch-errors-occur" title="Permanent link">#</a></h5>
+<p>
+If we take DXMP_Cathedral for example, several versions of the same map were released under the name DXMP_Cathedral. That
+means that it attempts to fetch the DXMP_Cathedral in your /Maps folder, because it sees you are joining a map with the
+name DXMP_Cathedral. If the server is running a different version however, Deus Ex tends to just get confused and give
+up, leaving you to mop up the pieces and sort it out!
+</p>
+<p>
+Another typical example is CaroneElevatorSet.u, a clever mod used to help make lift-making simpler in Deus Ex Editor/SDK.
+The maker, Carone I believe, released several versions under the same name. The map DXMP_RPGCity apparently uses it, must
+be in the crane or something - but I will usually get a MisMatch Error if I have been using CaroneElevator in a map I was
+making, and forgotten to remove it from /System.
+</p>
+<p>
+So to re-cap, if you get MisMatch errors, look at what the filename/map it is, then close Deus Ex and take that map/file
+out of your /DeusEx Folder!
+</p>
+
+<h4 id="bad-name-error-andor-newnone-actor-channel">Bad Name error and/or New/None Actor Channel<a class="headerlink" href="#bad-name-error-andor-newnone-actor-channel" title="Permanent link">#</a></h4>
+<p>
+This problem appears when one of the system files of Deus Ex is corrupted, usually it&#39;s "DeusEx.u" or "Engine.u". Other issues may also be involved.
+There are various ways to solve this:
+<ul>
+<li>Insert your Deus Ex CD, open it for browsing. Find System/ folder and copy "DeusEx.u" to your DeusEx/System/ folder. If it doesn&#39;t work, try copying all the files with .u extension to your DeusEx/System/ folder. </li>
+<li>Ask someone to give you the file(s). </li>
+<li>The easiest way is to reinstall Deus Ex. If you don&#39;t want to lose the settings, move/copy User.ini, Defuser.ini, DeusEx.ini and Default.ini from DeusEx/System to a safe place during installation and when it&#39;s finished, move them back.</li>
+</ul>
+
+<strong>Other things to try</strong>:
+Try turning off GUI fix/other fixes in Kenteis.
+Either change renderer, then change back to original, 
+or ingame type `debug gpf` then restart.
+
+<em>Thanks to Clix for the solution.</em>
+</p>
+
+<h4 id="clientdeath">Clientdeath<a class="headerlink" href="#clientdeath" title="Permanent link">#</a></h4>
+<h5 id="what-is-it">What is it?<a class="headerlink" href="#what-is-it" title="Permanent link">#</a></h5>
+<p>This is a bug of the game, called "client death". "Client death" is when you hear your own death scream, your user interface disappears, but you can still move (from a technical point of view, the player dies on <em>your</em> computer, but it doesn't die on the server, so the server doesn't clean your inventory, respawn and fine a death point on the scoreboard).</p>
+<h5 id="fixing">Fixing<a class="headerlink" href="#fixing" title="Permanent link">#</a></h5>
+<p>When happened, just press "Esc" button on your keyboard, it will show the main menu, then return to the game.
+Your interface should appear again. Don't pay attention to your "dead" body &mdash; the bug will go as soon as you're injured.</p>
+<h5 id="causes">Causes<a class="headerlink" href="#causes" title="Permanent link">#</a></h5>
+<p>The glitch occurs when the multiplayer replication code de-syncs between the client and server, which can happen for many reasons, including server lag, bad coding or other rare glitches.
+Basically, the server didn't expect the death to occur, but something on the client forced the death, which causes the desync.</p>
+<h4 id="bad-name-index">Bad Name Index<a class="headerlink" href="#bad-name-index" title="Permanent link">#</a></h4>
+<p>This problem appears when one of the system files of Deus Ex is corrupted, usually it's "DeusEx.u" or "Engine.u". Other issues may also be involved.
+There are various ways to solve this:</p>
+<ul>
+    <li>Insert your Deus Ex CD, open it for browsing. Find System/ folder and copy "DeusEx.u" to your DeusEx/System/
+        folder. If it doesn't work, try copying all the files with .u extension to your DeusEx/System/ folder. </li>
+    <li>Ask someone to give you the file(s). </li>
+    <li>The easiest way is to reinstall Deus Ex. If you don't want to lose the settings, move/copy User.ini, Defuser.ini, DeusEx.ini
+        and Default.ini from DeusEx/System to a safe place during installation and when it's finished, move them back.</li>
+</ul>
+
+<p><strong>Other things to try</strong>:
+Try turning off GUI fix/other fixes in Kenteis.
+New/None actor channel: Either change renderer, then change back to original, or ingame type <code>debug gpf</code> then restart.</p>
+<p>
+    <em>Thanks to Clix for the solution.</em>
+</p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../object/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../object/" class="btn btn-xs btn-link">
+        Object
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../singleplayer/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../singleplayer/" class="btn btn-xs btn-link">
+        Singleplayer Mods
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+      <p>
+        <a href="https://github.com/deusexhq/deusexhq.github.io"><i class="fa fa-github"></i>
+GitHub</a>
+      </p><p>© Techno and the Deus Ex HQ team, 2024</p>
+  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

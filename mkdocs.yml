@@ -10,8 +10,7 @@ markdown_extensions:
         baselevel: 3
 nav:
     - Home: index.md
-    - <img src="https://cdn.discordapp.com/emojis/457155649831305219.png" width="20" height="20" border="0" />Discord: https://discord.gg/7NB768D
-    - <img src="https://cdn.discordapp.com/emojis/454501690112999424.png" width="20" height="20" border="0" />Project-DXMP Github: https://github.com/deusexhq/project-dxmp
+    - <img src="https://cdn.discordapp.com/emojis/457155649831305219.png" width="20" height="20" border="0" />Discord: https://discord.gg/KUA8acb
     - Files: file.md
     - About: about.md
     - Deus Ex:
